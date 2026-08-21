@@ -1,0 +1,1 @@
+Personal portfolio built with Angular v22 and Express.js v5. It showcases my professional experience, technical skills, education, and projects, while demonstrating modern web development practices and a clean, responsive design.

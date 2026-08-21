@@ -1,25 +1,33 @@
-# Angular specific
-/dist/
-/out-tsc/
-/tmp/
-/coverage/
-/e2e/test-output/
-/.angular/
-.angular/
+# Dependencies
+node_modules/
+**/node_modules/
 
-# Node modules and dependency files
-/node_modules/
-/package-lock.json
-/yarn.lock
+package-lock.json
+yarn.lock
 
 # Environment files
-/.env
+.env
+.env.*
+!.env.example
 
-# Angular CLI and build artefacts
-/.angular-cli.json
-/.ng/
+# Angular / frontend build outputs
+portfolio-front/dist/
+portfolio-front/out-tsc/
+portfolio-front/tmp/
+portfolio-front/coverage/
+portfolio-front/.angular/
+portfolio-front/.angular-cache/
+portfolio-front/.sass-cache/
+portfolio-front/.ng/
+portfolio-front/.cache/
 
-# TypeScript cache
+# Backend build / runtime output
+portfolio-back/node_modules/
+portfolio-back/.env
+portfolio-back/dist/
+portfolio-back/logs/
+
+# TypeScript
 *.tsbuildinfo
 
 # Logs
@@ -27,39 +35,30 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Compiled output
-/bazel-out
-
-# Node
-npm-debug.log
-yarn-error.log
-
-# IDEs and editors
+# IDE / editor files
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# Visual Studio Code
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
+.history/
+*.swp
+*.swo
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test / coverage artifacts
+coverage/
+coverage-final.json
+/test-results/
+/playwright-report/
+
+# Miscellaneous Angular test artifacts
+/.angular-cli.json
 /connect.lock
-/coverage
 /libpeerconnection.log
 testem.log
 /typings
-
-# System files
-.DS_Store
-Thumbs.db

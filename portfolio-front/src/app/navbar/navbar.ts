@@ -2,6 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { DropdownMenu } from './dropdown-menu/dropdown-menu';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { ResponsiveService } from '../services/responsive-service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,6 +16,7 @@ export class Navbar implements OnInit {
 
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
+  protected responsiveService = inject(ResponsiveService);
 
   ngOnInit() {
     this.router.events
@@ -27,7 +29,6 @@ export class Navbar implements OnInit {
   private updateSectionTitle(): void {
     let route = this.activatedRoute;
     while (route.firstChild) {
-      console.log('Route:', route.firstChild);
       route = route.firstChild;
     }
     const title = route.snapshot.title?.split('|')[0] ?? '';

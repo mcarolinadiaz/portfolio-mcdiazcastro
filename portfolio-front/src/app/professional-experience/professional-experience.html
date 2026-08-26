@@ -1,1 +1,27 @@
-<p>professional-experience works!</p>
+<div>
+    <div>
+        @for (professionalExperience of professionalExperiences; track professionalExperience) {
+            <div>
+                <div>
+                    {{ professionalExperience.company }}
+                </div>
+                <div>
+                    {{ professionalExperience.position }}
+                </div>
+                <div>
+                    {{ professionalExperience.startDate }} - {{ professionalExperience.endDate }}
+                </div>
+                <div>
+                    {{ professionalExperience.description }}
+                </div>
+                <div>
+                    <div>
+                        @for (skill of professionalExperience.stack; track skill) {
+                            <div>{{ skill }}</div>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

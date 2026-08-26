@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Route, Router, RouterLink } from '@angular/router';
+import { ResponsiveService } from '../../services/responsive-service';
 
 @Component({
   selector: 'app-dropdown-menu',
@@ -9,6 +10,8 @@ import { Route, Router, RouterLink } from '@angular/router';
 })
 export class DropdownMenu implements OnInit {
   private router = inject(Router);
+  protected responsiveService = inject(ResponsiveService);
+  
   appRoutes: Route[] = [];
 
   ngOnInit(): void {
@@ -21,4 +24,6 @@ export class DropdownMenu implements OnInit {
       };
     }) ?? [];
   }
+
+
 }

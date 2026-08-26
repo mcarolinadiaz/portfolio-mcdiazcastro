@@ -15,7 +15,7 @@ img {
     flex-direction: row;
     background-color: var(--dark-blue);
     align-content: center;
-    width: 100px;
+    justify-content: flex-end;
 }
 
 .dropdown-button-content:hover {
@@ -26,8 +26,9 @@ img {
 .dropdown-menu.show {
     border-radius: 0;
     background-color: var(--dark-blue);
-    width: -webkit-fill-available;
     border: none;
+    right: 0;
+    left: auto;
 }
 
 .dropdown-item.active {

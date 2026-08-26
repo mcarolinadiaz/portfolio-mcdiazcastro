@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { UserInformationService } from '../services/user-information-service';
 
 @Component({
   selector: 'app-about',
@@ -7,8 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './about.scss',
 })
 export class About {
-  name: string = 'María Carolina Díaz Castro';
-  alias: string = 'Caro';
-  degree: string = 'Ingeniera de sistemas';
-  about: string = 'I\'m a software engineer, passionate about technology and innovation. I love to learn new things and share my knowledge with others. I\'m always looking for new challenges and opportunities to grow professionally.';
+  private readonly userInformationService = inject(UserInformationService);
+
+  readonly user = this.userInformationService.user();
+
+  readonly technicalSkills = this.userInformationService.getTechnicalSkills();
 }

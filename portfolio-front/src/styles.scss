@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+$ink-black: #001219;
+$dark-teal: #005f73;
+$dark-cyan: #0a9396;
+$pearl-aqua: #94d2bd;
+$vanilla-custard: #e9d8a6;
+$golden-orange: #ee9b00;
+$burnt-caramel: #ca6702;
+$rusty-spice: #bb3e03;
+$oxidized-iron: #ae2012;
+$brown-red: #9b2226;
+
+@use "bootstrap/scss/bootstrap" with (
+	$primary: $dark-cyan,
+	$secondary: $dark-teal,
+	$success: $pearl-aqua,
+	$warning: $golden-orange,
+	$danger: $oxidized-iron,
+	$body-bg: $vanilla-custard,
+	$body-color: $ink-black
+);
+
+:root {
+	--color-ink-black: #{$ink-black};
+	--color-dark-teal: #{$dark-teal};
+	--color-dark-cyan: #{$dark-cyan};
+	--color-pearl-aqua: #{$pearl-aqua};
+	--color-vanilla-custard: #{$vanilla-custard};
+	--color-golden-orange: #{$golden-orange};
+	--color-burnt-caramel: #{$burnt-caramel};
+	--color-rusty-spice: #{$rusty-spice};
+	--color-oxidized-iron: #{$oxidized-iron};
+	--color-brown-red: #{$brown-red};
+}
+
+html,
+body {
+	margin: 0;
+}
+

@@ -1,0 +1,11 @@
+<div class="list-items">
+    <div class="list-group-item">
+        @for (item of listItems(); track item) {
+            @if (item !== listItems()[listItems().length - 1]) {
+                {{ item }} |
+            } @else {
+                {{ item }}
+            }
+        }
+    </div>
+</div>

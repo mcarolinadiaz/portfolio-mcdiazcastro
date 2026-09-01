@@ -7,9 +7,20 @@
         justify-content: center;
         align-items: center;
         gap: 0.5rem;
+        transition: gap 0.5s;
         .icon-img {
             width: 3rem;
             height: 3rem;
+            border-radius: 0;
+            background-color: unset;
+            transition: width 2s, height 4s;
         }
+        .icon-img:hover {
+            width: 8rem;
+            height: 8rem;
+        }
+    }
+    .footer-content:hover {
+        gap: 4rem;
     }
 }

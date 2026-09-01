@@ -1,21 +1,17 @@
-<div>
-    <div>
-        Nombre completo: {{ user.name }} ({{ user.nickname }})
-    </div>
-    <div>
-        {{ user.degree }}
-    </div>
-    <div>
-        {{ user.about }}
-    </div>
-    <div>
-        <div>Redes profesionales</div>
-        <div>
-            @for (network of user.professionalNetworks; track network) {
-                <a [href]="network.url" target="_blank">
-                    <img [src]="network.icon" [alt]="network.name" width="24" height="24">
-                </a>
-            }
-        </div>
-    </div>
-</div>
+<!-- <div class="center-page-container">
+    <div class="about-information"> -->
+        <app-center-content [image]="responsiveService.isMobile() ? 'assets/me-mobile-home.svg' : 'assets/me-home.svg'" 
+            [imageName]="user.name">
+            <div class="welcome">
+                <div>
+                    Hi, I'm <span class="fullname">{{ user.fullname }}</span> but you can call me
+                </div>
+                <div>
+                    <span class="nickname">{{ user.name }} or {{ user.nickname }}</span> for short.
+                </div>
+            </div>
+            <div class="degree">
+                {{ user.degree }}
+            </div>
+        </app-center-content>
+<!-- </div> -->

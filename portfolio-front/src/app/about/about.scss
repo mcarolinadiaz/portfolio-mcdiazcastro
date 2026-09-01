@@ -1,0 +1,31 @@
+.welcome {
+    font-size: x-large;
+    text-align: center;
+    .fullname {
+        font-weight: bold;
+    }
+    .nickname {
+        color: var(--color-punch-red);
+        font-size: xxx-large;
+        font-weight: bold;
+    }
+}
+
+.degree {
+    color: var(--color-flag-red);
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .welcome {
+        font-size: large;
+        .nickname {
+            font-size: xx-large;
+        }
+    }
+    .degree {
+        font-size: x-large;
+    }
+}

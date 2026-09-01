@@ -1,0 +1,20 @@
+<div class="card column">
+    <div class="card-header">
+        <div class="card-title">{{ experience.position }} - {{ experience.company }}</div>
+        <div class="card-subtitle">
+            @if (!isTeachingAssistant) {
+                {{ experience.startDate ?? '-' | date:'MMM yy' }} - {{ getEndDate(experience.endDate) }}
+            } @else {
+                <app-list-group [listItems]="getListGroupItems(experience.dates)"></app-list-group>
+            }
+        </div>
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{ experience.description }}</p>
+    </div>
+    @if (!isTeachingAssistant) {
+        <div class="card-footer">
+            <app-list-group [listItems]="experience.stack"></app-list-group>
+        </div>
+    }
+</div>

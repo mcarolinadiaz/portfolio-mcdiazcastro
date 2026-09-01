@@ -10,15 +10,16 @@ import { ResponsiveService } from '../services/responsive-service';
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-export class Navbar implements OnInit {
-  title: string = 'MCDíazCastro';
+export class Navbar {
+  title: string = 'Carolina Díaz';
+  mobileTitle: string = 'CD';
   sectionTitle = signal('');
 
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
   protected responsiveService = inject(ResponsiveService);
 
-  ngOnInit() {
+  constructor() {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
@@ -31,7 +32,7 @@ export class Navbar implements OnInit {
     while (route.firstChild) {
       route = route.firstChild;
     }
-    const title = route.snapshot.title?.split('|')[0] ?? '';
+    const title = route.snapshot.title?.split('|')[1] ?? '';
     this.sectionTitle.set(title);
   }
 }

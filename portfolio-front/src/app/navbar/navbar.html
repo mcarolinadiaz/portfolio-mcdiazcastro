@@ -1,7 +1,13 @@
 <nav class="navbar">
   <div class="navbar-container">
       <div class="navbar-brand">
-        <div class="navbar-title">{{ title }}</div>
+        <div class="navbar-title">
+          @if (!responsiveService.isMobile()) {
+              {{ title }}
+          } @else {
+            {{ mobileTitle }}
+          }
+        </div>
       </div>
       @if (responsiveService.isMobile()) {
         <div class="navbar-section">

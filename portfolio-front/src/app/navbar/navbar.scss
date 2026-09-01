@@ -2,6 +2,13 @@
     --bs-navbar-padding-x: 0;
 }
 
+.nav.nav-tabs {
+    border-color: var(--color-space-indigo);
+    .nav-link.active {
+        border-color: var(--color-space-indigo);
+    }
+}
+
 .navbar-brand {
     display: flex;
     align-items: center;

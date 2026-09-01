@@ -1,0 +1,22 @@
+.contact-title {
+    text-align: center;
+    color: var(--color-punch-red);
+    font-size: xxx-large;
+    font-weight: bold;
+}
+
+.contact-subtitle {
+    font-size: x-large;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: xx-large;
+    }
+    .contact-subtitle {
+        font-size: large;
+    }
+}
+

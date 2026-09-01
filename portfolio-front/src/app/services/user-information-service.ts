@@ -84,6 +84,11 @@ export class UserInformationService {
             name: "GitHub",
             url: "https://github.com/mcarolinadiaz",
             icon: "assets/icons-github.svg"
+        },
+        {
+            name: "Email",
+            url: "mailto:diazmariacarolina6@gmail.com",
+            icon: "assets/icons-email.svg"
         }
     ];
 

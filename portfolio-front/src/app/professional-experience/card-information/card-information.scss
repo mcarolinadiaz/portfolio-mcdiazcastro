@@ -2,6 +2,11 @@
     width: 18rem;
     border-color: var(--color-flag-red);
     height: 27rem;
+    transition: width 0.5s, height 0.5s;
+    .card:hover {
+        width: 20rem;
+        height: 29rem;
+    }
     .card-header {
         background: none;
         height: 6rem;

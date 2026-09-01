@@ -1,17 +1,14 @@
-<!-- <div class="center-page-container">
-    <div class="about-information"> -->
-        <app-center-content [image]="responsiveService.isMobile() ? 'assets/me-mobile-home.svg' : 'assets/me-home.svg'" 
-            [imageName]="user.name">
-            <div class="welcome">
-                <div>
-                    Hi, I'm <span class="fullname">{{ user.fullname }}</span> but you can call me
-                </div>
-                <div>
-                    <span class="nickname">{{ user.name }} or {{ user.nickname }}</span> for short.
-                </div>
-            </div>
-            <div class="degree">
-                {{ user.degree }}
-            </div>
-        </app-center-content>
-<!-- </div> -->
+<app-center-content [image]="responsiveService.isMobile() ? 'assets/me-mobile-home.svg' : 'assets/me-home.svg'" 
+    [imageName]="user.name">
+    <div class="welcome">
+        <div>
+            Hi, I'm <span class="fullname">{{ user.fullname }}</span> but you can call me
+        </div>
+        <div>
+            <span class="nickname">{{ user.name }} or {{ user.nickname }}</span> for short.
+        </div>
+    </div>
+    <div class="degree">
+        {{ user.degree }}
+    </div>
+</app-center-content>

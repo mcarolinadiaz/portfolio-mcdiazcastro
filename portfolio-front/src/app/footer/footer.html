@@ -1,0 +1,9 @@
+<footer class="footer">
+    <div class="footer-content">
+        @for (network of professionalNetworks; track network) {
+            <a [href]="network.url" target="_blank">
+                <img class="icon-img" [src]="network.icon" [alt]="network.name">
+            </a>
+        }
+    </div>
+</footer>

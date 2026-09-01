@@ -1,5 +1,27 @@
 .navbar {
     --bs-navbar-padding-x: 0;
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        width: -webkit-fill-available;
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            .navbar-title {
+                font-weight: 900;
+                font-size: larger;
+                transition: font-weight 3s, font-size 3s;
+            }
+            .navbar-title:hover {
+                font-weight: 500;
+                font-size: xx-larger;
+                transition: font-weight 0.5s, font-size 0.5s;
+            }
+        }
+        .navbar-menu {
+            margin-left: auto;
+        }
+    }
 }
 
 .nav.nav-tabs {
@@ -9,22 +31,5 @@
     }
 }
 
-.navbar-brand {
-    display: flex;
-    align-items: center;
-}
 
-.navbar-container {
-    display: flex;
-    align-items: center;
-    width: -webkit-fill-available;
-}
 
-.navbar-menu {
-    margin-left: auto;
-}
-
-.navbar-title {
-    font-weight: 900;
-    font-size: larger;
-}

@@ -1,0 +1,57 @@
+.center-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .center-page-information {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        align-items: center;
+        // .welcome {
+        //     font-size: x-large;
+        //     text-align: center;
+        //     .fullname {
+        //         font-weight: bold;
+        //     }
+        //     .nickname {
+        //         color: var(--color-punch-red);
+        //         font-size: xxx-large;
+        //         font-weight: bold;
+        //     }
+        // }
+
+        // .degree {
+        //     color: var(--color-flag-red);
+        //     font-size: xx-large;
+        //     font-weight: bold;
+        // }
+    }
+    .center-page-image {
+        width: 40%;
+        .center-page-image-img {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .center-page-container {
+        flex-direction: column;
+        .center-page-information {
+            width: 100%;
+            // .welcome {
+            //     font-size: large;
+            //     .nickname {
+            //         font-size: xx-large;
+            //     }
+            // }
+            // .degree {
+            //     font-size: x-large;
+            // }
+        }
+        .center-page-image {
+            width: 50%;
+            margin-top: 1rem;
+        }
+    }
+}

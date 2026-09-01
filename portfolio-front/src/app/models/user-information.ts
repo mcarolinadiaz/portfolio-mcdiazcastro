@@ -3,6 +3,7 @@ import { ProfessionalExperience } from "./professional-experience";
 import { ProfessionalNetwork } from "./professional-network";
 
 export interface UserInformation {
+    fullname: string;
     name: string;
     nickname: string;
     degree: string;

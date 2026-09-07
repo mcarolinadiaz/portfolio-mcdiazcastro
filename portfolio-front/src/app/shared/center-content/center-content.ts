@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-center-content',
@@ -9,4 +9,8 @@ import { Component, input } from '@angular/core';
 export class CenterContent {
   image = input.required<string>();
   imageName = input.required<string>();
+  isImageLoading = signal(true); 
+  onImageLoad(): void { 
+    this.isImageLoading.set(false); 
+  }
 }

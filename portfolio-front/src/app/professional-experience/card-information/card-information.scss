@@ -1,12 +1,8 @@
 .card {
     width: 18rem;
     border-color: var(--color-flag-red);
-    height: 27rem;
+    height: 29rem;
     transition: width 0.5s, height 0.5s;
-    .card:hover {
-        width: 20rem;
-        height: 29rem;
-    }
     .card-header {
         background: none;
         height: 6rem;
@@ -22,11 +18,17 @@
         }
     }
     .card-body {
-
+        .card-text {
+            white-space: pre-line;
+        }
     }
     .card-footer {
         height: 6rem;
         border-color: var(--color-flag-red);
         background-color: unset;
     }
-  }
+}
+
+.card:hover {
+    width: 20rem;
+}

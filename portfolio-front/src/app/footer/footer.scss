@@ -2,6 +2,17 @@
     border-top-style: solid;
     border-top-width: thin;
     padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .footer-text {
+        display: flex;
+        align-items: center;
+        font-size: small;
+        opacity: 0.5;
+    }
+    .footer-text:hover {
+        opacity: unset;
+    }
     .footer-content {
         display: flex;
         justify-content: center;

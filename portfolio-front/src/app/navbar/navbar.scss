@@ -10,7 +10,7 @@
             .navbar-title {
                 font-weight: 900;
                 font-size: larger;
-                transition: font-weight 3s, font-size 3s;
+                transition: font-weight 0.5s, font-size 0.5s;
             }
             .navbar-title:hover {
                 font-weight: 500;
@@ -24,12 +24,6 @@
     }
 }
 
-.nav.nav-tabs {
-    border-color: var(--color-space-indigo);
-    .nav-link.active {
-        border-color: var(--color-space-indigo);
-    }
-}
 
 
 

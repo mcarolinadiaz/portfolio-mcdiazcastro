@@ -1,11 +1,10 @@
 import { Component, input } from '@angular/core';
-import { ProfessionalExperience } from '../../models/professional-experience';
-import { DatePipe } from '@angular/common';
+import { ProfessionalExperience } from '../../shared/models/professional-experience';
 import { ListGroup } from "./list-group/list-group";
 
 @Component({
   selector: 'app-card-information',
-  imports: [DatePipe, ListGroup],
+  imports: [ListGroup],
   templateUrl: './card-information.html',
   styleUrl: './card-information.scss',
 })
@@ -20,15 +19,35 @@ export class CardInformation {
     return this.experience.company.includes('UNICEN');
   }
 
-  getEndDate(date: Date | null | undefined): string {
-    if (date && date.getDate() === new Date().getDate()) {
-      return 'Present';
-    }
+  private getToLocaleDateString(date: Date | null | undefined): string {
     const options: Intl.DateTimeFormatOptions = {
       month: 'short',
-      year: '2-digit'
+      year: 'numeric'
     };
-    return date ? date.toLocaleDateString('en-US', options) : '-';
+    return date?.toLocaleDateString('en-US', options) ?? '-';
+  }
+
+  private isCurrentDate(date: Date | null | undefined): boolean {
+    if (!date) {
+      return false;
+    }
+    return date.getDate() === new Date().getDate();
+  }
+
+  getEndDate(date: Date | null | undefined): string {
+    if (this.isCurrentDate(date)) {
+      return 'Present';
+    }
+    return date ? this.getToLocaleDateString(date) : '-';
+  }
+
+  getDateToString(startDate: Date | null | undefined, endDate: Date | null | undefined): string {
+    const startDateToString = this.getToLocaleDateString(startDate);
+    const endDateToString = this.getEndDate(endDate);
+    if (this.isCurrentDate(endDate) || startDate?.getFullYear() != endDate?.getFullYear()) {
+      return `${startDateToString} - ${endDateToString}`;
+    }
+    return `${startDateToString.split(' ')[0]} - ${endDateToString}`;
   }
 
   getListGroupItems(dates: { startDate: Date; endDate: Date | null }[] | undefined): string[] {
@@ -36,9 +55,7 @@ export class CardInformation {
       return [];
     }
     return dates.map(dateRange => {
-      const startDate = dateRange.startDate.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
-      const endDate = this.getEndDate(dateRange.endDate);
-      return `${startDate} - ${endDate}`;
+      return this.getDateToString(dateRange.startDate, dateRange.endDate);
     });
   }
 }

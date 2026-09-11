@@ -3,7 +3,7 @@
         <div class="card-title">{{ experience.position }} - {{ experience.company }}</div>
         <div class="card-subtitle">
             @if (!isTeachingAssistant) {
-                {{ experience.startDate ?? '-' | date:'MMM yy' }} - {{ getEndDate(experience.endDate) }}
+                {{ getDateToString(experience.startDate, experience.endDate) }}
             } @else {
                 <app-list-group [listItems]="getListGroupItems(experience.dates)"></app-list-group>
             }

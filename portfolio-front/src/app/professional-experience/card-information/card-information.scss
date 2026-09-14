@@ -1,8 +1,9 @@
 .card {
     width: 18rem;
     border-color: var(--color-flag-red);
-    height: 30rem;
+    height: 28rem;
     transition: width 0.5s, height 0.5s;
+    font-size: smaller;
     .card-header {
         background: none;
         height: 6rem;

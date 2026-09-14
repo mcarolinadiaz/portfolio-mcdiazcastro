@@ -38,9 +38,7 @@ export class UserInformationService {
             startDate: new Date("2024-09-01"),
             endDate: new Date("2026-05-31"),
             description: `Developed UI component library follows a Figma design. Used Bootstrap v5 for utility classes and LESS. 
-            Developed and maintained applications using Angular v18 (HTML, SCSS, TypeScript), Odoo, Magento 2, PHP, JavaScript, .NET (C#) for an electrical distribution products.
-            Participated in each step of the product development process from ideation to development improvement.
-            `,
+            Developed and maintained applications using Angular v18 (HTML, SCSS, TypeScript), Odoo, Magento 2, PHP, JavaScript, .NET (C#) for an electrical distribution products.`,
             stack: ["Angular-v18", "TypeScript", "SCSS", ".NET", "C#", "Odoo", "Magento 2", "PHP", "JavaScript", "LESS"]
         },
         {

@@ -1,8 +1,8 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { inject, Service } from '@angular/core';
-import { BOOTSTRAP_BREAKPOINTS } from '../core/constants/breakpoints';
 import { map } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { BOOTSTRAP_BREAKPOINTS } from '../../core/constants/breakpoints';
 
 @Service()
 export class ResponsiveService {

@@ -15,7 +15,7 @@
 
 .page-container:has(.center-page-container) {
   display: flex;
-  align-items: center;
+  align-items: safe center;
 }
 
 .page-container {

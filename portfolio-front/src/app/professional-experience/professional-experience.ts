@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { UserInformationService } from '../services/user-information-service';
 import { CardInformation } from "./card-information/card-information";
+import { UserInformationService } from '../shared/services/user-information-service';
 
 @Component({
   selector: 'app-professional-experience',

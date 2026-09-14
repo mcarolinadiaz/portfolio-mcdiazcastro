@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Route, Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { ResponsiveService } from '../../services/responsive-service';
+import { ResponsiveService } from '../../shared/services/responsive-service';
 
 @Component({
   selector: 'app-dropdown-menu',

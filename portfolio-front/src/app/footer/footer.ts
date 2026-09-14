@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { UserInformationService } from '../services/user-information-service';
+import { UserInformationService } from '../shared/services/user-information-service';
 
 @Component({
   selector: 'app-footer',

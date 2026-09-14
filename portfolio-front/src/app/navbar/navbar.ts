@@ -2,7 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { DropdownMenu } from './dropdown-menu/dropdown-menu';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
-import { ResponsiveService } from '../services/responsive-service';
+import { ResponsiveService } from '../shared/services/responsive-service';
 
 @Component({
   selector: 'app-navbar',

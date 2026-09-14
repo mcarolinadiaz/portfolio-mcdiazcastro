@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { UserInformationService } from '../services/user-information-service';
-import { ResponsiveService } from '../services/responsive-service';
 import { CenterContent } from "../shared/center-content/center-content";
+import { ResponsiveService } from '../shared/services/responsive-service';
+import { UserInformationService } from '../shared/services/user-information-service';
 
 @Component({
   selector: 'app-about',

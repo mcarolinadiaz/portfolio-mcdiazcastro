@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { ProfessionalExperience } from '../../shared/models/professional-experience';
-import { ListGroup } from "./list-group/list-group";
+import { ListGroup } from "../../shared/list-group/list-group";
 
 @Component({
   selector: 'app-card-information',
@@ -22,20 +22,14 @@ export class CardInformation {
   private getToLocaleDateString(date: Date | null | undefined): string {
     const options: Intl.DateTimeFormatOptions = {
       month: 'short',
-      year: 'numeric'
+      year: 'numeric',
+      timeZone: 'UTC'
     };
     return date?.toLocaleDateString('en-US', options) ?? '-';
   }
 
-  private isCurrentDate(date: Date | null | undefined): boolean {
-    if (!date) {
-      return false;
-    }
-    return date.getDate() === new Date().getDate();
-  }
-
   getEndDate(date: Date | null | undefined): string {
-    if (this.isCurrentDate(date)) {
+    if (date === null) {
       return 'Present';
     }
     return date ? this.getToLocaleDateString(date) : '-';
@@ -44,7 +38,7 @@ export class CardInformation {
   getDateToString(startDate: Date | null | undefined, endDate: Date | null | undefined): string {
     const startDateToString = this.getToLocaleDateString(startDate);
     const endDateToString = this.getEndDate(endDate);
-    if (this.isCurrentDate(endDate) || startDate?.getFullYear() != endDate?.getFullYear()) {
+    if (endDate === null || startDate?.getUTCFullYear() !== endDate?.getUTCFullYear()) {
       return `${startDateToString} - ${endDateToString}`;
     }
     return `${startDateToString.split(' ')[0]} - ${endDateToString}`;

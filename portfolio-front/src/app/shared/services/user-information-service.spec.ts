@@ -65,7 +65,10 @@ describe('UserInformationService', () => {
       'Angular-v11',
       'Python',
       'Yolov3',
-      'TensorFlow'
+      'TensorFlow',
+      'Claude',
+      'Github Copilot',
+      'Opencode'
     ]);
   });
 });

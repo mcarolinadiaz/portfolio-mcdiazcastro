@@ -1,0 +1,14 @@
+<div class="accordion" [id]="idItem() + '-accordion'">
+  <div class="accordion-item">
+    <h2 class="accordion-header" [id]="idItem() + '-heading'">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#' + idItem() + '-collapse'" aria-expanded="true" [attr.aria-controls]="idItem() + '-collapse'">
+        {{ nameItem() }}
+      </button>
+    </h2>
+    <div class="accordion-collapse collapse show" [id]="idItem() + '-collapse'" [attr.aria-labelledby]="idItem() + '-heading'">
+      <div class="accordion-body">
+        <ng-content />
+      </div>
+    </div>
+  </div>
+</div>

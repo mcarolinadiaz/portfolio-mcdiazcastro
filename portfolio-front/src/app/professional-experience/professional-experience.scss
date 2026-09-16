@@ -1,7 +1,13 @@
 .pe-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 2rem;
   padding: 2rem 0;
   flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+    .pe-container {
+      justify-content: center;
+    }
 }

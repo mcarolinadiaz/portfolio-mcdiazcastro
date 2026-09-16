@@ -12,6 +12,7 @@ describe('ListGroup', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(ListGroup);
+    fixture.componentRef.setInput('listItems', ['Angular', 'TypeScript']);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

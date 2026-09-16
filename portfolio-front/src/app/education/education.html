@@ -1,1 +1,22 @@
-<p>education works!</p>
+<div class="education-container">
+    <app-accordion-component [idItem]="'education'" [nameItem]="'Education'">
+        <app-education-item [educationItem]="education"></app-education-item>
+    </app-accordion-component>
+    <app-accordion-component [idItem]="'technicalSkills'" [nameItem]="'Technical skills'">
+        <div class="skills">
+            <app-list-group [listItems]="technicalSkills"></app-list-group>
+        </div>
+    </app-accordion-component>
+    <app-accordion-component [idItem]="'certifications'" [nameItem]="'Certifications'">
+        @for (certification of certifications; track certification) {
+            <app-education-item [educationItem]="certification"></app-education-item>
+        }
+    </app-accordion-component>
+    <app-accordion-component [idItem]="'languages'" [nameItem]="'Languages'">
+        <div class="language">
+        @for (language of languages; track language) {
+            <p>{{ language.idiom }}: {{ language.level }}</p>
+        }
+        </div>
+    </app-accordion-component>
+</div>

@@ -1,0 +1,9 @@
+.education-item-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    .education-title {
+        font-size: larger;
+        font-weight: bold;
+    }
+}

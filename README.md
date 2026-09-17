@@ -26,7 +26,7 @@ This repository contents an SPA (Single Page Application) code was developed wit
 
 ## Project structure
 
-The repostiroy contains a directory:
+The repository contains a directory:
 
 - `portfolio-front/`: Contains Angular app.
 
@@ -54,7 +54,6 @@ To execute this project you must need:
     ```
     cd portfolio-front
     ng serve
-    ```
 
 ## Testing
 

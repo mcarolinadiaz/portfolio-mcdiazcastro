@@ -6,7 +6,6 @@
     font-size: smaller;
     .card-header {
         background: none;
-        height: 6rem;
         border-color: var(--color-flag-red);
         height: 7rem;
         .card-title {
@@ -32,4 +31,31 @@
 
 .card:hover {
     width: 20rem;
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+    .card:hover {
+        width: 18rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card:hover {
+        width: 18rem;
+    }
+}
+
+@media (max-width: 639px) {
+    .card {
+        height: auto;
+        .card-header {
+            height: auto;
+        }
+        .card-footer {
+            height: auto;
+        }
+    }
+    .card:hover {
+        width: 18rem;
+    }
 }

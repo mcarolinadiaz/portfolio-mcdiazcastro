@@ -1,9 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { provideRouter } from '@angular/router';
+import { provideTranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
 
 import { Navbar } from './navbar';
+import { LANGUAGE } from '../shared/services/language-service';
 
 describe('Navbar', () => {
   let component: Navbar;
@@ -14,11 +16,12 @@ describe('Navbar', () => {
       imports: [Navbar],
       providers: [
         provideRouter([]),
+        provideTranslateService({ lang: LANGUAGE.ENGLISH, fallbackLang: LANGUAGE.ENGLISH }),
         {
           provide: BreakpointObserver,
-          useValue: { observe: () => of({ matches: false, breakpoints: {} }) }
-        }
-      ]
+          useValue: { observe: () => of({ matches: false, breakpoints: {} }) },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(Navbar);
@@ -32,27 +35,27 @@ describe('Navbar', () => {
 
   it('should read the deepest active route title instead of the app root route', () => {
     const deepestRoute = {
-      snapshot: { title: 'About me | MCDíazCastro', data: {} },
-      routeConfig: { title: 'About me | MCDíazCastro' },
+      snapshot: { title: 'Carolina Díaz | Professional Experience', data: {} },
+      routeConfig: { path: 'professional-experience' },
       children: [],
-      firstChild: null
+      firstChild: null,
     };
     const childRoute = {
       snapshot: { title: undefined, data: {} },
       routeConfig: undefined,
       children: [deepestRoute],
-      firstChild: deepestRoute
+      firstChild: deepestRoute,
     };
     const routeTree = {
       snapshot: { title: undefined, data: {} },
       routeConfig: undefined,
       children: [childRoute],
-      firstChild: childRoute
+      firstChild: childRoute,
     };
 
     (component as any).activatedRoute = routeTree;
     (component as any).updateSectionTitle();
 
-    expect(component.sectionTitle()).toBe(' MCDíazCastro');
+    expect(component.sectionTitle()).toBe('NAV.PROFESSIONAL_EXPERIENCE');
   });
 });

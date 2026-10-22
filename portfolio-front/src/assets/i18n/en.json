@@ -1,0 +1,105 @@
+{
+  "NAV": {
+    "ABOUT": "About me",
+    "PROFESSIONAL_EXPERIENCE": "Professional Experience",
+    "EDUCATION": "Education",
+    "KEEP_IN_TOUCH": "Keep in Touch",
+    "EN": "EN",
+    "SP": "SP"
+  },
+  "LANGUAGE": {
+    "SELECTOR": "Select language"
+  },
+  "COMMON": {
+    "PRESENT": "Present"
+  },
+  "ABOUT": {
+    "GREETING_PREFIX": "Hi, I'm",
+    "GREETING_SUFFIX": "but you can call me",
+    "OR": "or",
+    "NICKNAME_SUFFIX": "for short.",
+    "DEGREE": "Software engineer",
+    "BIO": "Hi there! I\u2019m Caro and I'm a software engineer. I have experience in software development and expertise in the frontend and backend areas. When I'm faced with new challenges, I start with a thorough analysis and ask the necessary questions upfront, so the requirements are clear before I begin. I like to collaborate on projects where I can give my ideas and share my knowledge with others. I consider myself a curious person so I love learning new things and staying up to date with the latest in tech.\n\nThroughout my career I worked collaboratively with teams in research like Pladema, software factories like EDSA, Argentine digital company health like Health Management Solutions (HMS) and an electrical distribution products like LIESA. At my first work experience, I worked as an intern at Pladema in a research team doing \u201cTest and analysis of AI platforms\u201d. In that role, I won the 1st prize at JAIIO 49, Concurso EST with \u201cAnalysis and Design of Algorithms for Video Synopsis\u201d. Also, I used to work as a freelance software developer which gave me more autonomy and helped me become more proactive in my work. Finally, I completed a thesis project that was called \u201cBad Smell Detection in Microservices-based Applications\u201d at UNICEN.\n\nCurrently, I work as a software engineer doing a collaboration at the Escuela de Natha Yoga (Natha Yoga School) platform and I teach as a Teaching Assistant at UNICEN. My first experience as a Teaching Assistant started in 2019, after that, I taught several different courses over the years. I like to mentor others.\n\nIn my spare time, you can find me hiking, cycling, doing pottery or dancing tango. Also, I like reading sci-fi or fantasy novels so much. Some of my current favorite authors are Brandon Sanderson and Solvej Balle. It\u2019s very important to me to be close to the people I care about, so I love hanging out with friends or family and spending time with my partner."
+  },
+  "CONTACT": {
+    "TITLE": "Keep in touch!",
+    "SUBTITLE": "I'd love to hear from you! Please feel free to reach out to me through any of the channels below."
+  },
+  "EDUCATION_PAGE": {
+    "EDUCATION_SECTION": "Education",
+    "TECHNICAL_SKILLS_SECTION": "Technical skills",
+    "CERTIFICATIONS_SECTION": "Certifications",
+    "LANGUAGES_SECTION": "Languages"
+  },
+  "EDUCATION_DEGREE": {
+    "POSITION": "Bachelor\u2019s Degree in Software Engineering",
+    "DESCRIPTION": "Dissertation: Bad Smell Detection in Microservices-based Applications - Technologies: Java, Maven, Spring Boot, Docker. This work presents a process for the analysis and detection of the Shared Library (SL) smell, which occurs when multiple microservices depend on the same library, using the static analysis tool MSANose combined with Artificial Intelligence (AI) techniques."
+  },
+  "EXPERIENCE": {
+    "FREELANCE_SWE": {
+      "POSITION": "Software Engineer",
+      "DESCRIPTION": "Develop and maintain application platforms for Escuela de Natha Yoga (Natha Yoga School) using Laravel, Zend Framework and PHP. Utilized Opencode (spec development) and Copilot to accelerate feature development."
+    },
+    "UNICEN_TA": {
+      "POSITION": "Graduate Teaching Assistant",
+      "DESCRIPTION": "I taught several different courses over the years at university. My current teaching role is for one of the last courses in the program, called \u201cCompiladores e int\u00e9rpretes 1\u201d (\u201cCompilers and interpreters 1\u201d)."
+    },
+    "LIESA": {
+      "POSITION": "Software Developer",
+      "DESCRIPTION": "Developed UI component library follows a Figma design. Used Bootstrap v5 for utility classes and LESS. Developed and maintained applications using Angular v18 (HTML, SCSS, TypeScript), Odoo, Magento 2, PHP, JavaScript, .NET (C#) for an electrical distribution products. Utilized Copilot and Claude AI tools to accelerate development and refactoring process."
+    },
+    "HMS": {
+      "POSITION": "Software Developer",
+      "DESCRIPTION": "Implemented scalable and maintainable software solutions using Angular v18 for Argentine digital company health."
+    },
+    "FREELANCE_FRONTEND": {
+      "POSITION": "Front-End Developer",
+      "DESCRIPTION": "Provided support and maintenance for existing systems using Angular v15. Developed and maintained frontend web applications using Wordpress, Javascript and PHP for lawyer service application in cloud-based environments (AWS)."
+    },
+    "EDSA": {
+      "POSITION": "Software Developer",
+      "DESCRIPTION": "Worked on support and maintenance using PL/SQL, JavaScript, and JSP and developed frontend features using Angular v15 for a private health insurance in a software factory company."
+    },
+    "PLADEMA_FRONTEND": {
+      "POSITION": "Front-End Developer",
+      "DESCRIPTION": "Developed and maintabled user interfaces using Angular v11 (HTML, SCSS, TypeScript) for urban video surveillance system platform in Tandil."
+    },
+    "PLADEMA_INTERN": {
+      "POSITION": "Intern",
+      "DESCRIPTION": "Test and analysis of AI platforms (YOLOv3) using Python."
+    }
+  },
+  "CERTIFICATIONS_INFO": {
+    "SOLVD": {
+      "POSITION": "Bootcamp QA Automation",
+      "DESCRIPTION": "Developed automated API and Facebook login test suites in Java using TestNG, Carina API, and Carina Core.\nDesigned a relational database schema for a library management system using Java and MySQL, modeling entity relationships and normalization.\nBuilt a class hierarchy within the transport domain in Java."
+    },
+    "JAIIO": {
+      "POSITION": "1st Prize - Analysis and Design of Algorithms for Video Synopsis",
+      "DESCRIPTION": "Presented an application to do a security video synopsis from 60 to 8 minutes."
+    },
+    "CACIC": {
+      "POSITION": "OWL Ontologies Course",
+      "DESCRIPTION": ""
+    },
+    "IBM": {
+      "POSITION": "Object-Oriented Modeling with Rational",
+      "DESCRIPTION": ""
+    }
+  },
+  "LANGUAGES_INFO": {
+    "SPANISH": "Spanish",
+    "ENGLISH": "English",
+    "NATIVE": "Native",
+    "UPPER_INTERMEDIATE": "Upper-Intermediate"
+  },
+  "FOOTER": {
+    "INTRO": "Designed by myself, coded in",
+    "WITH": "with",
+    "AND": "and",
+    "TESTED_WITH": ", tested with",
+    "USED": ", used",
+    "ACCELERATE_DEPLOY": "to accelerate the process and deployed with",
+    "YEAR": "- 2026."
+  }
+}

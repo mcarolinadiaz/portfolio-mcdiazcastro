@@ -1,0 +1,103 @@
+{
+  "NAV": {
+    "ABOUT": "Sobre mí",
+    "PROFESSIONAL_EXPERIENCE": "Experiencia profesional",
+    "EDUCATION": "Educación",
+    "KEEP_IN_TOUCH": "Contacto",
+    "EN": "ING",
+    "SP": "ESP"
+  },
+  "LANGUAGE": {
+    "SELECTOR": "Seleccionar idioma"  },
+  "COMMON": {
+    "PRESENT": "Presente"
+  },
+  "ABOUT": {
+    "GREETING_PREFIX": "¡Hola! Soy",
+    "GREETING_SUFFIX": "pero podés llamarme",
+    "OR": "o",
+    "NICKNAME_SUFFIX": "para abreviar.",
+    "DEGREE": "Ingeniera de software",
+    "BIO": "\u00a1Hola! Soy Caro y soy ingeniera de software. Tengo experiencia en desarrollo de software y conocimientos tanto en frontend como en backend. Cuando me enfrento a nuevos desaf\u00edos, comienzo con un an\u00e1lisis exhaustivo y hago las preguntas necesarias desde el principio, para que los requisitos queden claros antes de empezar. Me gusta colaborar en proyectos donde pueda aportar mis ideas y compartir mis conocimientos con otros. Me considero una persona curiosa, as\u00ed que me encanta aprender cosas nuevas y mantenerme al d\u00eda con las \u00faltimas tendencias en tecnolog\u00eda.\n\nA lo largo de mi carrera trabaj\u00e9 de forma colaborativa con equipos de investigaci\u00f3n como Pladema, f\u00e1bricas de software como EDSA, una empresa argentina de salud digital como Health Management Solutions (HMS) y una empresa de productos de distribuci\u00f3n el\u00e9ctrica como LIESA. En mi primera experiencia laboral, trabaj\u00e9 como pasante en Pladema en un equipo de investigaci\u00f3n realizando \u201cpruebas y an\u00e1lisis de plataformas de IA\u201d. En ese rol, gan\u00e9 el 1er premio en las JAIIO 49, Concurso EST, con \u201cAn\u00e1lisis y Dise\u00f1o de Algoritmos para Video Synopsis\u201d. Adem\u00e1s, trabaj\u00e9 como desarrolladora de software freelance, lo que me dio m\u00e1s autonom\u00eda y me ayud\u00f3 a ser m\u00e1s proactiva en mi trabajo. Finalmente, complet\u00e9 un proyecto de tesis llamado \u201cDetecci\u00f3n de Bad Smells en Aplicaciones basadas en Microservicios\u201d en la UNICEN.\n\nActualmente, trabajo como ingeniera de software colaborando en la plataforma de la Escuela de Natha Yoga y ense\u00f1o como ayudante de c\u00e1tedra en la UNICEN. Mi primera experiencia como ayudante de c\u00e1tedra comenz\u00f3 en 2019, y desde entonces dict\u00e9 varias materias a lo largo de los a\u00f1os. Me gusta ser mentora de otras personas.\n\nEn mi tiempo libre, pod\u00e9s encontrarme haciendo senderismo, andando en bicicleta, haciendo cer\u00e1mica o bailando tango. Adem\u00e1s, me encanta leer novelas de ciencia ficci\u00f3n o fantas\u00eda. Algunos de mis autores favoritos actuales son Brandon Sanderson y Solvej Balle. Es muy importante para m\u00ed estar cerca de las personas que quiero, as\u00ed que me encanta pasar tiempo con amigos, familia y mi pareja."
+  },
+  "CONTACT": {
+    "TITLE": "Mantengamos el contacto!",
+    "SUBTITLE": "Me encantar\u00eda saber de vos! No dudes en contactarme a trav\u00e9s de cualquiera de las redes de debajo."
+  },
+  "EDUCATION_PAGE": {
+    "EDUCATION_SECTION": "Educaci\u00f3n",
+    "TECHNICAL_SKILLS_SECTION": "Habilidades t\u00e9cnicas",
+    "CERTIFICATIONS_SECTION": "Certificaciones",
+    "LANGUAGES_SECTION": "Idiomas"
+  },
+  "EDUCATION_DEGREE": {
+    "POSITION": "Ingenier\u00eda en Software",
+    "DESCRIPTION": "Tesis: Detecci\u00f3n de Bad Smells en Aplicaciones basadas en Microservicios - Tecnolog\u00edas: Java, Maven, Spring Boot, Docker. Este trabajo presenta un proceso para el an\u00e1lisis y detecci\u00f3n del bad smell Shared Library (SL), que ocurre cuando m\u00faltiples microservicios dependen de la misma librer\u00eda, utilizando la herramienta de an\u00e1lisis est\u00e1tico MSANose combinada con t\u00e9cnicas de Inteligencia Artificial (IA)."
+  },
+  "EXPERIENCE": {
+    "FREELANCE_SWE": {
+      "POSITION": "Ingeniera de software",
+      "DESCRIPTION": "Desarrollo y mantenimiento de plataformas de aplicaciones para la Escuela de Natha Yoga utilizando Laravel, Zend Framework y PHP. Utilic\u00e9 Opencode (desarrollo basado en especificaciones) y Copilot para acelerar el desarrollo de funcionalidades."
+    },
+    "UNICEN_TA": {
+      "POSITION": "Ayudante de c\u00e1tedra graduada",
+      "DESCRIPTION": "A lo largo de los a\u00f1os dict\u00e9 varias materias distintas en la universidad. Mi rol docente actual es en una de las \u00faltimas materias de la carrera, llamada \u201cCompiladores e int\u00e9rpretes 1\u201d."
+    },
+    "LIESA": {
+      "POSITION": "Desarrolladora de software",
+      "DESCRIPTION": "Desarroll\u00e9 una librer\u00eda de componentes de interfaz siguiendo un dise\u00f1o de Figma. Utilic\u00e9 Bootstrap v5 para clases de utilidad y LESS. Desarroll\u00e9 y mantuve aplicaciones usando Angular v18 (HTML, SCSS, TypeScript), Odoo, Magento 2, PHP, JavaScript y .NET (C#) para una empresa de productos de distribuci\u00f3n el\u00e9ctrica. Utilic\u00e9 las herramientas de IA Copilot y Claude para acelerar el desarrollo y el proceso de refactorizaci\u00f3n."
+    },
+    "HMS": {
+      "POSITION": "Desarrolladora de software",
+      "DESCRIPTION": "Implement\u00e9 soluciones de software escalables y mantenibles usando Angular v18 para una empresa argentina de salud digital."
+    },
+    "FREELANCE_FRONTEND": {
+      "POSITION": "Desarrolladora Front-End",
+      "DESCRIPTION": "Brind\u00e9 soporte y mantenimiento a sistemas existentes usando Angular v15. Desarroll\u00e9 y mantuve aplicaciones web frontend usando WordPress, JavaScript y PHP para una aplicaci\u00f3n de servicios legales en entornos basados en la nube (AWS)."
+    },
+    "EDSA": {
+      "POSITION": "Desarrolladora de software",
+      "DESCRIPTION": "Trabaj\u00e9 en soporte y mantenimiento usando PL/SQL, JavaScript y JSP, y desarroll\u00e9 funcionalidades de frontend usando Angular v15 para una obra social privada, en una empresa f\u00e1brica de software."
+    },
+    "PLADEMA_FRONTEND": {
+      "POSITION": "Desarrolladora Front-End",
+      "DESCRIPTION": "Desarroll\u00e9 y mantuve interfaces de usuario usando Angular v11 (HTML, SCSS, TypeScript) para una plataforma de videovigilancia urbana en Tandil."
+    },
+    "PLADEMA_INTERN": {
+      "POSITION": "Pasante",
+      "DESCRIPTION": "Pruebas y an\u00e1lisis de plataformas de IA (YOLOv3) usando Python."
+    }
+  },
+  "CERTIFICATIONS_INFO": {
+    "SOLVD": {
+      "POSITION": "Bootcamp de Automatización QA",
+      "DESCRIPTION": "Desarrollé suites de pruebas automatizadas de API e inicio de sesión de Facebook en Java usando TestNG, Carina API y Carina Core.\nDiseñé un esquema de base de datos relacional para un sistema de gestión de biblioteca usando Java y MySQL, modelando relaciones entre entidades y normalización.\nConstruí una jerarquía de clases dentro del dominio de transporte en Java."
+    },
+    "JAIIO": {
+      "POSITION": "1er Premio - An\u00e1lisis y Dise\u00f1o de Algoritmos para Video Synopsis",
+      "DESCRIPTION": "Present\u00e9 una aplicaci\u00f3n para generar un resumen (synopsis) de video de seguridad, reduci\u00e9ndolo de 60 a 8 minutos."
+    },
+    "CACIC": {
+      "POSITION": "Curso de Ontolog\u00edas OWL",
+      "DESCRIPTION": ""
+    },
+    "IBM": {
+      "POSITION": "Modelado Orientado a Objetos con Rational",
+      "DESCRIPTION": ""
+    }
+  },
+  "LANGUAGES_INFO": {
+    "SPANISH": "Espa\u00f1ol",
+    "ENGLISH": "Ingl\u00e9s",
+    "NATIVE": "Nativo",
+    "UPPER_INTERMEDIATE": "Intermedio alto"
+  },
+  "FOOTER": {
+    "INTRO": "Dise\u00f1ado por m\u00ed misma, programado en",
+    "WITH": "con",
+    "AND": "y",
+    "TESTED_WITH": ", probado con",
+    "USED": ", us\u00e9",
+    "ACCELERATE_DEPLOY": "para acelerar el proceso y desplegado con",
+    "YEAR": "- 2026."  }
+}

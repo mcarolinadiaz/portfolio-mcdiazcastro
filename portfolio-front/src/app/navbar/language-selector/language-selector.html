@@ -1,0 +1,19 @@
+<div class="language-selector" role="group" [attr.aria-label]="'LANGUAGE.SELECTOR' | translate">
+  <button
+    class="language-button"
+    type="button"
+    [class.active]="languageService.activeLanguage() === language.ENGLISH"
+    (click)="setLanguage(language.ENGLISH)"
+  >
+    {{ 'NAV.EN' | translate }}
+  </button>
+  <span class="language-divider" aria-hidden="true">/</span>
+  <button
+    class="language-button"
+    type="button"
+    [class.active]="languageService.activeLanguage() === language.SPANISH"
+    (click)="setLanguage(language.SPANISH)"
+  >
+    {{ 'NAV.SP' | translate }}
+  </button>
+</div>

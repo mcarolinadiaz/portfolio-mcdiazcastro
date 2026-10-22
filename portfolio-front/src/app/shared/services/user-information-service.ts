@@ -3,203 +3,211 @@ import { UserInformation } from '../models/user-information';
 import { Language } from '../models/language';
 import { ProfessionalExperience } from '../models/professional-experience';
 import { ProfessionalNetwork } from '../models/professional-network';
+import { COMPANY } from '../../core/constants/companies';
 
 @Service()
 export class UserInformationService {
-    readonly languages: Language[] = [
-        { idiom: 'Spanish', level: 'Native' },
-        { idiom: 'English', level: 'Upper-Intermediate' },
-    ];
+  readonly languages: Language[] = [
+    { idiom: 'LANGUAGES_INFO.SPANISH', level: 'LANGUAGES_INFO.NATIVE' },
+    { idiom: 'LANGUAGES_INFO.ENGLISH', level: 'LANGUAGES_INFO.UPPER_INTERMEDIATE' },
+  ];
 
-    readonly professionalExperiences: ProfessionalExperience[] = [
-        {
-            company: "Freelance",
-            position: "Software Engineer",
-            startDate: new Date("2026-09-01"),
-            endDate: null,
-            description: `Develop and maintain application platforms for Escuela de Natha Yoga (Natha Yoga School) using Laravel, Zend Framework and PHP.
-            Utilized Opencode (spec development) and Copilot to accelerate feature development.`,
-            stack: ["PHP", "Laravel", "Zend Framework", "MariaDB", "HTML", "Javascript", "CSS"]
-        },
-        {
-            company: "UNICEN",
-            position: "Graduate Teaching Assistant",
-            dates: [
-                { startDate: new Date("2026-08-01"), endDate: null }, 
-                { startDate: new Date("2024-10-01"), endDate: new Date("2026-05-31") },
-                { startDate: new Date("2020-05-01"), endDate: new Date("2021-09-30") },
-                { startDate: new Date("2019-04-01"), endDate: new Date("2019-09-30") }
-            ],
-            description: `I taught several different courses over the years at university. My current teaching role is for one of the last courses in the program, called “Compiladores e intérpretes 1” (“Compilers and interpreters 1”)`,
-            stack: [""]
-        },
-        {
-            company: "LIESA",
-            position: "Software Developer",
-            startDate: new Date("2024-09-01"),
-            endDate: new Date("2026-05-31"),
-            description: `Developed UI component library follows a Figma design. Used Bootstrap v5 for utility classes and LESS. 
-            Developed and maintained applications using Angular v18 (HTML, SCSS, TypeScript), Odoo, Magento 2, PHP, JavaScript, .NET (C#) for an electrical distribution products.
-            Utilized Copilot and Claude AI tools to accelerate development and refactoring process.`,
-            stack: ["Angular-v18", "TypeScript", "SCSS", ".NET", "C#", "Odoo", "Magento 2", "PHP", "JavaScript", "LESS"]
-        },
-        {
-            company: "HMS",
-            position: "Software Developer",
-            startDate: new Date("2024-01-01"),
-            endDate: new Date("2024-09-30"),
-            description: `Implemented scalable and maintainable software solutions using Angular v18 for Argentine digital company health.`,
-            stack: ["Angular-v18", "TypeScript", "SCSS", "JavaScript"]
-        },
-        {
-            company: "Freelance",
-            position: "Front-End Developer",
-            startDate: new Date("2022-03-01"),
-            endDate: new Date("2023-01-31"),
-            description: `Provided support and maintenance for existing systems using Angular v15.
-            Developed and maintained frontend web applications using Wordpress, Javascript and PHP for lawyer service application in cloud-based environments (AWS).`,
-            stack: ["Angular-v15", "WordPress", "PHP", "JavaScript", "SCSS"]
-        },
-        {
-            company: "EDSA",
-            position: "Software Developer",
-            startDate: new Date("2021-05-01"),
-            endDate: new Date("2021-12-31"),
-            description: `Worked on support and maintenance using PL/SQL, JavaScript, and JSP and developed frontend features using Angular v15 for a private health insurance in a software factory company.`,
-            stack: ["PL/SQL", "JavaScript", "JSP", "Angular-v15", "Azure"]
-        },
-        {
-            company: "Pladema",
-            position: "Front-End Developer",
-            startDate: new Date("2020-08-01"),
-            endDate: new Date("2021-05-31"),
-            description: `Developed and maintabled user interfaces using Angular v11 (HTML, SCSS, TypeScript) for urban video surveillance system platform in Tandil.`,
-            stack: ["Angular-v11", "HTML", "SCSS", "TypeScript"]
-        },
-        {
-            company: "Pladema",
-            position: "Intern",
-            startDate: new Date("2019-08-01"),
-            endDate: new Date("2020-08-31"),
-            description: `Test and analysis of AI platforms (YOLOv3) using Python.`,
-            stack: ["Python", "Yolov3", "TensorFlow", "Javascript"]
+  readonly professionalExperiences: ProfessionalExperience[] = [
+    {
+      company: 'Freelance',
+      position: 'EXPERIENCE.FREELANCE_SWE.POSITION',
+      startDate: new Date('2026-09-01'),
+      endDate: null,
+      description: 'EXPERIENCE.FREELANCE_SWE.DESCRIPTION',
+      stack: ['PHP', 'Laravel', 'Zend Framework', 'MariaDB', 'HTML', 'Javascript', 'CSS'],
+    },
+    {
+      company: COMPANY.UNICEN,
+      position: 'EXPERIENCE.UNICEN_TA.POSITION',
+      dates: [
+        { startDate: new Date('2026-08-01'), endDate: null },
+        { startDate: new Date('2024-10-01'), endDate: new Date('2026-05-31') },
+        { startDate: new Date('2020-05-01'), endDate: new Date('2021-09-30') },
+        { startDate: new Date('2019-04-01'), endDate: new Date('2019-09-30') },
+      ],
+      description: 'EXPERIENCE.UNICEN_TA.DESCRIPTION',
+      stack: [''],
+    },
+    {
+      company: 'LIESA',
+      position: 'EXPERIENCE.LIESA.POSITION',
+      startDate: new Date('2024-09-01'),
+      endDate: new Date('2026-05-31'),
+      description: 'EXPERIENCE.LIESA.DESCRIPTION',
+      stack: [
+        'Angular-v18',
+        'TypeScript',
+        'SCSS',
+        '.NET',
+        'C#',
+        'Odoo',
+        'Magento 2',
+        'PHP',
+        'JavaScript',
+        'LESS',
+      ],
+    },
+    {
+      company: 'HMS',
+      position: 'EXPERIENCE.HMS.POSITION',
+      startDate: new Date('2024-01-01'),
+      endDate: new Date('2024-09-30'),
+      description: 'EXPERIENCE.HMS.DESCRIPTION',
+      stack: ['Angular-v18', 'TypeScript', 'SCSS', 'JavaScript'],
+    },
+    {
+      company: 'Freelance',
+      position: 'EXPERIENCE.FREELANCE_FRONTEND.POSITION',
+      startDate: new Date('2022-03-01'),
+      endDate: new Date('2023-01-31'),
+      description: 'EXPERIENCE.FREELANCE_FRONTEND.DESCRIPTION',
+      stack: ['Angular-v15', 'WordPress', 'PHP', 'JavaScript', 'SCSS'],
+    },
+    {
+      company: 'EDSA',
+      position: 'EXPERIENCE.EDSA.POSITION',
+      startDate: new Date('2021-05-01'),
+      endDate: new Date('2021-12-31'),
+      description: 'EXPERIENCE.EDSA.DESCRIPTION',
+      stack: ['PL/SQL', 'JavaScript', 'JSP', 'Angular-v15', 'Azure'],
+    },
+    {
+      company: 'Pladema',
+      position: 'EXPERIENCE.PLADEMA_FRONTEND.POSITION',
+      startDate: new Date('2020-08-01'),
+      endDate: new Date('2021-05-31'),
+      description: 'EXPERIENCE.PLADEMA_FRONTEND.DESCRIPTION',
+      stack: ['Angular-v11', 'HTML', 'SCSS', 'TypeScript'],
+    },
+    {
+      company: 'Pladema',
+      position: 'EXPERIENCE.PLADEMA_INTERN.POSITION',
+      startDate: new Date('2019-08-01'),
+      endDate: new Date('2020-08-31'),
+      description: 'EXPERIENCE.PLADEMA_INTERN.DESCRIPTION',
+      stack: ['Python', 'Yolov3', 'TensorFlow', 'Javascript'],
+    },
+  ];
+
+  readonly professionalNetworks: ProfessionalNetwork[] = [
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/mariacarolinadiaz/',
+      icon: 'assets/icons-linkedin.svg',
+    },
+    {
+      name: 'GitHub',
+      url: 'https://github.com/mcarolinadiaz',
+      icon: 'assets/icons-github.svg',
+    },
+    {
+      name: 'Email',
+      url: 'mailto:diazmariacarolina6@gmail.com',
+      icon: 'assets/icons-email.svg',
+    },
+  ];
+
+  readonly user = signal<UserInformation>({
+    fullname: 'María Carolina Díaz Castro',
+    name: 'Carolina',
+    nickname: 'Caro',
+    degree: 'ABOUT.DEGREE',
+    about: 'ABOUT.BIO',
+    location: 'Tandil, Buenos Aires, Argentina',
+    workAuthorization: 'EU / Argentina',
+    email: 'diazmariacarolina6@gmail.com',
+    languages: this.languages,
+    professionalExperiences: this.professionalExperiences,
+    professionalNetworks: this.professionalNetworks,
+  });
+
+  readonly education = signal<ProfessionalExperience>({
+    company: COMPANY.UNICEN,
+    position: 'EDUCATION_DEGREE.POSITION',
+    startDate: new Date('2015-03-01'),
+    endDate: new Date('2026-07-01'),
+    description: 'EDUCATION_DEGREE.DESCRIPTION',
+    stack: [],
+  });
+
+  readonly certifications = signal<ProfessionalExperience[]>([
+    {
+      company: 'Solvd',
+      position: 'CERTIFICATIONS_INFO.SOLVD.POSITION',
+      startDate: new Date('2022-12-01'),
+      endDate: new Date('2023-02-28'),
+      description: 'CERTIFICATIONS_INFO.SOLVD.DESCRIPTION',
+      stack: [],
+    },
+    {
+      company: 'JAIIO 49 (EST Contest)',
+      position: 'CERTIFICATIONS_INFO.JAIIO.POSITION',
+      startDate: new Date('2021-10-01'),
+      endDate: new Date('2021-10-31'),
+      description: 'CERTIFICATIONS_INFO.JAIIO.DESCRIPTION',
+      stack: [],
+    },
+    {
+      company: 'CACIC',
+      position: 'CERTIFICATIONS_INFO.CACIC.POSITION',
+      startDate: new Date('2018-10-01'),
+      endDate: new Date('2018-10-31'),
+      description: 'CERTIFICATIONS_INFO.CACIC.DESCRIPTION',
+      stack: [],
+    },
+    {
+      company: 'IBM Program',
+      position: 'CERTIFICATIONS_INFO.IBM.POSITION',
+      startDate: new Date('2017-10-01'),
+      endDate: new Date('2017-10-31'),
+      description: 'CERTIFICATIONS_INFO.IBM.DESCRIPTION',
+      stack: [],
+    },
+  ]);
+
+  getLanguages(): Language[] {
+    return this.languages;
+  }
+
+  getProfessionalExperiences(): ProfessionalExperience[] {
+    return this.professionalExperiences;
+  }
+
+  getProfessionalNetworks(): ProfessionalNetwork[] {
+    return this.professionalNetworks;
+  }
+
+  getContactInformation(): { email: string; location: string; workAuthorization: string } {
+    return {
+      email: this.user().email,
+      location: this.user().location,
+      workAuthorization: this.user().workAuthorization,
+    };
+  }
+
+  getTechnicalSkills(): string[] {
+    let stack: string[] = [];
+    this.professionalExperiences.forEach((experience) => {
+      experience.stack.forEach((skill) => {
+        if (!stack.includes(skill)) {
+          stack.push(skill);
         }
-    ];
-
-    readonly professionalNetworks: ProfessionalNetwork[] = [
-        {
-            name: "LinkedIn",
-            url: "https://www.linkedin.com/in/mariacarolinadiaz/",
-            icon: "assets/icons-linkedin.svg"
-        },
-        {
-            name: "GitHub",
-            url: "https://github.com/mcarolinadiaz",
-            icon: "assets/icons-github.svg"
-        },
-        {
-            name: "Email",
-            url: "mailto:diazmariacarolina6@gmail.com",
-            icon: "assets/icons-email.svg"
-        }
-    ];
-
-    readonly user = signal<UserInformation>({
-        fullname: 'María Carolina Díaz Castro',
-        name: 'Carolina',
-        nickname: 'Caro',
-        degree: 'Software engineer',
-        about: `Hi there! I’m Caro and I'm a software engineer. I have experience in software development and expertise in the frontend and backend areas. When I'm faced with new challenges, I start with a thorough analysis and ask the necessary questions upfront, so the requirements are clear before I begin. I like to collaborate on projects where I can give my ideas and share my knowledge with others. I consider myself a curious person so I love learning new things and staying up to date with the latest in tech.
-
-        Throughout my career I worked collaboratively with teams in research like Pladema, software factories like EDSA, Argentine digital company health like Health Management Solutions (HMS) and an electrical distribution products like LIESA. At my first work experience, I worked as an intern at Pladema in a research team doing “Test and analysis of AI platforms”. In that role, I won the 1st prize at JAIIO 49, Concurso EST with “Analysis and Design of Algorithms for Video Synopsis”. Also, I used to work as a freelance software developer which gave me more autonomy and helped me become more proactive in my work. Finally, I completed a thesis project that was called "Bad Smell Detection in Microservices-based Applications” at UNICEN.
-
-        Currently, I work as a software engineer doing a collaboration at the Escuela de Natha Yoga (Natha Yoga School) platform and I teach as a Teaching Assistant at UNICEN. My first experience as a Teaching Assistant started in 2019, after that, I taught several different courses over the years. I like to mentor others.
-
-        In my spare time, you can find me hiking, cycling, doing pottery or dancing tango. Also, I like reading sci-fi or fantasy novels so much. Some of my current favorite authors are Brandon Sanderson and Solvej Balle. It’s very important to me to be close to the people I care about, so I love hanging out with friends or family and spending time with my partner.`,
-        location: 'Tandil, Buenos Aires, Argentina',
-        workAuthorization: 'EU / Argentina',
-        email: 'diazmariacarolina6@gmail.com',
-        languages: this.languages,
-        professionalExperiences: this.professionalExperiences,
-        professionalNetworks: this.professionalNetworks,
+      });
     });
+    stack.push('Claude', 'Github Copilot', 'Opencode');
+    return stack;
+  }
 
-    readonly education = signal<ProfessionalExperience>({
-        company: "UNICEN",
-        position: "Bachelor’s Degree in Software Engineering",
-        startDate: new Date("2015-03-01"),
-        endDate: new Date("2026-07-01"),
-        description: `Dissertation: Bad Smell Detection in Microservices-based Applications - Technologies: Java, Maven, Spring Boot, Docker. This work presents a process for the analysis and detection of the Shared Library (SL) smell, which occurs when multiple microservices depend on the same library, using the static analysis tool MSANose combined with Artificial Intelligence (AI) techniques.`,
-        stack: []
-    });
+  getEducation(): ProfessionalExperience {
+    return this.education();
+  }
 
-    readonly certifications = signal<ProfessionalExperience[]>([
-        {
-            company: "JAIIO 49 (EST Contest)",
-            position: "1st Prize - Analysis and Design of Algorithms for Video Synopsis",
-            startDate: new Date("2021-10-01"),
-            endDate: new Date("2021-10-31"),
-            description: `Presented an application to do a security video synopsis from 60 to 8 minutes.`,
-            stack: []
-        },
-        {
-            company: "CACIC",
-            position: "OWL Ontologies Course",
-            startDate: new Date("2018-10-01"),
-            endDate: new Date("2018-10-31"),
-            description: ``,
-            stack: []
-        },
-        {
-            company: "IBM Program",
-            position: "Object-Oriented Modeling with Rational",
-            startDate: new Date("2017-10-01"),
-            endDate: new Date("2017-10-31"),
-            description: ``,
-            stack: []
-        }
-    ]);
-
-    getLanguages(): Language[] {
-        return this.languages;
-    }
-
-    getProfessionalExperiences(): ProfessionalExperience[] {
-        return this.professionalExperiences;
-    }
-    
-    getProfessionalNetworks(): ProfessionalNetwork[] {
-        return this.professionalNetworks;
-    }
-
-    getContactInformation(): { email: string; location: string; workAuthorization: string } {
-        return {
-            email: this.user().email,
-            location: this.user().location,
-            workAuthorization: this.user().workAuthorization
-        };
-    }
-
-    getTechnicalSkills(): string[] {
-        let stack: string[] = [];
-        this.professionalExperiences.forEach(experience => {
-            experience.stack.forEach(skill => {
-                if (!stack.includes(skill)) {
-                    stack.push(skill);
-                }
-            });
-        });
-        stack.push('Claude', 'Github Copilot', 'Opencode');
-        return stack;
-    }
-
-    getEducation(): ProfessionalExperience {
-        return this.education();
-    }
-
-    getCertifications(): ProfessionalExperience[] {
-        return this.certifications();
-    }
+  getCertifications(): ProfessionalExperience[] {
+    return this.certifications();
+  }
 }
-
-

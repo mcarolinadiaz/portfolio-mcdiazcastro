@@ -15,19 +15,19 @@ describe('UserInformationService', () => {
 
   it('should return the configured languages, experiences, networks, education, and certifications', () => {
     expect(service.getLanguages()).toEqual([
-      { idiom: 'Spanish', level: 'Native' },
-      { idiom: 'English', level: 'Upper-Intermediate' }
+      { idiom: 'LANGUAGES_INFO.SPANISH', level: 'LANGUAGES_INFO.NATIVE' },
+      { idiom: 'LANGUAGES_INFO.ENGLISH', level: 'LANGUAGES_INFO.UPPER_INTERMEDIATE' }
     ]);
     expect(service.getProfessionalExperiences()).toHaveLength(8);
-    expect(service.getProfessionalExperiences()[0].position).toBe('Software Engineer');
+    expect(service.getProfessionalExperiences()[0].position).toBe('EXPERIENCE.FREELANCE_SWE.POSITION');
     expect(service.getProfessionalNetworks().map(network => network.name)).toEqual([
       'LinkedIn',
       'GitHub',
       'Email'
     ]);
-    expect(service.getEducation().position).toBe("Bachelor’s Degree in Software Engineering");
-    expect(service.getCertifications()).toHaveLength(3);
-    expect(service.getCertifications()[0].position).toContain('1st Prize');
+    expect(service.getEducation().position).toBe('EDUCATION_DEGREE.POSITION');
+    expect(service.getCertifications()).toHaveLength(4);
+    expect(service.getCertifications()[0].position).toBe('CERTIFICATIONS_INFO.SOLVD.POSITION');
   });
 
   it('should return contact information from the current user', () => {

@@ -1,6 +1,6 @@
 <div class="card column">
     <div class="card-header">
-        <div class="card-title">{{ experience.position }} - {{ experience.company }}</div>
+        <div class="card-title">{{ experience.position | translate }} - {{ experience.company }}</div>
         <div class="card-subtitle">
             @if (!isTeachingAssistant) {
                 {{ getDateToString(experience.startDate, experience.endDate) }}
@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="card-body">
-        <p class="card-text">{{ experience.description }}</p>
+        <p class="card-text">{{ experience.description | translate }}</p>
     </div>
     @if (!isTeachingAssistant) {
         <div class="card-footer">

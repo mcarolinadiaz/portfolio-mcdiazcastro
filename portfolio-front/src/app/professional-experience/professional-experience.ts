@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CardInformation } from "./card-information/card-information";
 import { UserInformationService } from '../shared/services/user-information-service';
 
@@ -7,9 +7,10 @@ import { UserInformationService } from '../shared/services/user-information-serv
   imports: [CardInformation],
   templateUrl: './professional-experience.html',
   styleUrl: './professional-experience.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfessionalExperience {
   private readonly userInformationService = inject(UserInformationService);
 
-  professionalExperiences = this.userInformationService.getProfessionalExperiences();
+  protected readonly professionalExperiences = this.userInformationService.getProfessionalExperiences();
 }

@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideTranslateService, TranslateService } from '@ngx-translate/core';
 
 import { CardInformation } from './card-information';
+import { LANGUAGE } from '../../shared/services/language-service';
 
 describe('CardInformation', () => {
   let component: CardInformation;
@@ -9,7 +11,13 @@ describe('CardInformation', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CardInformation],
+      providers: [
+        provideTranslateService({ lang: LANGUAGE.ENGLISH, fallbackLang: LANGUAGE.ENGLISH }),
+      ],
     }).compileComponents();
+
+    const translateService = TestBed.inject(TranslateService);
+    translateService.setTranslation(LANGUAGE.ENGLISH, { COMMON: { PRESENT: 'Present' } });
 
     fixture = TestBed.createComponent(CardInformation);
     fixture.componentRef.setInput('professionalExperience', {
@@ -18,7 +26,7 @@ describe('CardInformation', () => {
       startDate: new Date('2026-01-01'),
       endDate: null,
       description: '',
-      stack: []
+      stack: [],
     });
     component = fixture.componentInstance;
     await fixture.whenStable();
@@ -34,7 +42,8 @@ describe('CardInformation', () => {
   });
 
   it('should omit the year for dates in the same year', () => {
-    expect(component.getDateToString(new Date('2026-01-01'), new Date('2026-09-15')))
-      .toBe('Jan - Sep 2026');
+    expect(component.getDateToString(new Date('2026-01-01'), new Date('2026-09-15'))).toBe(
+      'Jan - Sep 2026',
+    );
   });
 });

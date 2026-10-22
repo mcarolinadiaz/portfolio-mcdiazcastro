@@ -1,16 +1,18 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { ProfessionalExperience } from '../../shared/models/professional-experience';
 
 @Component({
-  imports: [],
+  imports: [TranslatePipe],
   selector: 'app-education-item',
   styleUrl: './education-item.scss',
   templateUrl: './education-item.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EducationItem {
-  educationItem = input.required<ProfessionalExperience>();
+  readonly educationItem = input.required<ProfessionalExperience>();
 
-  getYearEducation() {
+  protected getYearEducation() {
     return this.educationItem().startDate?.getFullYear();
   }
 }

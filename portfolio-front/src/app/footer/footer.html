@@ -1,12 +1,12 @@
 <footer class="footer">
     <div class="footer-text">
-        Designed by myself, coded in 
-        <a [href]="vscSite()">Visual Studio Code</a> with 
-        <a [href]="angularSite()">Angular v22</a> and 
-        <a [href]="bootstrapSite()">Bootstrap v5</a>, tested with 
-        <a [href]="vitestSite()">Vitest</a>, used 
-        <a [href]="copilotSite()">Github Copilot</a> to accelerate the process and deployed with 
-        <a [href]="vercelSite()">Vercel</a> - 2026. 
+        {{ 'FOOTER.INTRO' | translate }}
+        <a [href]="vscSite()">Visual Studio Code</a> {{ 'FOOTER.WITH' | translate }}
+        <a [href]="angularSite()">Angular v22</a> {{ 'FOOTER.AND' | translate }}
+        <a [href]="bootstrapSite()">Bootstrap v5</a>{{ 'FOOTER.TESTED_WITH' | translate }}
+        <a [href]="vitestSite()">Vitest</a>{{ 'FOOTER.USED' | translate }}
+        <a [href]="copilotSite()">Github Copilot</a> {{ 'FOOTER.ACCELERATE_DEPLOY' | translate }}
+        <a [href]="vercelSite()">Vercel</a> {{ 'FOOTER.YEAR' | translate }}
     </div>
     <div class="footer-content">
         @for (network of professionalNetworks; track network) {

@@ -1,12 +1,13 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   imports: [],
   selector: 'app-accordion-component',
   styleUrl: './accordion-component.scss',
   templateUrl: './accordion-component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccordionComponent {
-  idItem = input.required<string>();
-  nameItem = input<string>();
+  readonly idItem = input.required<string>();
+  readonly nameItem = input<string>();
 }

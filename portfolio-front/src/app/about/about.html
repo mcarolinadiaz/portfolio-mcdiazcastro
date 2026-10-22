@@ -1,16 +1,18 @@
 <app-center-content>
     <div class="welcome">
         <div>
-            Hi, I'm <span class="fullname">{{ user.fullname }}</span> but you can call me
+            {{ 'ABOUT.GREETING_PREFIX' | translate }} <span class="fullname">{{ user.fullname }}</span>
+            {{ 'ABOUT.GREETING_SUFFIX' | translate }}
         </div>
         <div>
-            <span class="nickname">{{ user.name }} or {{ user.nickname }}</span> for short.
+            <span class="nickname">{{ user.name }} {{ 'ABOUT.OR' | translate }} {{ user.nickname }}</span>
+            {{ 'ABOUT.NICKNAME_SUFFIX' | translate }}
         </div>
     </div>
     <div class="degree">
-        {{ user.degree }}
+        {{ user.degree | translate }}
     </div>
     <div class="about">
-        {{ user.about }}
+        {{ user.about | translate }}
     </div>
 </app-center-content>

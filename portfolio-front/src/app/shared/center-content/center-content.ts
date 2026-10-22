@@ -1,19 +1,15 @@
-import { CommonModule } from '@angular/common';
-import { Component, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'app-center-content',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './center-content.html',
   styleUrl: './center-content.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CenterContent {
-  image = input<string>();
-  imageName = input<string>();
-  
-  get isImageLoading() {
-    return this.image() ? signal(true) : signal(false);
-  }
+  readonly image = input<string>();
+  readonly imageName = input<string>();
 
-  
+  protected readonly hasImage = computed(() => !!this.image());
 }

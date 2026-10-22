@@ -1,21 +1,21 @@
 <div class="education-container">
-    <app-accordion-component [idItem]="'education'" [nameItem]="'Education'">
+    <app-accordion-component [idItem]="'education'" [nameItem]="'EDUCATION_PAGE.EDUCATION_SECTION' | translate">
         <app-education-item [educationItem]="education"></app-education-item>
     </app-accordion-component>
-    <app-accordion-component [idItem]="'technicalSkills'" [nameItem]="'Technical skills'">
+    <app-accordion-component [idItem]="'technicalSkills'" [nameItem]="'EDUCATION_PAGE.TECHNICAL_SKILLS_SECTION' | translate">
         <div class="skills">
             <app-list-group [listItems]="technicalSkills"></app-list-group>
         </div>
     </app-accordion-component>
-    <app-accordion-component [idItem]="'certifications'" [nameItem]="'Certifications'">
+    <app-accordion-component [idItem]="'certifications'" [nameItem]="'EDUCATION_PAGE.CERTIFICATIONS_SECTION' | translate">
         @for (certification of certifications; track certification) {
             <app-education-item [educationItem]="certification"></app-education-item>
         }
     </app-accordion-component>
-    <app-accordion-component [idItem]="'languages'" [nameItem]="'Languages'">
+    <app-accordion-component [idItem]="'languages'" [nameItem]="'EDUCATION_PAGE.LANGUAGES_SECTION' | translate">
         <div class="language">
         @for (language of languages; track language) {
-            <p>{{ language.idiom }}: {{ language.level }}</p>
+            <p>{{ language.idiom | translate }}: {{ language.level | translate }}</p>
         }
         </div>
     </app-accordion-component>

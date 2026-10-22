@@ -1,8 +1,11 @@
 <div class="center-page-container">
-    <div [ngClass]="{ 'center-page-information': isImageLoading(), 'center-page-information-no-image': !isImageLoading() }">
+    <div
+        [class.center-page-information]="hasImage()"
+        [class.center-page-information-no-image]="!hasImage()"
+    >
         <ng-content />
     </div>
-    @if (isImageLoading()) {
+    @if (hasImage()) {
         <div class="center-page-image">
             <img class="center-page-image-img" 
                 [src]="image()" 

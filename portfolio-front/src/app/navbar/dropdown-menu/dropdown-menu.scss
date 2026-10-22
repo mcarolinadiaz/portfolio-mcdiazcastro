@@ -1,54 +1,65 @@
 .dropdown-button {
-    border: none;
+  border: none;
 }
 
 .dropdown-button-content {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-end;
 }
 
 .dropdown-menu.show {
-    border-radius: 0;
-    background-color: var(--color-platinum);
-    border: none;
-    right: 0;
-    left: auto;
-    width: 30vh;
-    color: var(--color-punch-red);
+  border-radius: 0;
+  background-color: var(--color-platinum);
+  border: none;
+  right: 0;
+  left: auto;
+  width: 30vh;
+  color: var(--color-punch-red);
 }
 
-.dropdown-item.active, .dropdown-item:active, .nav-link.active, .nav-link:active, .dropdown-button-content.active, .dropdown-button-content:active {
-    // font-weight: 800;    
-    background-color: var(--color-platinum);
-    color: var(--color-flag-red);
-    border-bottom-width: unset;
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.dropdown-item:hover, .nav-link:hover, .dropdown-button-content:hover {
-    // font-weight: 800;
-    cursor: pointer;
-    background-color: var(--color-platinum);
-    color: var(--color-punch-red);
-    border-bottom-width: medium;
+.dropdown-item.active,
+.dropdown-item:active,
+.nav-link.active,
+.nav-link:active,
+.dropdown-button-content.active,
+.dropdown-button-content:active {
+  background-color: var(--color-platinum);
+  color: var(--color-flag-red);
+  border-bottom-width: unset;
+}
 
+.dropdown-item:hover,
+.nav-link:hover,
+.dropdown-button-content:hover {
+  cursor: pointer;
+  background-color: var(--color-platinum);
+  color: var(--color-punch-red);
+  border-bottom-width: medium;
 }
 
 .nav.nav-tabs {
-    background-color: var(--color-platinum);
-    border-color: var(--color-space-indigo);
-    font-size: small;
+  background-color: var(--color-platinum);
+  border-color: var(--color-space-indigo);
+  font-size: small;
+  border: unset;
+  .nav-link {
     border: unset;
-    .nav-link {
-        border: unset;
-    }
-    .nav-link.active, .nav-link:hover {
-        border-color: var(--color-space-indigo);
-        border-bottom: solid;
-        border-bottom-width: thin;
-        border-top: unset;
-        border-left: unset;
-        border-right: unset;
-    }
+  }
+  .nav-link.active,
+  .nav-link:hover {
+    border-color: var(--color-space-indigo);
+    border-bottom: solid;
+    border-bottom-width: thin;
+    border-top: unset;
+    border-left: unset;
+    border-right: unset;
+  }
 }

@@ -1,25 +1,59 @@
 <div>
-    @if (responsiveService.isMobile()) {
-        <div class="dropdown">
-            <button class="btn dropdown-button" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <div class="dropdown-button-content">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                    </svg>
-                </div>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                @for (route of appRoutes; track route.path) {
-                    <a class="dropdown-item" [routerLink]="'/' + route.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{ route.title }}</a>
-                }
-            </div>
+  @if (responsiveService.isMobile()) {
+    <div class="dropdown">
+      <button
+        class="btn dropdown-button"
+        type="button"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <div class="dropdown-button-content">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+            />
+          </svg>
         </div>
-    } @else {
-        <div class="nav nav-tabs" role="tablist">
-            @for (route of appRoutes; track route.path) {
-                <a class="nav-link" aria-current="page" [routerLink]="'/' + route.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-bs-toggle="tab" role="tab">{{ route.title }}</a>
-            }
-        </div>
-    }
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        @for (route of appRoutes; track route.path) {
+          <a
+            class="dropdown-item"
+            [routerLink]="'/' + route.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >{{ route.title | translate }}</a
+          >
+        }
+        <app-language-selector></app-language-selector>
+      </div>
+    </div>
+  } @else {
+    <div class="desktop-menu">
+      <div class="nav nav-tabs" role="tablist">
+        @for (route of appRoutes; track route.path) {
+          <a
+            class="nav-link"
+            aria-current="page"
+            [routerLink]="'/' + route.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            data-bs-toggle="tab"
+            role="tab"
+            >{{ route.title | translate }}</a
+          >
+        }
+      </div>
+      <app-language-selector></app-language-selector>
+    </div>
+  }
 </div>
-

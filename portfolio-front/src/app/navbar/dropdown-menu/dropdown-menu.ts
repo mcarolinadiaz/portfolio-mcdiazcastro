@@ -1,29 +1,18 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { Route, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { ResponsiveService } from '../../shared/services/responsive-service';
+import { LanguageSelector } from '../language-selector/language-selector';
+import { NAVIGATION_ROUTES } from '../../core/constants/app-page-routes';
 
 @Component({
   selector: 'app-dropdown-menu',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, TranslatePipe, LanguageSelector],
   templateUrl: './dropdown-menu.html',
   styleUrl: './dropdown-menu.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownMenu {
-  private router = inject(Router);
-  protected responsiveService = inject(ResponsiveService);
-  
-  appRoutes: Route[] = [];
-
-  constructor() {
-    this.appRoutes = this.router.config.at(0)?.children?.filter((child: any) => child.path !== undefined && child.title !== undefined)
-    .map((child: any) => 
-    {
-      return {
-        path: child.path,
-        title: String(child.title)?.split('|')[1] ?? '', 
-      };
-    }) ?? [];
-  }
-
-
+  protected readonly responsiveService = inject(ResponsiveService);
+  protected readonly appRoutes = NAVIGATION_ROUTES;
 }

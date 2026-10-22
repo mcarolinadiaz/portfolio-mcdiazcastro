@@ -1,8 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { provideRouter } from '@angular/router';
+import { provideTranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { App } from './app';
+import { LANGUAGE } from './shared/services/language-service';
 
 describe('App', () => {
   beforeEach(async () => {
@@ -10,11 +12,12 @@ describe('App', () => {
       imports: [App],
       providers: [
         provideRouter([]),
+        provideTranslateService({ lang: LANGUAGE.ENGLISH, fallbackLang: LANGUAGE.ENGLISH }),
         {
           provide: BreakpointObserver,
-          useValue: { observe: () => of({ matches: false, breakpoints: {} }) }
-        }
-      ]
+          useValue: { observe: () => of({ matches: false, breakpoints: {} }) },
+        },
+      ],
     }).compileComponents();
   });
 

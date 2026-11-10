@@ -32,6 +32,21 @@ describe('SocialLinks', () => {
     );
   });
 
+  it('should show the address without protocol in the cards variant', async () => {
+    fixture.componentRef.setInput('variant', 'cards');
+    await fixture.whenStable();
+
+    const urls = Array.from(
+      fixture.nativeElement.querySelectorAll('.social-card-url') as NodeListOf<HTMLElement>,
+      (url) => url.textContent?.trim(),
+    );
+    expect(urls).toEqual([
+      'linkedin.com/in/mariacarolinadiaz',
+      'github.com/mcarolinadiaz',
+      'diazmariacarolina6@gmail.com',
+    ]);
+  });
+
   it('should open web profiles in a new tab but not mailto links', () => {
     const [linkedin, , email] = links();
 

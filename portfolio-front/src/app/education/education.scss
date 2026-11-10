@@ -187,15 +187,6 @@
   font-weight: var(--font-weight-semibold);
 }
 
-.language-level {
-  padding: 6px var(--space-3);
-  border-radius: var(--radius-pill);
-  background: var(--color-surface-dark);
-  color: var(--color-text-on-dark);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-}
-
 @media (max-width: bp.$mobile-max) {
   :host {
     padding-block: var(--space-7);

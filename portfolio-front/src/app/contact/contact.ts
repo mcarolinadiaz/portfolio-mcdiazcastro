@@ -1,12 +1,18 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { CenterContent } from "../shared/center-content/center-content";
+import { APP_PAGE_PATHS } from '../core/constants/app-page-routes';
+import { SocialLinks } from '../shared/social-links/social-links';
+import { UserInformationService } from '../shared/services/user-information-service';
+import { getNavTranslationKey } from '../shared/utils/nav-translation-key';
 
 @Component({
   selector: 'app-contact',
-  imports: [CenterContent, TranslatePipe],
+  imports: [SocialLinks, TranslatePipe],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Contact {}
+export class Contact {
+  protected readonly navKey = getNavTranslationKey(APP_PAGE_PATHS.CONTACT);
+  protected readonly contactInformation = inject(UserInformationService).getContactInformation();
+}

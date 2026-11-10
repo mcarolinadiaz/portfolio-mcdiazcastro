@@ -135,6 +135,9 @@ configured in `.prettierrc` but has no npm script.
     on `div`/`span`.
   - Style through classes, not element selectors, so changing a tag never
     changes the look.
+- `src/test-setup.ts` (registered in `angular.json` > `test` > `setupFiles`)
+  clears `localStorage` before every test, so a test that switches the
+  language with `LanguageService` doesn't leak it into the next one.
 - Component tests use Angular `TestBed` with the standalone component in
   `imports`, then await `fixture.whenStable()` before assertions.
 
@@ -193,5 +196,12 @@ configured in `.prettierrc` but has no npm script.
   formatted through the `DateRangeFormatter` service. With no Bootstrap
   JavaScript component left, the Bootstrap JS bundle was removed from
   `index.html`; only its Sass is used.
+- 2026-11-10: Contact reuses `SocialLinks` with `variant="cards"` (large
+  cards with the address; email highlighted) next to the original contact
+  texts. `CenterContent` and the `me-*.svg` illustrations were removed; a
+  page that should be vertically centered grows with `flex: 1` inside
+  `.page-content` (see `contact.scss`). Desktop nav links draw their red
+  underline with a `::after` that scales from left to right on hover/focus
+  and stays on the active page.
 - 2026-11-10: Templates use semantic HTML elements (`header`, `main`,
   `section`, `article`, `nav`, lists) instead of generic `div`s.

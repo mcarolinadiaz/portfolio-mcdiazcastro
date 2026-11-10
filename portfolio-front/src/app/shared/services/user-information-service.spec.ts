@@ -17,7 +17,7 @@ describe('UserInformationService', () => {
   it('should return the configured languages, experiences, networks, education, and certifications', () => {
     expect(service.getLanguages()).toEqual([
       { idiom: 'LANGUAGES_INFO.SPANISH', level: 'LANGUAGES_INFO.NATIVE' },
-      { idiom: 'LANGUAGES_INFO.ENGLISH', level: 'LANGUAGES_INFO.UPPER_INTERMEDIATE' }
+      { idiom: 'LANGUAGES_INFO.ENGLISH', level: 'LANGUAGES_INFO.B2' }
     ]);
     expect(service.getProfessionalExperiences()).toHaveLength(8);
     expect(service.getProfessionalExperiences()[0].position).toBe('EXPERIENCE.FREELANCE_SWE.POSITION');
@@ -46,7 +46,7 @@ describe('UserInformationService', () => {
       'Zend Framework',
       'MariaDB',
       'HTML',
-      'Javascript',
+      'JavaScript',
       'CSS',
       'Angular-v18',
       'TypeScript',
@@ -55,7 +55,6 @@ describe('UserInformationService', () => {
       'C#',
       'Odoo',
       'Magento 2',
-      'JavaScript',
       'LESS',
       'Angular-v15',
       'WordPress',

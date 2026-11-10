@@ -10,9 +10,6 @@ describe('Education', () => {
   let fixture: ComponentFixture<Education>;
 
   beforeEach(async () => {
-    // LanguageService restores the language saved by a previous test.
-    localStorage.clear();
-
     await TestBed.configureTestingModule({
       imports: [Education],
       providers: [

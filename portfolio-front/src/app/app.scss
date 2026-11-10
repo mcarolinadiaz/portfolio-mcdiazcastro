@@ -71,15 +71,11 @@
   }
 }
 
+// Fills the page area so a page can grow (flex: 1) to center its content.
 .page-content {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-}
-
-// Pages built with CenterContent are vertically centered when they fit.
-.page-content:has(.center-page-container) {
-  justify-content: safe center;
 }
 
 @media (min-width: 768px) {

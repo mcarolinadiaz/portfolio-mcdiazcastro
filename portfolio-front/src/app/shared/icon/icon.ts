@@ -21,6 +21,7 @@ const ICON_PATHS = {
     'M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5',
   ],
   'arrow-right': ['M5 12h14', 'M13 6l6 6-6 6'],
+  'arrow-up-right': ['M7 17L17 7', 'M9 7h8v8'],
   download: ['M12 3v12', 'M7 10l5 5 5-5', 'M5 21h14'],
   close: ['M6 6l12 12M18 6L6 18'],
   menu: ['M4 7h16M4 12h16M4 17h16'],

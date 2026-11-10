@@ -1,3 +1,6 @@
+@use '../../../styles/breakpoints' as bp;
+
+// Icons variant (footer)
 .social-links {
   display: flex;
   gap: var(--space-2);
@@ -20,5 +23,126 @@
   &:hover {
     background: var(--color-border-on-dark);
     color: var(--color-white);
+  }
+}
+
+// Cards variant (contact page)
+.social-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: transform var(--transition-fast);
+
+  &:hover {
+    color: var(--color-text);
+    transform: translateY(-2px);
+  }
+}
+
+.social-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+}
+
+.social-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+  min-width: 0;
+}
+
+.social-card-name {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.social-card-url {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+}
+
+.social-card-arrow {
+  color: var(--color-accent);
+}
+
+// Email: the main call to action, highlighted in dark.
+.social-card.is-featured {
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+
+  &:hover {
+    color: var(--color-text-on-dark);
+  }
+
+  .social-card-icon {
+    background: var(--color-accent);
+    color: var(--color-white);
+  }
+
+  .social-card-url {
+    color: var(--color-text-on-dark-muted);
+  }
+
+  .social-card-arrow {
+    color: var(--color-accent-on-dark);
+  }
+}
+
+// Mobile: smaller icon and no arrow so the addresses fit on one line.
+@media (max-width: bp.$mobile-max) {
+  .social-card {
+    gap: var(--space-4);
+    padding: var(--space-4);
+  }
+
+  .social-card-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .social-card-name {
+    font-size: var(--font-size-lg);
+  }
+
+  .social-card-url {
+    font-size: var(--font-size-sm);
+  }
+
+  .social-card-arrow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-card {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 }

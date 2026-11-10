@@ -15,7 +15,7 @@ import { SkillGroup } from '../models/skill-group';
 export class UserInformationService {
   readonly languages: Language[] = [
     { idiom: 'LANGUAGES_INFO.SPANISH', level: 'LANGUAGES_INFO.NATIVE' },
-    { idiom: 'LANGUAGES_INFO.ENGLISH', level: 'LANGUAGES_INFO.UPPER_INTERMEDIATE' },
+    { idiom: 'LANGUAGES_INFO.ENGLISH', level: 'LANGUAGES_INFO.B2' },
   ];
 
   readonly professionalExperiences: ProfessionalExperience[] = [
@@ -25,7 +25,7 @@ export class UserInformationService {
       startDate: new Date('2026-09-01'),
       endDate: null,
       description: 'EXPERIENCE.FREELANCE_SWE.DESCRIPTION',
-      stack: ['PHP', 'Laravel', 'Zend Framework', 'MariaDB', 'HTML', 'Javascript', 'CSS'],
+      stack: ['PHP', 'Laravel', 'Zend Framework', 'MariaDB', 'HTML', 'JavaScript', 'CSS'],
     },
     {
       company: COMPANY.UNICEN,
@@ -96,7 +96,7 @@ export class UserInformationService {
       startDate: new Date('2019-08-01'),
       endDate: new Date('2020-08-31'),
       description: 'EXPERIENCE.PLADEMA_INTERN.DESCRIPTION',
-      stack: ['Python', 'Yolov3', 'TensorFlow', 'Javascript'],
+      stack: ['Python', 'Yolov3', 'TensorFlow', 'JavaScript'],
     },
   ];
 

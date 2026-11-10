@@ -12,9 +12,6 @@ describe('ProfessionalExperience', () => {
   let fixture: ComponentFixture<ProfessionalExperience>;
 
   beforeEach(async () => {
-    // LanguageService restores the language saved by a previous test.
-    localStorage.clear();
-
     await TestBed.configureTestingModule({
       imports: [ProfessionalExperience],
       providers: [

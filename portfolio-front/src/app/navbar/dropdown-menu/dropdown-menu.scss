@@ -36,12 +36,34 @@
   display: flex;
   gap: var(--space-1);
 
+  // Red underline that grows from left to right on hover/focus and stays on the active page.
   .menu-link {
-    border-bottom: 2px solid transparent;
+    position: relative;
 
-    &.active {
-      border-bottom-color: var(--color-accent-decorative);
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--color-accent-decorative);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.3s ease;
     }
+
+    &:hover::after,
+    &:focus-visible::after,
+    &.active::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desktop-menu-list .menu-link::after {
+    transition: none;
   }
 }
 

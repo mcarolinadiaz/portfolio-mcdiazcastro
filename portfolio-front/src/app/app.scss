@@ -19,8 +19,12 @@
   color: var(--color-text-on-dark);
 }
 
+// Above the page so the version 1 preview card can overlay it.
 .app-footer {
-  padding-bottom: var(--space-6);
+  position: relative;
+  z-index: 10;
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
 }
 
 // Header/footer backgrounds span the full width; their content is centered.

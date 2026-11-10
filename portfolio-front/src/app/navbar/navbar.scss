@@ -29,8 +29,10 @@
   background: var(--color-accent);
   color: var(--color-white);
   font-family: var(--font-family-heading);
-  font-size: 1.375rem;
+  // The "C" fills 72% of the square's height, same as public/favicon.ico.
+  font-size: 2.47rem;
   font-weight: var(--font-weight-bold);
+  line-height: 1;
 }
 
 .navbar-title {

@@ -6,10 +6,11 @@ import { filter } from 'rxjs';
 import { ResponsiveService } from '../../shared/services/responsive-service';
 import { LanguageSelector } from '../language-selector/language-selector';
 import { NAVIGATION_ROUTES } from '../../core/constants/app-page-routes';
+import { Icon } from '../../shared/icon/icon';
 
 @Component({
   selector: 'app-dropdown-menu',
-  imports: [RouterLink, RouterLinkActive, TranslatePipe, LanguageSelector],
+  imports: [RouterLink, RouterLinkActive, TranslatePipe, LanguageSelector, Icon],
   templateUrl: './dropdown-menu.html',
   styleUrl: './dropdown-menu.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

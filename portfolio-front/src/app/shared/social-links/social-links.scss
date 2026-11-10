@@ -1,0 +1,24 @@
+.social-links {
+  display: flex;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-dark-raised);
+  color: var(--color-text-on-dark);
+  transition: background-color var(--transition-fast);
+
+  &:hover {
+    background: var(--color-border-on-dark);
+    color: var(--color-white);
+  }
+}

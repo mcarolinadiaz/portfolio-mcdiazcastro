@@ -98,17 +98,17 @@ export class UserInformationService {
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/mariacarolinadiaz/',
-      icon: 'assets/icons-linkedin.svg',
+      icon: 'linkedin',
     },
     {
       name: 'GitHub',
       url: 'https://github.com/mcarolinadiaz',
-      icon: 'assets/icons-github.svg',
+      icon: 'github',
     },
     {
       name: 'Email',
       url: 'mailto:diazmariacarolina6@gmail.com',
-      icon: 'assets/icons-email.svg',
+      icon: 'email',
     },
   ];
 

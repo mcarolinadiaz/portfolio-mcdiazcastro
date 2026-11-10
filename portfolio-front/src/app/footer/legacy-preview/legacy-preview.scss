@@ -1,0 +1,134 @@
+@use '../../../styles/breakpoints' as bp;
+
+.legacy-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  border: 1px solid var(--color-border-on-dark);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-on-dark);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+
+  &:hover,
+  &[aria-expanded='true'] {
+    background: var(--color-surface-dark-raised);
+    color: var(--color-white);
+  }
+}
+
+// Positioned against .footer so it opens above the footer, aligned to the content edge.
+.legacy-card {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + var(--space-3));
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 420px;
+  max-width: 100%;
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-popover);
+  text-align: left;
+}
+
+.legacy-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.legacy-host {
+  min-width: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  overflow-wrap: anywhere;
+}
+
+.legacy-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.legacy-thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.legacy-thumb-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.legacy-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-overlay);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+// Shown on hover/focus; always shown where there is no hover (touch screens).
+.legacy-thumb:hover .legacy-overlay,
+.legacy-thumb:focus-visible .legacy-overlay,
+.legacy-thumb.overlay-visible .legacy-overlay {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .legacy-overlay {
+    opacity: 1;
+  }
+}
+
+.legacy-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 52px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+@media (max-width: bp.$mobile-max) {
+  .legacy-card {
+    left: 0;
+    width: auto;
+  }
+
+  // The full mobile screenshot is taller than the screen: show its top part.
+  .legacy-thumb-img {
+    height: 340px;
+    object-fit: cover;
+    object-position: top center;
+  }
+}

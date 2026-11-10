@@ -1,4 +1,8 @@
-# Copilot Instructions
+# Agent Instructions
+
+Shared instructions for every coding agent working in this repository
+(GitHub Copilot, Claude Code, Codex, Cursor, ...). `CLAUDE.md` imports this
+file, so keep all project guidance here instead of duplicating it.
 
 ## Workspace and commands
 
@@ -91,7 +95,16 @@ configured in `.prettierrc` but has no npm script.
   Reuse `getNavTranslationKey` rather than re-deriving the key when adding a
   page route.
 - Reuse `ResponsiveService` and `BOOTSTRAP_BREAKPOINTS` for responsive
-  behavior so TypeScript and CSS breakpoints remain aligned.
+  behavior so TypeScript and CSS breakpoints remain aligned. In component
+  SCSS, media queries use the variables in `src/styles/_breakpoints.scss`
+  (`@use '<relative path>/styles/breakpoints' as bp;`), which mirror
+  `breakpoints.ts`. Never `@use` `_tokens.scss` from a component: it emits
+  the `:root` custom properties and would duplicate them.
+- Icons are rendered with the shared `Icon` component
+  (`<app-icon name="..." [size]="...">`, `shared/icon/`): stroke SVGs that
+  inherit `currentColor` and are `aria-hidden`, so the surrounding button or
+  link carries the accessible label. Add new icons to its `ICON_PATHS` map
+  instead of inlining `<svg>` in templates or adding icon image assets.
 - Reuse the site palette, Bootstrap configuration, and global styles from
   `src/styles.scss` before adding component-specific styles.
 - Follow `.editorconfig` and Prettier: 2-space indentation, single-quoted
@@ -147,5 +160,16 @@ configured in `.prettierrc` but has no npm script.
   a custom panel that closes on link click, Escape and `NavigationEnd`.
   Popper.js was dropped from `index.html` since no Bootstrap dropdown remains
   (Bootstrap's JS bundle is still loaded for the accordion's collapse).
+- 2026-11-10: Version 1 of the site is frozen on the `release/v1` branch and
+  deployed as its own Vercel project; its URL and screenshots live in
+  `core/constants/legacy-site.ts` (`LEGACY_SITE`) and
+  `src/assets/legacy/`. The footer's `LegacyPreview` button opens a card
+  with the screenshot linking to it (closes on Escape, outside click or the
+  close button). Social links are the shared `SocialLinks` component, fed by
+  `UserInformationService.getProfessionalNetworks()`.
+- 2026-11-10: The favicon (`public/favicon.ico`, `apple-touch-icon.png`)
+  reproduces the navbar brand mark: white Space Grotesk "C" at 72% of the
+  red square's height. Keep both in sync, and bump the `?v=` query in
+  `index.html` when the icon changes.
 - 2026-11-10: Templates use semantic HTML elements (`header`, `main`,
   `section`, `article`, `nav`, lists) instead of generic `div`s.

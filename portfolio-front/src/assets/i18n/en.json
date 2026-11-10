@@ -102,6 +102,13 @@
     "TESTED_WITH": ", tested with",
     "USED": ", used",
     "ACCELERATE_DEPLOY": "to accelerate the process and deployed with",
-    "YEAR": "- 2026."
+    "YEAR": "- 2026.",
+    "SOCIAL_NETWORKS": "Social networks"
+  },
+  "LEGACY": {
+    "OPEN_PREVIEW": "View version 1",
+    "PREVIEW": "Version 1 preview",
+    "CLOSE_PREVIEW": "Close preview",
+    "OPEN_SITE": "Open version 1 in a new tab"
   }
 }

@@ -1,0 +1,16 @@
+<ul class="social-links" [attr.aria-label]="'FOOTER.SOCIAL_NETWORKS' | translate">
+  @for (network of networks; track network.name) {
+    <li>
+      <a
+        class="social-link"
+        [href]="network.url"
+        [attr.target]="network.isExternal ? '_blank' : null"
+        [attr.rel]="network.isExternal ? 'noopener' : null"
+        [attr.aria-label]="network.name"
+        [attr.title]="network.name"
+      >
+        <app-icon [name]="network.icon"></app-icon>
+      </a>
+    </li>
+  }
+</ul>

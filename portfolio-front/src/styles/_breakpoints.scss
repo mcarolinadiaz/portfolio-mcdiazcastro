@@ -1,0 +1,7 @@
+// Media-query limits shared by component styles.
+// Keep in sync with BOOTSTRAP_BREAKPOINTS in src/app/core/constants/breakpoints.ts
+// (ResponsiveService.isMobile uses the same value).
+// This partial only declares variables, so it can be @use'd from any component
+// without emitting CSS.
+
+$mobile-max: 873.98px;

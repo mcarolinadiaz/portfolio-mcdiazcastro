@@ -1,44 +1,139 @@
-.welcome {
-    font-size: x-large;
-    text-align: center;
-    .fullname {
-        font-weight: bold;
-    }
-    .nickname {
-        color: var(--color-punch-red);
-        font-size: xxx-large;
-        font-weight: bold;
-    }
+@use '../../styles/breakpoints' as bp;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-block: var(--space-9);
 }
 
-.degree {
-    color: var(--color-flag-red);
-    font-size: xx-large;
-    font-weight: bold;
-    transition: font-size 0.5s;
-    text-align: center;
+// Hero
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
 }
 
-.about {
-    font-size: medium;
-    white-space: pre-line;
-    padding-top: 1rem;
-    text-align: center;
+.hero-title {
+  max-width: 960px;
+  margin: 0;
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
-.degree:hover {
-    font-size: xxx-large;
+.hero-subtitle {
+  margin: 0;
+  color: var(--color-text-body);
+  font-size: var(--font-size-xl);
+  line-height: 1.5;
+
+  strong {
+    color: var(--color-text);
+  }
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
 
-@media (max-width: 768px) {
-    .welcome {
-        font-size: large;
-        .nickname {
-            font-size: xx-large;
-        }
-    }
-    .degree {
-        font-size: x-large;
-    }
+// Quick facts
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.fact-label {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fact-value {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+// Bio
+.bio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6) var(--space-7);
+}
+
+.bio-title {
+  flex: 1 1 220px;
+  margin: 0;
+  font-size: var(--font-size-3xl);
+}
+
+.bio-text {
+  flex: 999 1 560px;
+  min-width: 0;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+
+  p {
+    margin: 0;
+    color: var(--color-text-body);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-relaxed);
+  }
+}
+
+@media (max-width: bp.$mobile-max) {
+  :host {
+    gap: var(--space-7);
+    padding-block: var(--space-7);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-md);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+
+  // Location is the longest value: give it the full row.
+  .fact:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .fact {
+    padding: var(--space-4);
+  }
+
+  .fact-value {
+    font-size: var(--font-size-base);
+  }
+
+  .bio-text p {
+    font-size: var(--font-size-base);
+  }
 }

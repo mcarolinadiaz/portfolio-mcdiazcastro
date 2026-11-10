@@ -10,7 +10,8 @@ export class UrlSanitizerService {
     readonly vscSite = signal<SafeUrl>(this.sanitizeUrl('https://code.visualstudio.com/'));
     readonly vitestSite = signal<SafeUrl>(this.sanitizeUrl('https://vitest.dev/'));
     readonly vercelSite = signal<SafeUrl>(this.sanitizeUrl('https://vercel.com/'));
-    readonly copilotSite = signal<SafeUrl>(this.sanitizeUrl('https://github.com/copilot'));
+    readonly claudeSite = signal<SafeUrl>(this.sanitizeUrl('https://claude.com/'));
+    readonly copilotSite =signal<SafeUrl>(this.sanitizeUrl('https://github.com/copilot'));
 
     sanitizeUrl(url: string): SafeUrl {
         return this.sanitizer.bypassSecurityTrustUrl(url);

@@ -31,7 +31,7 @@ export class UserInformationService {
         { startDate: new Date('2019-04-01'), endDate: new Date('2019-09-30') },
       ],
       description: 'EXPERIENCE.UNICEN_TA.DESCRIPTION',
-      stack: [''],
+      stack: [],
     },
     {
       company: 'LIESA',

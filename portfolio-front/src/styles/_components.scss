@@ -1,0 +1,95 @@
+// Global building blocks shared by several pages. Component-specific styles stay
+// beside each component; anything reused across pages lives here.
+
+// Small red uppercase label with a leading line, shown above page titles.
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0;
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-eyebrow);
+  text-transform: uppercase;
+
+  &::before {
+    content: '';
+    width: 32px;
+    height: 2px;
+    background: currentColor;
+  }
+}
+
+.page-title {
+  margin: 0;
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+// Buttons rendered as links (<a class="button button-primary">) or <button>.
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 52px;
+  padding: 0 var(--space-5);
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.button-primary {
+  background: var(--color-text);
+  color: var(--color-white);
+
+  &:hover {
+    background: var(--color-surface-dark-raised);
+    color: var(--color-white);
+  }
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--color-text);
+
+  &:hover {
+    background: var(--color-text);
+    color: var(--color-white);
+  }
+}
+
+// Technology chips: <ul class="tag-list"><li class="tag">…</li></ul>
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  padding: 6px var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.tag-outline {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-body);
+}

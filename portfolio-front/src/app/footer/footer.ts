@@ -18,5 +18,6 @@ export class Footer {
   protected readonly vscSite = this.urlSanitizerService.vscSite;
   protected readonly vitestSite = this.urlSanitizerService.vitestSite;
   protected readonly vercelSite = this.urlSanitizerService.vercelSite;
+  protected readonly claudeSite = this.urlSanitizerService.claudeSite;
   protected readonly copilotSite = this.urlSanitizerService.copilotSite;
 }

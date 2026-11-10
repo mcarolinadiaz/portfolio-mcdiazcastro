@@ -60,7 +60,7 @@ configured in `.prettierrc` but has no npm script.
 - Mark class members `protected` when they're only read from the component's
   own template, unless a `*.spec.ts` calls them directly without an `as any`
   cast — keep those public so tests stay type-safe (see
-  `CardInformation.getEndDate`/`getDateToString`/`getListGroupItems`).
+  `ProfessionalExperience.entries`, `DropdownMenu.toggleMenu`/`closeMenu`).
 - Add or reuse Angular services when component functionality needs shared
   state, platform integration, or reusable behavior; keep page components
   focused on presenting and composing that functionality. Decorate plain
@@ -72,13 +72,16 @@ configured in `.prettierrc` but has no npm script.
   Use the `LANGUAGE` constant and `SupportedLanguage` type exported from
   `shared/services/language-service.ts` (e.g. `LANGUAGE.ENGLISH`,
   `LANGUAGE.SPANISH`) so every usage reads the language codes from one place.
+  Format dates for the active language with `LANGUAGE_LOCALE` and the helpers
+  in `shared/utils/date-range.ts` (UTC-based, so 'YYYY-MM-DD' dates never
+  shift to the previous month); never hardcode a locale such as `'en-US'`.
 - Avoid repeating magic string/number literals. Extract them to a named
   `const` (module-level for a single file, `core/constants/*.ts` — following
   `breakpoints.ts` — when shared across files) and reuse that same constant
   everywhere the value carries the same meaning, instead of redeclaring
   separate constants with identical values (see `COMPANY.UNICEN` in
-  `card-information.ts`/`user-information-service.ts`, and the single `ZERO`
-  constant reused in `card-information.ts`).
+  `user-information-service.ts` and the specs, and `APP_PAGE_PATHS` in
+  `core/constants/app-page-routes.ts`, used for every link to a page).
 - Child page routes set their static `title` to a `NAV.*` translation key via
   `getNavTranslationKey(path)` (`shared/utils/nav-translation-key.ts`) instead
   of literal text. Route metadata is centralized in
@@ -106,7 +109,11 @@ configured in `.prettierrc` but has no npm script.
   link carries the accessible label. Add new icons to its `ICON_PATHS` map
   instead of inlining `<svg>` in templates or adding icon image assets.
 - Reuse the site palette, Bootstrap configuration, and global styles from
-  `src/styles.scss` before adding component-specific styles.
+  `src/styles.scss` before adding component-specific styles. Building blocks
+  shared by several pages live in `src/styles/_components.scss`: `.eyebrow`,
+  `.page-title`, `.button` + `.button-primary`/`.button-outline`, and
+  `.tag-list` + `.tag`/`.tag-outline` for technology chips. Add a class there
+  when a second page needs it instead of copying it into another component.
 - Follow `.editorconfig` and Prettier: 2-space indentation, single-quoted
   TypeScript strings, UTF-8, final newlines, and a 100-character print width.
 - Use semantic HTML elements for structure, and keep `div`/`span` only for
@@ -171,5 +178,10 @@ configured in `.prettierrc` but has no npm script.
   reproduces the navbar brand mark: white Space Grotesk "C" at 72% of the
   red square's height. Keep both in sync, and bump the `?v=` query in
   `index.html` when the icon changes.
+- 2026-11-10: Professional Experience is a vertical timeline (`ExperienceItem`)
+  instead of `CardInformation` cards; dates are formatted per language and
+  roles with several periods (`dates`) list each term. The "Download CV"
+  button reads `core/constants/curriculum.ts` and stays hidden while
+  `CURRICULUM.path` is null (the PDF is not committed yet).
 - 2026-11-10: Templates use semantic HTML elements (`header`, `main`,
   `section`, `article`, `nav`, lists) instead of generic `div`s.

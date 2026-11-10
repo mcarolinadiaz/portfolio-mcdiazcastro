@@ -1,0 +1,35 @@
+@let item = entry();
+@let experience = item.experience;
+
+<p class="experience-dates">{{ item.dateRange }}</p>
+
+<div class="experience-marker" [class.is-current]="item.isCurrent" [class.is-last]="isLast()" aria-hidden="true">
+  <span class="marker-line marker-line-top"></span>
+  <span class="marker-dot"></span>
+  <span class="marker-line marker-line-bottom"></span>
+</div>
+
+<article class="experience-card">
+  <header class="experience-card-header">
+    <h2 class="experience-position">{{ experience.position | translate }}</h2>
+    <span class="experience-company">{{ experience.company }}</span>
+  </header>
+
+  @if (item.terms.length) {
+    <ul class="tag-list" [attr.aria-label]="'EXPERIENCE_PAGE.TERMS' | translate">
+      @for (term of item.terms; track term) {
+        <li class="tag tag-outline">{{ term }}</li>
+      }
+    </ul>
+  }
+
+  <p class="experience-description">{{ experience.description | translate }}</p>
+
+  @if (experience.stack.length) {
+    <ul class="tag-list" [attr.aria-label]="'EXPERIENCE_PAGE.STACK' | translate">
+      @for (technology of experience.stack; track technology) {
+        <li class="tag">{{ technology }}</li>
+      }
+    </ul>
+  }
+</article>

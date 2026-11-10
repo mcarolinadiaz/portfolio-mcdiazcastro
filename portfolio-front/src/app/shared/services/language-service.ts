@@ -9,6 +9,12 @@ export const LANGUAGE = {
   SPANISH: 'es',
 } as const satisfies Record<string, SupportedLanguage>;
 
+/** BCP 47 locale used to format dates and numbers for each language. */
+export const LANGUAGE_LOCALE: Record<SupportedLanguage, string> = {
+  [LANGUAGE.ENGLISH]: 'en-US',
+  [LANGUAGE.SPANISH]: 'es-AR',
+};
+
 const LANGUAGE_STORAGE_KEY = 'portfolio-language';
 
 @Service()

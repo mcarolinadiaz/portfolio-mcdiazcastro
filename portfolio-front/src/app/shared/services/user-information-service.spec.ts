@@ -47,7 +47,6 @@ describe('UserInformationService', () => {
       'HTML',
       'Javascript',
       'CSS',
-      '',
       'Angular-v18',
       'TypeScript',
       'SCSS',

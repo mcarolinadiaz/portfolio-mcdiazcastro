@@ -53,6 +53,8 @@
 	$headings-font-weight:   700
 );
 
+@use 'styles/components';
+
 html,
 body {
 	margin: 0;

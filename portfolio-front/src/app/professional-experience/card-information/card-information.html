@@ -1,5 +1,5 @@
-<div class="card column">
-    <div class="card-header">
+<article class="card column">
+    <header class="card-header">
         <div class="card-title">{{ experience.position | translate }} - {{ experience.company }}</div>
         <div class="card-subtitle">
             @if (!isTeachingAssistant) {
@@ -8,13 +8,13 @@
                 <app-list-group [listItems]="getListGroupItems(experience.dates)"></app-list-group>
             }
         </div>
-    </div>
+    </header>
     <div class="card-body">
         <p class="card-text">{{ experience.description | translate }}</p>
     </div>
     @if (!isTeachingAssistant) {
-        <div class="card-footer">
+        <footer class="card-footer">
             <app-list-group [listItems]="experience.stack"></app-list-group>
-        </div>
+        </footer>
     }
-</div>
+</article>

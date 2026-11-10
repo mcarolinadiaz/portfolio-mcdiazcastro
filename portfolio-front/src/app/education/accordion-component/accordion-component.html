@@ -1,5 +1,5 @@
 <div class="accordion" [id]="idItem() + '-accordion'">
-  <div class="accordion-item">
+  <section class="accordion-item">
     <h2 class="accordion-header" [id]="idItem() + '-heading'">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#' + idItem() + '-collapse'" aria-expanded="true" [attr.aria-controls]="idItem() + '-collapse'">
         {{ nameItem() }}
@@ -10,5 +10,5 @@
         <ng-content />
       </div>
     </div>
-  </div>
+  </section>
 </div>

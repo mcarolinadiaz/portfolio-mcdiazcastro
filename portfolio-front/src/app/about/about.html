@@ -1,5 +1,5 @@
 <app-center-content>
-    <div class="welcome">
+    <header class="welcome">
         <div>
             {{ 'ABOUT.GREETING_PREFIX' | translate }} <span class="fullname">{{ user.fullname }}</span>
             {{ 'ABOUT.GREETING_SUFFIX' | translate }}
@@ -8,11 +8,11 @@
             <span class="nickname">{{ user.name }} {{ 'ABOUT.OR' | translate }} {{ user.nickname }}</span>
             {{ 'ABOUT.NICKNAME_SUFFIX' | translate }}
         </div>
-    </div>
-    <div class="degree">
-        {{ user.degree | translate }}
-    </div>
-    <div class="about">
+        <div class="degree">
+            {{ user.degree | translate }}
+        </div>
+    </header>
+    <section class="about">
         {{ user.about | translate }}
-    </div>
+    </section>
 </app-center-content>

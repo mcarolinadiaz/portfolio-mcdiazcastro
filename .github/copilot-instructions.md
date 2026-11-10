@@ -95,6 +95,25 @@ configured in `.prettierrc` but has no npm script.
   `src/styles.scss` before adding component-specific styles.
 - Follow `.editorconfig` and Prettier: 2-space indentation, single-quoted
   TypeScript strings, UTF-8, final newlines, and a 100-character print width.
+- Use semantic HTML elements for structure, and keep `div`/`span` only for
+  purely visual wrappers:
+  - The `App` shell owns the page landmarks: `<header>` (navbar), a single
+    `<main>` (routed page) and the footer. Don't add another `<main>` inside
+    pages.
+  - Navigation menus go in `<nav>` with an `aria-label` when there is more
+    than one.
+  - Each page or thematic block with its own heading is a `<section>`;
+    self-contained items (experience cards, certifications) are `<article>`,
+    with an inner `<header>`/`<footer>` when they have a title area or a
+    closing area.
+  - Lists of items use `<ul>`/`<ol>` with `<li>`; term/value pairs use
+    `<dl>`; images that carry content use `<figure>`.
+  - Headings follow the hierarchy (one `<h1>` per page, then `<h2>`, `<h3>`)
+    without skipping levels.
+  - Use `<button>` for actions and `<a>` for navigation, never click handlers
+    on `div`/`span`.
+  - Style through classes, not element selectors, so changing a tag never
+    changes the look.
 - Component tests use Angular `TestBed` with the standalone component in
   `imports`, then await `fixture.whenStable()` before assertions.
 
@@ -113,3 +132,13 @@ configured in `.prettierrc` but has no npm script.
 - 2026-10-22: `Navbar` initializes mobile section title immediately and keeps
   it updated on navigation via `NavigationEnd`, using the deepest active route
   path and `getNavTranslationKey`.
+- 2026-11-10: Design tokens live in `src/styles/_tokens.scss` (SCSS palette
+  for the Bootstrap theme plus CSS custom properties); components use the
+  custom properties instead of hardcoded values.
+- 2026-11-10: The `App` shell is a three-row grid (`header` / scrollable
+  `main.page-container` / footer) at `100dvh`: header and footer stay fixed
+  and span the full width, page content is centered at
+  `--container-max-width`. Because `main` is the scroll container, `App`
+  resets its `scrollTop` on every `NavigationEnd`.
+- 2026-11-10: Templates use semantic HTML elements (`header`, `main`,
+  `section`, `article`, `nav`, lists) instead of generic `div`s.

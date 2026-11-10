@@ -1,59 +1,59 @@
-<div>
-  @if (responsiveService.isMobile()) {
-    <div class="dropdown">
-      <button
-        class="btn dropdown-button"
-        type="button"
-        id="dropdownMenuButton1"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <div class="dropdown-button-content">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-list"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-            />
-          </svg>
-        </div>
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+@if (responsiveService.isMobile()) {
+  <button
+    class="menu-toggle"
+    type="button"
+    [attr.aria-expanded]="isMenuOpen()"
+    [attr.aria-controls]="menuId"
+    [attr.aria-label]="(isMenuOpen() ? 'NAV.CLOSE_MENU' : 'NAV.OPEN_MENU') | translate"
+    (click)="toggleMenu()"
+  >
+    @if (isMenuOpen()) {
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M6 6l12 12M18 6L6 18"></path>
+      </svg>
+    } @else {
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M4 7h16M4 12h16M4 17h16"></path>
+      </svg>
+    }
+  </button>
+
+  @if (isMenuOpen()) {
+    <div class="mobile-menu" [id]="menuId">
+      <ul class="menu-list mobile-menu-list">
         @for (route of appRoutes; track route.path) {
-          <a
-            class="dropdown-item"
-            [routerLink]="'/' + route.path"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >{{ route.title | translate }}</a
-          >
+          <li>
+            <a
+              class="menu-link"
+              [routerLink]="'/' + route.path"
+              routerLinkActive="active"
+              ariaCurrentWhenActive="page"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="closeMenu()"
+              >{{ route.title | translate }}</a
+            >
+          </li>
         }
-        <app-language-selector></app-language-selector>
-      </div>
-    </div>
-  } @else {
-    <div class="desktop-menu">
-      <div class="nav nav-tabs" role="tablist">
-        @for (route of appRoutes; track route.path) {
-          <a
-            class="nav-link"
-            aria-current="page"
-            [routerLink]="'/' + route.path"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            data-bs-toggle="tab"
-            role="tab"
-            >{{ route.title | translate }}</a
-          >
-        }
-      </div>
+      </ul>
       <app-language-selector></app-language-selector>
     </div>
   }
-</div>
+} @else {
+  <div class="desktop-menu">
+    <ul class="menu-list desktop-menu-list">
+      @for (route of appRoutes; track route.path) {
+        <li>
+          <a
+            class="menu-link"
+            [routerLink]="'/' + route.path"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >{{ route.title | translate }}</a
+          >
+        </li>
+      }
+    </ul>
+    <app-language-selector></app-language-selector>
+  </div>
+}

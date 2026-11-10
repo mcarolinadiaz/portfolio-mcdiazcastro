@@ -81,9 +81,10 @@ configured in `.prettierrc` but has no npm script.
   `core/constants/app-page-routes.ts`: `APP_PAGE_ROUTES` is the source of truth
   for router configuration and `NAVIGATION_ROUTES` is reused by navigation UI.
   `DropdownMenu` must consume `NAVIGATION_ROUTES` instead of introspecting
-  `router.config`, `Navbar` derives its mobile section title from the deepest
-  active route's `routeConfig.path` and renders the key with the `translate`
-  pipe, and `TranslatedTitleStrategy`
+  `router.config` (it renders the desktop links, or on mobile its own toggle
+  button and panel driven by the `isMenuOpen` signal — not Bootstrap's
+  dropdown JS), `Navbar` shows the brand (logo + name, linking home) on every
+  breakpoint, and `TranslatedTitleStrategy`
   (`shared/services/translated-title-strategy.ts`, provided as `TitleStrategy`
   in `app.config.ts`) resolves the key to set the document `<title>` as
   `Carolina Díaz | <translated section>`, re-applying on language change.
@@ -140,5 +141,11 @@ configured in `.prettierrc` but has no npm script.
   and span the full width, page content is centered at
   `--container-max-width`. Because `main` is the scroll container, `App`
   resets its `scrollTop` on every `NavigationEnd`.
+- 2026-11-10: Redesigned header: dark full-width bar with the brand, links
+  marked with `ariaCurrentWhenActive="page"` and a pill language selector
+  (`aria-pressed`). The mobile section title was removed; the mobile menu is
+  a custom panel that closes on link click, Escape and `NavigationEnd`.
+  Popper.js was dropped from `index.html` since no Bootstrap dropdown remains
+  (Bootstrap's JS bundle is still loaded for the accordion's collapse).
 - 2026-11-10: Templates use semantic HTML elements (`header`, `main`,
   `section`, `article`, `nav`, lists) instead of generic `div`s.

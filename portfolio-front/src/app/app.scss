@@ -10,8 +10,13 @@
   height: 100dvh;
 }
 
+// Positioned (and above the page) so the mobile menu panel can overlay it.
 .app-header {
-  padding-top: var(--space-6);
+  position: relative;
+  z-index: 10;
+  padding-block: var(--space-4);
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
 }
 
 .app-footer {

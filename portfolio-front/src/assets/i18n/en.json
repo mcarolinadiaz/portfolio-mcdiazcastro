@@ -5,7 +5,9 @@
     "EDUCATION": "Education",
     "KEEP_IN_TOUCH": "Keep in Touch",
     "EN": "EN",
-    "SP": "SP"
+    "SP": "SP",
+    "OPEN_MENU": "Open menu",
+    "CLOSE_MENU": "Close menu"
   },
   "LANGUAGE": {
     "SELECTOR": "Select language"

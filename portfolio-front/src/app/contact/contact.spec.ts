@@ -24,13 +24,14 @@ describe('Contact', () => {
     return fixture.nativeElement as HTMLElement;
   }
 
-  it('should render one h1 and the contact details', () => {
+  it('should render one h1 and no location or work authorization details', () => {
     const { location, workAuthorization } =
       TestBed.inject(UserInformationService).getContactInformation();
 
     expect(element().querySelectorAll('h1').length).toBe(1);
-    expect(element().querySelector('.contact-details')?.textContent).toContain(location);
-    expect(element().querySelector('.contact-details')?.textContent).toContain(workAuthorization);
+    expect(element().querySelector('.eyebrow')).toBeNull();
+    expect(element().textContent).not.toContain(location);
+    expect(element().textContent).not.toContain(workAuthorization);
   });
 
   it('should render one card per network, highlighting the email', () => {

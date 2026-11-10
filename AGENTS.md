@@ -205,3 +205,15 @@ configured in `.prettierrc` but has no npm script.
   and stays on the active page.
 - 2026-11-10: Templates use semantic HTML elements (`header`, `main`,
   `section`, `article`, `nav`, lists) instead of generic `div`s.
+- 2026-11-10: Accessibility baseline (axe-core reports 0 WCAG 2.2 AA /
+  best-practice violations on every page, desktop and mobile, menu and v1
+  preview open). Keep it that way:
+  - `<main>` is the scroll container, so it has `tabindex="0"` (keyboard
+    scrolling); a "Skip to content" button (`NAV.SKIP_TO_CONTENT`) focuses
+    it, and `App` moves focus to it after every in-app navigation.
+  - `LanguageService.setLanguage` updates `<html lang>` so screen readers use
+    the right pronunciation.
+  - A global `prefers-reduced-motion` rule in `styles.scss` neutralizes all
+    transitions and animations.
+  - Interactive targets are at least `--touch-target` (44px) and every
+    icon-only control has an `aria-label`.

@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { inject, PLATFORM_ID, Service, signal } from '@angular/core';
+import { DOCUMENT, inject, PLATFORM_ID, Service, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 export type SupportedLanguage = 'en' | 'es';
@@ -21,6 +21,7 @@ const LANGUAGE_STORAGE_KEY = 'portfolio-language';
 export class LanguageService {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly translate = inject(TranslateService);
+  private readonly document = inject(DOCUMENT);
 
   readonly activeLanguage = signal<SupportedLanguage>(LANGUAGE.ENGLISH);
 
@@ -37,6 +38,8 @@ export class LanguageService {
 
   setLanguage(language: SupportedLanguage): void {
     this.activeLanguage.set(language);
+    // Screen readers pick the pronunciation from <html lang>.
+    this.document.documentElement.lang = language;
 
     if (!isPlatformBrowser(this.platformId)) {
       return;

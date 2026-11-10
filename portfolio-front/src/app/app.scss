@@ -10,6 +10,26 @@
   height: 100dvh;
 }
 
+// Hidden above the viewport until it receives keyboard focus (first Tab).
+.skip-link {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 100;
+  min-height: var(--touch-target);
+  padding: 0 var(--space-5);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-weight: var(--font-weight-semibold);
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: none;
+  }
+}
+
 // Positioned (and above the page) so the mobile menu panel can overlay it.
 .app-header {
   position: relative;
@@ -38,6 +58,11 @@
 }
 
 .page-container {
+  // Drawn inside, so the header and footer don't cover the focus ring.
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+
   min-height: 0;
 
   overflow-x: hidden;

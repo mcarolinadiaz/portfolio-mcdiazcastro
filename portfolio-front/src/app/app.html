@@ -1,10 +1,14 @@
 <div class="app-container">
+    <button type="button" class="skip-link" (click)="focusMainContent()">
+        {{ 'NAV.SKIP_TO_CONTENT' | translate }}
+    </button>
     <header class="app-header">
         <div class="app-section-inner">
             <app-navbar></app-navbar>
         </div>
     </header>
-    <main #pageContainer class="page-container">
+    <!-- Focusable because it is the scroll container: keyboard users can scroll it with the arrows. -->
+    <main #pageContainer class="page-container" tabindex="0">
         <div class="page-content">
             <router-outlet></router-outlet>
         </div>

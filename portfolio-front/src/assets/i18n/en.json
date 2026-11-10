@@ -36,10 +36,18 @@
     "EDUCATION_SECTION": "Education",
     "TECHNICAL_SKILLS_SECTION": "Technical skills",
     "CERTIFICATIONS_SECTION": "Certifications",
-    "LANGUAGES_SECTION": "Languages"
+    "LANGUAGES_SECTION": "Languages",
+    "DEGREE_LABEL": "Degree",
+    "SKILL_GROUPS": {
+      "FRONTEND": "Frontend",
+      "BACKEND": "Backend",
+      "DATA_INFRA": "Data & infrastructure",
+      "AI_TOOLS": "AI & tools",
+      "OTHER": "Other"
+    }
   },
   "EDUCATION_DEGREE": {
-    "POSITION": "Bachelor\u2019s Degree in Software Engineering",
+    "POSITION": "Software Engineering",
     "DESCRIPTION": "Dissertation: Bad Smell Detection in Microservices-based Applications - Technologies: Java, Maven, Spring Boot, Docker. This work presents a process for the analysis and detection of the Shared Library (SL) smell, which occurs when multiple microservices depend on the same library, using the static analysis tool MSANose combined with Artificial Intelligence (AI) techniques."
   },
   "EXPERIENCE_PAGE": {

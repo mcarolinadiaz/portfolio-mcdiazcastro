@@ -30,6 +30,16 @@ describe('date-range utils', () => {
     ).toBe('Jan – Sep 2024');
   });
 
+  it('should show a single month when both dates are in the same month', () => {
+    expect(
+      formatDateRange(
+        { startDate: new Date('2021-10-01'), endDate: new Date('2021-10-31') },
+        ES,
+        'Presente',
+      ),
+    ).toBe('Oct 2021');
+  });
+
   it('should show both years for ranges across years', () => {
     expect(
       formatDateRange(

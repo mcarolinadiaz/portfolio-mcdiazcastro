@@ -4,6 +4,12 @@ import { Language } from '../models/language';
 import { ProfessionalExperience } from '../models/professional-experience';
 import { ProfessionalNetwork } from '../models/professional-network';
 import { COMPANY } from '../../core/constants/companies';
+import {
+  SKILL_CATEGORIES,
+  SKILL_CATEGORY,
+  SKILL_CATEGORY_ORDER,
+} from '../../core/constants/skill-categories';
+import { SkillGroup } from '../models/skill-group';
 
 @Service()
 export class UserInformationService {
@@ -201,6 +207,15 @@ export class UserInformationService {
     });
     stack.push('Claude', 'Github Copilot', 'Opencode');
     return stack;
+  }
+
+  /** Technical skills grouped by `SKILL_CATEGORIES`, keeping their original order. */
+  getTechnicalSkillGroups(): SkillGroup[] {
+    const skills = this.getTechnicalSkills();
+    return SKILL_CATEGORY_ORDER.map((category) => ({
+      category,
+      skills: skills.filter((skill) => (SKILL_CATEGORIES[skill] ?? SKILL_CATEGORY.OTHER) === category),
+    })).filter((group) => group.skills.length > 0);
   }
 
   getEducation(): ProfessionalExperience {

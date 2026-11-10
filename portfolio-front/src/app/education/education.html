@@ -1,22 +1,68 @@
-<section class="education-container">
-    <app-accordion-component [idItem]="'education'" [nameItem]="'EDUCATION_PAGE.EDUCATION_SECTION' | translate">
-        <app-education-item [educationItem]="education"></app-education-item>
-    </app-accordion-component>
-    <app-accordion-component [idItem]="'technicalSkills'" [nameItem]="'EDUCATION_PAGE.TECHNICAL_SKILLS_SECTION' | translate">
-        <div class="skills">
-            <app-list-group [listItems]="technicalSkills"></app-list-group>
-        </div>
-    </app-accordion-component>
-    <app-accordion-component [idItem]="'certifications'" [nameItem]="'EDUCATION_PAGE.CERTIFICATIONS_SECTION' | translate">
-        @for (certification of certifications; track certification) {
-            <app-education-item [educationItem]="certification"></app-education-item>
+<section class="education-page" aria-labelledby="education-title">
+  <h1 id="education-title" class="page-title">{{ titleKey | translate }}</h1>
+
+  <section class="degree" aria-labelledby="degree-title">
+    <div class="degree-heading">
+      <p class="degree-label">{{ 'EDUCATION_PAGE.DEGREE_LABEL' | translate }}</p>
+      <h2 id="degree-title" class="degree-title">{{ education.position | translate }}</h2>
+      <p class="degree-meta">{{ education.company }} · {{ degreePeriod() }}</p>
+    </div>
+    <p class="degree-description">{{ education.description | translate }}</p>
+  </section>
+
+  <section class="block" aria-labelledby="certifications-title">
+    <h2 id="certifications-title" class="section-title">
+      {{ 'EDUCATION_PAGE.CERTIFICATIONS_SECTION' | translate }}
+    </h2>
+    <div class="certifications">
+      @for (item of certifications(); track item.certification.company) {
+        @let certification = item.certification;
+        @let description = certification.description | translate;
+        <article class="panel certification">
+          <header class="certification-header">
+            <span class="certification-issuer">{{ certification.company }}</span>
+            <span class="certification-period">{{ item.period }}</span>
+          </header>
+          <h3 class="certification-title">{{ certification.position | translate }}</h3>
+          @if (description && description !== certification.description) {
+            <p class="certification-description">{{ description }}</p>
+          }
+        </article>
+      }
+    </div>
+  </section>
+
+  <div class="skills-and-languages">
+    <section class="block skills" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="section-title">
+        {{ 'EDUCATION_PAGE.TECHNICAL_SKILLS_SECTION' | translate }}
+      </h2>
+      <div class="panel skill-groups">
+        @for (group of skillGroups; track group.category) {
+          <div class="skill-group">
+            <h3 class="skill-group-title">{{ group.titleKey | translate }}</h3>
+            <ul class="tag-list">
+              @for (skill of group.skills; track skill) {
+                <li class="tag">{{ skill }}</li>
+              }
+            </ul>
+          </div>
         }
-    </app-accordion-component>
-    <app-accordion-component [idItem]="'languages'" [nameItem]="'EDUCATION_PAGE.LANGUAGES_SECTION' | translate">
-        <div class="language">
-        @for (language of languages; track language) {
-            <p>{{ language.idiom | translate }}: {{ language.level | translate }}</p>
+      </div>
+    </section>
+
+    <section class="block languages" aria-labelledby="languages-title">
+      <h2 id="languages-title" class="section-title">
+        {{ 'EDUCATION_PAGE.LANGUAGES_SECTION' | translate }}
+      </h2>
+      <ul class="language-list">
+        @for (language of languages; track language.idiom) {
+          <li class="panel language">
+            <span class="language-name">{{ language.idiom | translate }}</span>
+            <span class="language-level">{{ language.level | translate }}</span>
+          </li>
         }
-        </div>
-    </app-accordion-component>
+      </ul>
+    </section>
+  </div>
 </section>

@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { UserInformationService } from './user-information-service';
+import { SKILL_CATEGORY } from '../../core/constants/skill-categories';
 
 describe('UserInformationService', () => {
   let service: UserInformationService;
@@ -69,5 +70,17 @@ describe('UserInformationService', () => {
       'Github Copilot',
       'Opencode'
     ]);
+  });
+
+  it('should classify every technical skill in a known category', () => {
+    const categories = service.getTechnicalSkillGroups().map((group) => group.category);
+
+    expect(categories).not.toContain(SKILL_CATEGORY.OTHER);
+  });
+
+  it('should group every technical skill exactly once', () => {
+    const grouped = service.getTechnicalSkillGroups().flatMap((group) => group.skills);
+
+    expect([...grouped].sort()).toEqual([...service.getTechnicalSkills()].sort());
   });
 });

@@ -5,12 +5,16 @@ import { ProfessionalExperience } from './professional-experience';
 import { LANGUAGE, LanguageService } from '../shared/services/language-service';
 import { UserInformationService } from '../shared/services/user-information-service';
 import { COMPANY } from '../core/constants/companies';
+import { CURRICULUM } from '../core/constants/curriculum';
 
 describe('ProfessionalExperience', () => {
   let component: ProfessionalExperience;
   let fixture: ComponentFixture<ProfessionalExperience>;
 
   beforeEach(async () => {
+    // LanguageService restores the language saved by a previous test.
+    localStorage.clear();
+
     await TestBed.configureTestingModule({
       imports: [ProfessionalExperience],
       providers: [
@@ -64,7 +68,16 @@ describe('ProfessionalExperience', () => {
     expect(component.entries()[0].dateRange).toBe('Sept 2026 – Presente');
   });
 
-  it('should hide the CV button while no CV file is configured', () => {
-    expect(element().querySelector('.page-header .button')).toBeNull();
+  it('should download the CV of the active language with the same file name', async () => {
+    const button = () => element().querySelector('.page-header .button') as HTMLAnchorElement;
+
+    expect(button().getAttribute('href')).toBe(CURRICULUM.paths[LANGUAGE.ENGLISH]);
+    expect(button().getAttribute('download')).toBe(CURRICULUM.fileName);
+
+    TestBed.inject(LanguageService).setLanguage(LANGUAGE.SPANISH);
+    await fixture.whenStable();
+
+    expect(button().getAttribute('href')).toBe(CURRICULUM.paths[LANGUAGE.SPANISH]);
+    expect(button().getAttribute('download')).toBe(CURRICULUM.fileName);
   });
 });

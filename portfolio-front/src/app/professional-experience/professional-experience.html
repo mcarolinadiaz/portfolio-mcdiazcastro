@@ -4,12 +4,10 @@
       <p class="eyebrow">{{ firstYear }} – {{ 'COMMON.PRESENT' | translate }}</p>
       <h1 id="experience-title" class="page-title">{{ titleKey | translate }}</h1>
     </div>
-    @if (curriculum.path) {
-      <a class="button button-outline" [href]="curriculum.path" [attr.download]="curriculum.fileName">
-        <app-icon name="download" [size]="18"></app-icon>
-        {{ 'EXPERIENCE_PAGE.DOWNLOAD_CV' | translate }}
-      </a>
-    }
+    <a class="button button-outline" [href]="curriculumPath()" [attr.download]="curriculumFileName">
+      <app-icon name="download" [size]="18"></app-icon>
+      {{ 'EXPERIENCE_PAGE.DOWNLOAD_CV' | translate }}
+    </a>
   </header>
 
   <ol class="timeline">

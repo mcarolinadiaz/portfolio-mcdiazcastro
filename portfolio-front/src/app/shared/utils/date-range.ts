@@ -1,3 +1,5 @@
+import { ProfessionalExperience } from '../models/professional-experience';
+
 // Dates in the portfolio data are created from 'YYYY-MM-DD' strings (UTC midnight),
 // so they are always formatted in UTC to avoid shifting to the previous month.
 const MONTH_YEAR_OPTIONS: Intl.DateTimeFormatOptions = {
@@ -25,8 +27,8 @@ export function formatMonthYear(date: Date, locale: string): string {
 }
 
 /**
- * "Sep 2024 – May 2026", "Jan – Sep 2024" (same year) or "Aug 2026 – Present"
- * (open-ended, `endDate` null).
+ * "Sep 2024 – May 2026", "Jan – Sep 2024" (same year), "Oct 2021" (same month)
+ * or "Aug 2026 – Present" (open-ended, `endDate` null).
  */
 export function formatDateRange(range: DateRange, locale: string, presentLabel: string): string {
   const { startDate, endDate } = range;
@@ -34,10 +36,23 @@ export function formatDateRange(range: DateRange, locale: string, presentLabel: 
     return `${formatMonthYear(startDate, locale)}${RANGE_SEPARATOR}${presentLabel}`;
   }
   const isSameYear = startDate.getUTCFullYear() === endDate.getUTCFullYear();
+  if (isSameYear && startDate.getUTCMonth() === endDate.getUTCMonth()) {
+    return formatMonthYear(endDate, locale);
+  }
   const start = isSameYear
     ? normalize(new Intl.DateTimeFormat(locale, MONTH_OPTIONS).format(startDate))
     : formatMonthYear(startDate, locale);
   return `${start}${RANGE_SEPARATOR}${formatMonthYear(endDate, locale)}`;
+}
+
+/** Periods of an experience: its `dates` list, or its single start/end pair. */
+export function getExperienceDateRanges(experience: ProfessionalExperience): DateRange[] {
+  if (experience.dates?.length) {
+    return experience.dates;
+  }
+  return experience.startDate
+    ? [{ startDate: experience.startDate, endDate: experience.endDate ?? null }]
+    : [];
 }
 
 /** Smallest range covering every given range (open-ended if any of them is). */

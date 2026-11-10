@@ -1,21 +1,43 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { APP_PAGE_PATHS } from '../core/constants/app-page-routes';
+import { DateRangeFormatter } from '../shared/services/date-range-formatter';
 import { UserInformationService } from '../shared/services/user-information-service';
-import { AccordionComponent } from './accordion-component/accordion-component';
-import { EducationItem } from './education-item/education-item';
-import { ListGroup } from '../shared/list-group/list-group';
+import { getExperienceDateRanges, spanDateRanges } from '../shared/utils/date-range';
+import { getNavTranslationKey } from '../shared/utils/nav-translation-key';
+import { ProfessionalExperience } from '../shared/models/professional-experience';
+
+const SKILL_GROUP_KEY_PREFIX = 'EDUCATION_PAGE.SKILL_GROUPS.';
 
 @Component({
   selector: 'app-education',
-  imports: [AccordionComponent, EducationItem, ListGroup, TranslatePipe],
+  imports: [TranslatePipe],
   templateUrl: './education.html',
   styleUrl: './education.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Education {
   private readonly userInformationService = inject(UserInformationService);
-  protected readonly technicalSkills = this.userInformationService.getTechnicalSkills();
+  private readonly dateRangeFormatter = inject(DateRangeFormatter);
+
+  protected readonly titleKey = getNavTranslationKey(APP_PAGE_PATHS.EDUCATION);
   protected readonly education = this.userInformationService.getEducation();
-  protected readonly certifications = this.userInformationService.getCertifications();
   protected readonly languages = this.userInformationService.getLanguages();
+  protected readonly skillGroups = this.userInformationService
+    .getTechnicalSkillGroups()
+    .map((group) => ({ ...group, titleKey: `${SKILL_GROUP_KEY_PREFIX}${group.category}` }));
+
+  private readonly formatPeriod = (item: ProfessionalExperience): string => {
+    const ranges = getExperienceDateRanges(item);
+    return ranges.length ? this.dateRangeFormatter.format()(spanDateRanges(ranges)) : '';
+  };
+
+  readonly degreePeriod = computed(() => this.formatPeriod(this.education));
+
+  // formatPeriod reads the formatter signal, so both lists update on language change.
+  readonly certifications = computed(() =>
+    this.userInformationService
+      .getCertifications()
+      .map((certification) => ({ certification, period: this.formatPeriod(certification) })),
+  );
 }

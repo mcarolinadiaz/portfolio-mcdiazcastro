@@ -1,10 +1,16 @@
+import { LANGUAGE, SupportedLanguage } from '../../shared/services/language-service';
+
 /**
- * Downloadable CV. The PDF is not in the repository yet: once it is added under
- * `public/` (e.g. `public/cv/...pdf`), set `path` to its URL relative to the site
- * root (e.g. 'cv/Resume-CarolinaDiaz.pdf'). The "Download CV" button stays hidden
- * while `path` is null.
+ * Downloadable CV, one PDF per language under `public/cv/<language>/`. Every
+ * version is saved as the same `fileName`, whatever the active language.
  */
-export const CURRICULUM: { readonly path: string | null; readonly fileName: string } = {
-  path: null,
+export const CURRICULUM: {
+  readonly paths: Readonly<Record<SupportedLanguage, string>>;
+  readonly fileName: string;
+} = {
+  paths: {
+    [LANGUAGE.ENGLISH]: 'cv/en/Resume-CarolinaDiaz.pdf',
+    [LANGUAGE.SPANISH]: 'cv/es/Resume-CarolinaDiaz.pdf',
+  },
   fileName: 'Resume-CarolinaDiaz.pdf',
 };

@@ -166,7 +166,7 @@ configured in `.prettierrc` but has no npm script.
   (`aria-pressed`). The mobile section title was removed; the mobile menu is
   a custom panel that closes on link click, Escape and `NavigationEnd`.
   Popper.js was dropped from `index.html` since no Bootstrap dropdown remains
-  (Bootstrap's JS bundle is still loaded for the accordion's collapse).
+  (the Bootstrap JS bundle was later removed too).
 - 2026-11-10: Version 1 of the site is frozen on the `release/v1` branch and
   deployed as its own Vercel project; its URL and screenshots live in
   `core/constants/legacy-site.ts` (`LEGACY_SITE`) and
@@ -181,7 +181,17 @@ configured in `.prettierrc` but has no npm script.
 - 2026-11-10: Professional Experience is a vertical timeline (`ExperienceItem`)
   instead of `CardInformation` cards; dates are formatted per language and
   roles with several periods (`dates`) list each term. The "Download CV"
-  button reads `core/constants/curriculum.ts` and stays hidden while
-  `CURRICULUM.path` is null (the PDF is not committed yet).
+  button downloads the CV of the active language (`public/cv/<lang>/`,
+  configured in `core/constants/curriculum.ts`), always saved as
+  `Resume-CarolinaDiaz.pdf`. The published CVs must not include the phone
+  number.
+- 2026-11-10: Education shows the degree, certifications, technical skills
+  grouped by category and languages without the Bootstrap accordion.
+  Categories come from `SKILL_CATEGORIES` (`core/constants/skill-categories.ts`)
+  via `UserInformationService.getTechnicalSkillGroups()`; classify every new
+  technology there (a spec fails if one falls into OTHER). Date ranges are
+  formatted through the `DateRangeFormatter` service. With no Bootstrap
+  JavaScript component left, the Bootstrap JS bundle was removed from
+  `index.html`; only its Sass is used.
 - 2026-11-10: Templates use semantic HTML elements (`header`, `main`,
   `section`, `article`, `nav`, lists) instead of generic `div`s.

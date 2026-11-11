@@ -1,18 +1,51 @@
-<app-center-content>
-    <div class="welcome">
-        <div>
-            {{ 'ABOUT.GREETING_PREFIX' | translate }} <span class="fullname">{{ user.fullname }}</span>
-            {{ 'ABOUT.GREETING_SUFFIX' | translate }}
-        </div>
-        <div>
-            <span class="nickname">{{ user.name }} {{ 'ABOUT.OR' | translate }} {{ user.nickname }}</span>
-            {{ 'ABOUT.NICKNAME_SUFFIX' | translate }}
-        </div>
-    </div>
-    <div class="degree">
-        {{ user.degree | translate }}
-    </div>
-    <div class="about">
-        {{ user.about | translate }}
-    </div>
-</app-center-content>
+<section class="hero" aria-labelledby="about-title">
+  <p class="eyebrow">{{ user.degree | translate }}</p>
+  <h1 id="about-title" class="hero-title">
+    {{ 'ABOUT.GREETING_PREFIX' | translate }} {{ user.fullname }}
+  </h1>
+  <p class="hero-subtitle">
+    {{ 'ABOUT.GREETING_SUFFIX' | translate }}
+    <strong>{{ user.name }} {{ 'ABOUT.OR' | translate }} {{ user.nickname }}</strong>
+    {{ 'ABOUT.NICKNAME_SUFFIX' | translate }}
+  </p>
+  <div class="hero-actions">
+    <a class="button button-primary" [routerLink]="'/' + paths.PROFESSIONAL_EXPERIENCE">
+      {{ navKey(paths.PROFESSIONAL_EXPERIENCE) | translate }}
+      <app-icon name="arrow-right" [size]="18"></app-icon>
+    </a>
+    <a class="button button-outline" [routerLink]="'/' + paths.CONTACT">
+      {{ navKey(paths.CONTACT) | translate }}
+    </a>
+  </div>
+</section>
+
+<dl class="facts">
+  <div class="fact">
+    <dt class="fact-label">{{ 'ABOUT.FACTS.LOCATION' | translate }}</dt>
+    <dd class="fact-value">{{ user.location }}</dd>
+  </div>
+  <div class="fact">
+    <dt class="fact-label">{{ 'ABOUT.FACTS.WORK_AUTHORIZATION' | translate }}</dt>
+    <dd class="fact-value">{{ user.workAuthorization }}</dd>
+  </div>
+  <div class="fact">
+    <dt class="fact-label">{{ 'ABOUT.FACTS.LANGUAGES' | translate }}</dt>
+    <dd class="fact-value">
+      @for (language of user.languages; track language.idiom) {
+        {{ language.idiom | translate }}
+        @if (!$last) {
+          /
+        }
+      }
+    </dd>
+  </div>
+</dl>
+
+<section class="bio" aria-labelledby="bio-title">
+  <h2 id="bio-title" class="bio-title">{{ navKey(paths.ABOUT) | translate }}</h2>
+  <div class="bio-text">
+    @for (paragraph of user.about | translate | paragraphs; track $index) {
+      <p>{{ paragraph }}</p>
+    }
+  </div>
+</section>

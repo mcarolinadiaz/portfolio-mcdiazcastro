@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { CenterContent } from "../shared/center-content/center-content";
+import { SocialLinks } from '../shared/social-links/social-links';
 
 @Component({
   selector: 'app-contact',
-  imports: [CenterContent, TranslatePipe],
+  imports: [SocialLinks, TranslatePipe],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

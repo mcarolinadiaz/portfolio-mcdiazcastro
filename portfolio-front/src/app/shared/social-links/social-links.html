@@ -1,0 +1,41 @@
+@if (variant() === 'cards') {
+  <ul class="social-cards">
+    @for (network of networks; track network.name) {
+      <li>
+        <a
+          class="social-card"
+          [class.is-featured]="!network.isExternal"
+          [href]="network.url"
+          [attr.target]="network.isExternal ? '_blank' : null"
+          [attr.rel]="network.isExternal ? 'noopener' : null"
+        >
+          <span class="social-card-icon">
+            <app-icon [name]="network.icon" [size]="26"></app-icon>
+          </span>
+          <span class="social-card-text">
+            <span class="social-card-name">{{ network.name }}</span>
+            <span class="social-card-url">{{ network.displayUrl }}</span>
+          </span>
+          <app-icon class="social-card-arrow" name="arrow-up-right" [size]="22"></app-icon>
+        </a>
+      </li>
+    }
+  </ul>
+} @else {
+  <ul class="social-links" [attr.aria-label]="'FOOTER.SOCIAL_NETWORKS' | translate">
+    @for (network of networks; track network.name) {
+      <li>
+        <a
+          class="social-link"
+          [href]="network.url"
+          [attr.target]="network.isExternal ? '_blank' : null"
+          [attr.rel]="network.isExternal ? 'noopener' : null"
+          [attr.aria-label]="network.name"
+          [attr.title]="network.name"
+        >
+          <app-icon [name]="network.icon"></app-icon>
+        </a>
+      </li>
+    }
+  </ul>
+}

@@ -4,12 +4,18 @@ import { Language } from '../models/language';
 import { ProfessionalExperience } from '../models/professional-experience';
 import { ProfessionalNetwork } from '../models/professional-network';
 import { COMPANY } from '../../core/constants/companies';
+import {
+  SKILL_CATEGORIES,
+  SKILL_CATEGORY,
+  SKILL_CATEGORY_ORDER,
+} from '../../core/constants/skill-categories';
+import { SkillGroup } from '../models/skill-group';
 
 @Service()
 export class UserInformationService {
   readonly languages: Language[] = [
     { idiom: 'LANGUAGES_INFO.SPANISH', level: 'LANGUAGES_INFO.NATIVE' },
-    { idiom: 'LANGUAGES_INFO.ENGLISH', level: 'LANGUAGES_INFO.UPPER_INTERMEDIATE' },
+    { idiom: 'LANGUAGES_INFO.ENGLISH', level: 'LANGUAGES_INFO.B2' },
   ];
 
   readonly professionalExperiences: ProfessionalExperience[] = [
@@ -19,7 +25,7 @@ export class UserInformationService {
       startDate: new Date('2026-09-01'),
       endDate: null,
       description: 'EXPERIENCE.FREELANCE_SWE.DESCRIPTION',
-      stack: ['PHP', 'Laravel', 'Zend Framework', 'MariaDB', 'HTML', 'Javascript', 'CSS'],
+      stack: ['PHP', 'Laravel', 'Zend Framework', 'MariaDB', 'HTML', 'JavaScript', 'CSS'],
     },
     {
       company: COMPANY.UNICEN,
@@ -31,7 +37,7 @@ export class UserInformationService {
         { startDate: new Date('2019-04-01'), endDate: new Date('2019-09-30') },
       ],
       description: 'EXPERIENCE.UNICEN_TA.DESCRIPTION',
-      stack: [''],
+      stack: [],
     },
     {
       company: 'LIESA',
@@ -40,7 +46,7 @@ export class UserInformationService {
       endDate: new Date('2026-05-31'),
       description: 'EXPERIENCE.LIESA.DESCRIPTION',
       stack: [
-        'Angular-v18',
+        'Angular',
         'TypeScript',
         'SCSS',
         '.NET',
@@ -58,7 +64,7 @@ export class UserInformationService {
       startDate: new Date('2024-01-01'),
       endDate: new Date('2024-09-30'),
       description: 'EXPERIENCE.HMS.DESCRIPTION',
-      stack: ['Angular-v18', 'TypeScript', 'SCSS', 'JavaScript'],
+      stack: ['Angular', 'TypeScript', 'SCSS', 'JavaScript'],
     },
     {
       company: 'Freelance',
@@ -66,7 +72,7 @@ export class UserInformationService {
       startDate: new Date('2022-03-01'),
       endDate: new Date('2023-01-31'),
       description: 'EXPERIENCE.FREELANCE_FRONTEND.DESCRIPTION',
-      stack: ['Angular-v15', 'WordPress', 'PHP', 'JavaScript', 'SCSS'],
+      stack: ['Angular', 'WordPress', 'PHP', 'JavaScript', 'SCSS'],
     },
     {
       company: 'EDSA',
@@ -74,7 +80,7 @@ export class UserInformationService {
       startDate: new Date('2021-05-01'),
       endDate: new Date('2021-12-31'),
       description: 'EXPERIENCE.EDSA.DESCRIPTION',
-      stack: ['PL/SQL', 'JavaScript', 'JSP', 'Angular-v15', 'Azure'],
+      stack: ['PL/SQL', 'JavaScript', 'JSP', 'Angular', 'Azure'],
     },
     {
       company: 'Pladema',
@@ -82,7 +88,7 @@ export class UserInformationService {
       startDate: new Date('2020-08-01'),
       endDate: new Date('2021-05-31'),
       description: 'EXPERIENCE.PLADEMA_FRONTEND.DESCRIPTION',
-      stack: ['Angular-v11', 'HTML', 'SCSS', 'TypeScript'],
+      stack: ['Angular', 'HTML', 'SCSS', 'TypeScript'],
     },
     {
       company: 'Pladema',
@@ -90,7 +96,7 @@ export class UserInformationService {
       startDate: new Date('2019-08-01'),
       endDate: new Date('2020-08-31'),
       description: 'EXPERIENCE.PLADEMA_INTERN.DESCRIPTION',
-      stack: ['Python', 'Yolov3', 'TensorFlow', 'Javascript'],
+      stack: ['Python', 'Yolov3', 'TensorFlow', 'JavaScript'],
     },
   ];
 
@@ -98,17 +104,17 @@ export class UserInformationService {
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/mariacarolinadiaz/',
-      icon: 'assets/icons-linkedin.svg',
+      icon: 'linkedin',
     },
     {
       name: 'GitHub',
       url: 'https://github.com/mcarolinadiaz',
-      icon: 'assets/icons-github.svg',
+      icon: 'github',
     },
     {
       name: 'Email',
       url: 'mailto:diazmariacarolina6@gmail.com',
-      icon: 'assets/icons-email.svg',
+      icon: 'email',
     },
   ];
 
@@ -182,14 +188,6 @@ export class UserInformationService {
     return this.professionalNetworks;
   }
 
-  getContactInformation(): { email: string; location: string; workAuthorization: string } {
-    return {
-      email: this.user().email,
-      location: this.user().location,
-      workAuthorization: this.user().workAuthorization,
-    };
-  }
-
   getTechnicalSkills(): string[] {
     let stack: string[] = [];
     this.professionalExperiences.forEach((experience) => {
@@ -201,6 +199,16 @@ export class UserInformationService {
     });
     stack.push('Claude', 'Github Copilot', 'Opencode');
     return stack;
+  }
+
+  getTechnicalSkillGroups(): SkillGroup[] {
+    const skills = this.getTechnicalSkills();
+    return SKILL_CATEGORY_ORDER.map((category) => ({
+      category,
+      skills: skills.filter(
+        (skill) => (SKILL_CATEGORIES[skill] ?? SKILL_CATEGORY.OTHER) === category,
+      ),
+    })).filter((group) => group.skills.length > 0);
   }
 
   getEducation(): ProfessionalExperience {

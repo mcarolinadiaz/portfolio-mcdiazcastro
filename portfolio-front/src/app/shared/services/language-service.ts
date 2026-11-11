@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { inject, PLATFORM_ID, Service, signal } from '@angular/core';
+import { DOCUMENT, inject, PLATFORM_ID, Service, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 export type SupportedLanguage = 'en' | 'es';
@@ -9,12 +9,18 @@ export const LANGUAGE = {
   SPANISH: 'es',
 } as const satisfies Record<string, SupportedLanguage>;
 
+export const LANGUAGE_LOCALE: Record<SupportedLanguage, string> = {
+  [LANGUAGE.ENGLISH]: 'en-US',
+  [LANGUAGE.SPANISH]: 'es-AR',
+};
+
 const LANGUAGE_STORAGE_KEY = 'portfolio-language';
 
 @Service()
 export class LanguageService {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly translate = inject(TranslateService);
+  private readonly document = inject(DOCUMENT);
 
   readonly activeLanguage = signal<SupportedLanguage>(LANGUAGE.ENGLISH);
 
@@ -31,6 +37,7 @@ export class LanguageService {
 
   setLanguage(language: SupportedLanguage): void {
     this.activeLanguage.set(language);
+    this.document.documentElement.lang = language;
 
     if (!isPlatformBrowser(this.platformId)) {
       return;

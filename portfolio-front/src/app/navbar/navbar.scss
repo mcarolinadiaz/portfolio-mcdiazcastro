@@ -1,29 +1,42 @@
-.navbar {
-    --bs-navbar-padding-x: 0;
-    .navbar-container {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            .navbar-title {
-                font-weight: 900;
-                font-size: larger;
-                transition: font-weight 0.5s, font-size 0.5s;
-            }
-            .navbar-title:hover {
-                font-weight: 500;
-                font-size: xx-larger;
-                transition: font-weight 0.5s, font-size 0.5s;
-            }
-        }
-        .navbar-menu {
-            margin-left: auto;
-        }
-    }
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--touch-target);
+  color: var(--color-text-on-dark);
+  text-decoration: none;
 
+  &:hover {
+    color: var(--color-white);
+  }
+}
 
+.brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-family: var(--font-family-heading);
+  font-size: 2.47rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
 
+.navbar-title {
+  font-family: var(--font-family-heading);
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}

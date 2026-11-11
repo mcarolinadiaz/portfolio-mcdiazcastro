@@ -33,29 +33,10 @@ describe('Navbar', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should read the deepest active route title instead of the app root route', () => {
-    const deepestRoute = {
-      snapshot: { title: 'Carolina Díaz | Professional Experience', data: {} },
-      routeConfig: { path: 'professional-experience' },
-      children: [],
-      firstChild: null,
-    };
-    const childRoute = {
-      snapshot: { title: undefined, data: {} },
-      routeConfig: undefined,
-      children: [deepestRoute],
-      firstChild: deepestRoute,
-    };
-    const routeTree = {
-      snapshot: { title: undefined, data: {} },
-      routeConfig: undefined,
-      children: [childRoute],
-      firstChild: childRoute,
-    };
+  it('should render the brand as a link to the home page', () => {
+    const brand = fixture.nativeElement.querySelector('.brand') as HTMLAnchorElement;
 
-    (component as any).activatedRoute = routeTree;
-    (component as any).updateSectionTitle();
-
-    expect(component.sectionTitle()).toBe('NAV.PROFESSIONAL_EXPERIENCE');
+    expect(brand.getAttribute('href')).toBe('/');
+    expect(brand.querySelector('.navbar-title')?.textContent).toContain('Carolina Díaz');
   });
 });

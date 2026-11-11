@@ -1,0 +1,100 @@
+$space-indigo: #2b2d42;
+$lavender-grey: #8d99ae;
+$platinum: #edf2f4;
+$punch-red: #ef233c;
+$flag-red: #d90429;
+$flag-red-dark: #ae0321;
+
+$pure-white: #ffffff;
+
+$slate-text: #3b3e54;
+$slate-muted: #555b6e;
+$indigo-raised: #3a3d56;
+$indigo-border: #5c6178;
+$mist: #c9d1dc;
+$rose-on-dark: #ff8a98;
+
+$font-family-body:
+  'Inter',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  sans-serif;
+$font-family-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+
+:root {
+  --color-space-indigo: #{$space-indigo};
+  --color-lavender-grey: #{$lavender-grey};
+  --color-white: #{$pure-white};
+
+  --color-bg: #{$platinum};
+  --color-surface: #{$pure-white};
+  --color-surface-dark: #{$space-indigo};
+  --color-surface-dark-raised: #{$indigo-raised};
+
+  --color-text: #{$space-indigo};
+  --color-text-body: #{$slate-text};
+  --color-text-muted: #{$slate-muted};
+  --color-text-on-dark: #{$platinum};
+  --color-text-on-dark-muted: #{$mist};
+
+  --color-accent: #{$flag-red};
+  --color-accent-hover: #{$flag-red-dark};
+  --color-accent-decorative: #{$punch-red};
+  --color-accent-on-dark: #{$rose-on-dark};
+
+  --color-border: #{$mist};
+  --color-border-on-dark: #{$indigo-border};
+  --color-overlay: rgb(43 45 66 / 60%);
+
+  --font-family-body: #{$font-family-body};
+  --font-family-heading: #{$font-family-heading};
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.0625rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: clamp(1.875rem, 1.25rem + 2vw, 2.5rem);
+  --font-size-4xl: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+  --font-size-display: clamp(2.5rem, 1.25rem + 5vw, 4.5rem);
+
+  --line-height-tight: 1.05;
+  --line-height-heading: 1.15;
+  --line-height-body: 1.65;
+  --line-height-relaxed: 1.75;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-eyebrow: 0.08em;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  --container-max-width: 1200px;
+  --touch-target: 44px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  --shadow-popover: 0 16px 48px rgb(43 45 66 / 30%);
+
+  --transition-fast: 0.2s ease;
+}

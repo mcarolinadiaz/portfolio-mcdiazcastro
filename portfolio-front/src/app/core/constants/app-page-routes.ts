@@ -10,29 +10,36 @@ export interface AppPageRoute extends NavigationRoute {
   readonly loadComponent: Route['loadComponent'];
 }
 
+export const APP_PAGE_PATHS = {
+  ABOUT: '',
+  PROFESSIONAL_EXPERIENCE: 'professional-experience',
+  EDUCATION: 'education',
+  CONTACT: 'keep-in-touch',
+} as const;
+
 export const APP_PAGE_ROUTES: readonly AppPageRoute[] = [
   {
-    path: '',
+    path: APP_PAGE_PATHS.ABOUT,
     loadComponent: () => import('../../about/about').then((m) => m.About),
-    title: getNavTranslationKey(''),
+    title: getNavTranslationKey(APP_PAGE_PATHS.ABOUT),
   },
   {
-    path: 'professional-experience',
+    path: APP_PAGE_PATHS.PROFESSIONAL_EXPERIENCE,
     loadComponent: () =>
       import('../../professional-experience/professional-experience').then(
         (m) => m.ProfessionalExperience,
       ),
-    title: getNavTranslationKey('professional-experience'),
+    title: getNavTranslationKey(APP_PAGE_PATHS.PROFESSIONAL_EXPERIENCE),
   },
   {
-    path: 'education',
+    path: APP_PAGE_PATHS.EDUCATION,
     loadComponent: () => import('../../education/education').then((m) => m.Education),
-    title: getNavTranslationKey('education'),
+    title: getNavTranslationKey(APP_PAGE_PATHS.EDUCATION),
   },
   {
-    path: 'keep-in-touch',
+    path: APP_PAGE_PATHS.CONTACT,
     loadComponent: () => import('../../contact/contact').then((m) => m.Contact),
-    title: getNavTranslationKey('keep-in-touch'),
+    title: getNavTranslationKey(APP_PAGE_PATHS.CONTACT),
   },
 ];
 

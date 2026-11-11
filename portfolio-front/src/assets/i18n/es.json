@@ -5,34 +5,55 @@
     "EDUCATION": "Educación",
     "KEEP_IN_TOUCH": "Contacto",
     "EN": "ING",
-    "SP": "ESP"
+    "SP": "ESP",
+    "OPEN_MENU": "Abrir menú",
+    "CLOSE_MENU": "Cerrar menú",
+    "SKIP_TO_CONTENT": "Saltar al contenido"
   },
   "LANGUAGE": {
-    "SELECTOR": "Seleccionar idioma"  },
+    "SELECTOR": "Seleccionar idioma"
+  },
   "COMMON": {
     "PRESENT": "Presente"
   },
   "ABOUT": {
-    "GREETING_PREFIX": "¡Hola! Soy",
+    "GREETING_PREFIX": "Hola, soy",
     "GREETING_SUFFIX": "pero podés llamarme",
     "OR": "o",
     "NICKNAME_SUFFIX": "para abreviar.",
     "DEGREE": "Ingeniera de sistemas",
-    "BIO": "\u00a1Hola! Soy Caro y soy ingeniera de software. Tengo experiencia en desarrollo de software y conocimientos tanto en frontend como en backend. Cuando me enfrento a nuevos desaf\u00edos, comienzo con un an\u00e1lisis exhaustivo y hago las preguntas necesarias desde el principio, para que los requisitos queden claros antes de empezar. Me gusta colaborar en proyectos donde pueda aportar mis ideas y compartir mis conocimientos con otros. Me considero una persona curiosa, as\u00ed que me encanta aprender cosas nuevas y mantenerme al d\u00eda con las \u00faltimas tendencias en tecnolog\u00eda.\n\nA lo largo de mi carrera trabaj\u00e9 de forma colaborativa con equipos de investigaci\u00f3n como Pladema, f\u00e1bricas de software como EDSA, una empresa argentina de salud digital como Health Management Solutions (HMS) y una empresa de productos de distribuci\u00f3n el\u00e9ctrica como LIESA. En mi primera experiencia laboral, trabaj\u00e9 como pasante en Pladema en un equipo de investigaci\u00f3n realizando \u201cpruebas y an\u00e1lisis de plataformas de IA\u201d. En ese rol, gan\u00e9 el 1er premio en las JAIIO 49, Concurso EST, con \u201cAn\u00e1lisis y Dise\u00f1o de Algoritmos para Video Synopsis\u201d. Adem\u00e1s, trabaj\u00e9 como desarrolladora de software freelance, lo que me dio m\u00e1s autonom\u00eda y me ayud\u00f3 a ser m\u00e1s proactiva en mi trabajo. Finalmente, complet\u00e9 un proyecto de tesis llamado \u201cDetecci\u00f3n de Bad Smells en Aplicaciones basadas en Microservicios\u201d en la UNICEN.\n\nActualmente, trabajo como ingeniera de software colaborando en la plataforma de la Escuela de Natha Yoga y ense\u00f1o como ayudante de c\u00e1tedra en la UNICEN. Mi primera experiencia como ayudante de c\u00e1tedra comenz\u00f3 en 2019, y desde entonces dict\u00e9 varias materias a lo largo de los a\u00f1os. Me gusta ser mentora de otras personas.\n\nEn mi tiempo libre, pod\u00e9s encontrarme haciendo senderismo, andando en bicicleta, haciendo cer\u00e1mica o bailando tango. Adem\u00e1s, me encanta leer novelas de ciencia ficci\u00f3n o fantas\u00eda. Algunos de mis autores favoritos actuales son Brandon Sanderson y Solvej Balle. Es muy importante para m\u00ed estar cerca de las personas que quiero, as\u00ed que me encanta pasar tiempo con amigos, familia y mi pareja."
+    "FACTS": {
+      "LOCATION": "Ubicación",
+      "WORK_AUTHORIZATION": "Autorización laboral",
+      "LANGUAGES": "Idiomas"
+    },
+    "BIO": "\u00a1Hola! Soy Caro y soy ingeniera de sistemas. Tengo experiencia en desarrollo de software y conocimientos tanto en frontend como en backend. Cuando me enfrento a nuevos desaf\u00edos, comienzo con un an\u00e1lisis exhaustivo y hago las preguntas necesarias desde el principio, para que los requisitos queden claros antes de empezar. Me gusta colaborar en proyectos donde pueda aportar mis ideas y compartir mis conocimientos con otros. Me considero una persona curiosa, as\u00ed que me encanta aprender cosas nuevas y mantenerme al d\u00eda con las \u00faltimas tendencias en tecnolog\u00eda.\n\nA lo largo de mi carrera trabaj\u00e9 de forma colaborativa con equipos de investigaci\u00f3n como Pladema, f\u00e1bricas de software como EDSA, una empresa argentina de salud digital como Health Management Solutions (HMS) y una empresa de productos de distribuci\u00f3n el\u00e9ctrica como LIESA. En mi primera experiencia laboral, trabaj\u00e9 como pasante en Pladema en un equipo de investigaci\u00f3n realizando \u201cpruebas y an\u00e1lisis de plataformas de IA\u201d. En ese rol, gan\u00e9 el 1er premio en las JAIIO 49, Concurso EST, con \u201cAn\u00e1lisis y Dise\u00f1o de Algoritmos para Video Synopsis\u201d. Adem\u00e1s, trabaj\u00e9 como desarrolladora de software freelance, lo que me dio m\u00e1s autonom\u00eda y me ayud\u00f3 a ser m\u00e1s proactiva en mi trabajo. Finalmente, complet\u00e9 un proyecto de tesis llamado \u201cDetecci\u00f3n de Bad Smells en Aplicaciones basadas en Microservicios\u201d en la UNICEN.\n\nActualmente, trabajo como ingeniera de sistemas colaborando en la plataforma de la Escuela de Natha Yoga y ense\u00f1o como ayudante de c\u00e1tedra en la UNICEN. Mi primera experiencia como ayudante de c\u00e1tedra comenz\u00f3 en 2019, y desde entonces dict\u00e9 varias materias a lo largo de los a\u00f1os. Me gusta ser mentora de otras personas.\n\nEn mi tiempo libre, pod\u00e9s encontrarme haciendo senderismo, andando en bicicleta, haciendo cer\u00e1mica o bailando tango. Adem\u00e1s, me encanta leer novelas de ciencia ficci\u00f3n o fantas\u00eda. Algunos de mis autores favoritos actuales son Brandon Sanderson y Solvej Balle. Es muy importante para m\u00ed estar cerca de las personas que quiero, as\u00ed que me encanta pasar tiempo con amigos, familia y mi pareja."
   },
   "CONTACT": {
     "TITLE": "Mantengamos el contacto!",
     "SUBTITLE": "Me encantar\u00eda saber de vos! No dudes en contactarme a trav\u00e9s de cualquiera de las redes de debajo."
   },
   "EDUCATION_PAGE": {
-    "EDUCATION_SECTION": "Educaci\u00f3n",
     "TECHNICAL_SKILLS_SECTION": "Habilidades t\u00e9cnicas",
     "CERTIFICATIONS_SECTION": "Certificaciones",
-    "LANGUAGES_SECTION": "Idiomas"
+    "LANGUAGES_SECTION": "Idiomas",
+    "DEGREE_LABEL": "Título de grado",
+    "SKILL_GROUPS": {
+      "FRONTEND": "Frontend",
+      "BACKEND": "Backend",
+      "DATA_INFRA": "Datos e infraestructura",
+      "AI_TOOLS": "IA y herramientas",
+      "OTHER": "Otras"
+    }
   },
   "EDUCATION_DEGREE": {
     "POSITION": "Ingenier\u00eda en Software",
     "DESCRIPTION": "Tesis: Detecci\u00f3n de Bad Smells en Aplicaciones basadas en Microservicios - Tecnolog\u00edas: Java, Maven, Spring Boot, Docker. Este trabajo presenta un proceso para el an\u00e1lisis y detecci\u00f3n del bad smell Shared Library (SL), que ocurre cuando m\u00faltiples microservicios dependen de la misma librer\u00eda, utilizando la herramienta de an\u00e1lisis est\u00e1tico MSANose combinada con t\u00e9cnicas de Inteligencia Artificial (IA)."
+  },
+  "EXPERIENCE_PAGE": {
+    "DOWNLOAD_CV": "Descargar CV",
+    "TERMS": "Períodos",
+    "STACK": "Tecnologías"
   },
   "EXPERIENCE": {
     "FREELANCE_SWE": {
@@ -90,14 +111,26 @@
     "SPANISH": "Espa\u00f1ol",
     "ENGLISH": "Ingl\u00e9s",
     "NATIVE": "Nativo",
-    "UPPER_INTERMEDIATE": "Intermedio alto"
+    "B2": "B2"
   },
   "FOOTER": {
-    "INTRO": "Dise\u00f1ado por m\u00ed misma, programado en",
+    "INTRO": "Programado por mí en",
     "WITH": "con",
     "AND": "y",
     "TESTED_WITH": ", probado con",
     "USED": ", us\u00e9",
     "ACCELERATE_DEPLOY": "para acelerar el proceso y desplegado con",
-    "YEAR": "- 2026."  }
+    "YEAR": "- 2026.",
+    "SOCIAL_NETWORKS": "Redes sociales"
+  },
+  "LEGACY": {
+    "OPEN_PREVIEW": "Ver versión 1",
+    "PREVIEW": "Vista previa de la versión 1",
+    "CLOSE_PREVIEW": "Cerrar vista previa",
+    "OPEN_SITE": "Abrir versión 1 en una pestaña nueva"
+  },
+  "SEO": {
+    "DESCRIPTION": "Ingeniera de sistemas de Tandil, Argentina, con experiencia en desarrollo de software y conocimientos tanto en frontend como en backend.",
+    "SHARE_IMAGE_ALT": "María Carolina Díaz Castro, ingeniera de sistemas de Tandil, Buenos Aires, Argentina"
+  }
 }

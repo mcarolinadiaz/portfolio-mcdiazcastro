@@ -1,24 +1,28 @@
 .language-selector {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--color-border-on-dark);
+  border-radius: var(--radius-pill);
 }
 
 .language-button {
+  min-height: 38px;
+  padding: 0 var(--space-3);
   border: 0;
+  border-radius: var(--radius-pill);
   background: transparent;
-  color: var(--color-punch-red);
-  font-size: inherit;
-  padding: 0;
-}
+  color: var(--color-text-on-dark-muted);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
 
-.language-button:hover {
-  color: var(--color-flag-red);
-}
+  &:hover {
+    color: var(--color-white);
+  }
 
-.language-button.active {
-  color: var(--color-flag-red);
-  font-weight: 700;
+  &.active {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
 }

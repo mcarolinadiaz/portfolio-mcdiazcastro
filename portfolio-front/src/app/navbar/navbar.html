@@ -1,21 +1,7 @@
-<nav class="navbar">
-  <div class="navbar-container">
-      <div class="navbar-brand">
-        <div class="navbar-title">
-          @if (!responsiveService.isMobile()) {
-              {{ title }}
-          } @else {
-            {{ mobileTitle }}
-          }
-        </div>
-      </div>
-      @if (responsiveService.isMobile()) {
-        <div class="navbar-section">
-              {{ sectionTitle() | translate }}
-        </div>
-      }
-      <div class="navbar-menu">
-        <app-dropdown-menu></app-dropdown-menu>
-      </div>
-    </div>
+<nav class="site-nav">
+  <a class="brand" routerLink="/">
+    <span class="brand-mark" aria-hidden="true">{{ brandInitial }}</span>
+    <span class="navbar-title">{{ title }}</span>
+  </a>
+  <app-dropdown-menu></app-dropdown-menu>
 </nav>

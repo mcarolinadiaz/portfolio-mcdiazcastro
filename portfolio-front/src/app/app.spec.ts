@@ -27,6 +27,26 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
+  it('should let keyboard users reach the scrollable page area', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const main = (fixture.nativeElement as HTMLElement).querySelector('main');
+
+    expect(main?.getAttribute('tabindex')).toBe('0');
+  });
+
+  it('should move the focus to the page with the skip link', async () => {
+    const fixture = TestBed.createComponent(App);
+    document.body.appendChild(fixture.nativeElement);
+    await fixture.whenStable();
+    const element = fixture.nativeElement as HTMLElement;
+
+    element.querySelector<HTMLButtonElement>('.skip-link')!.click();
+
+    expect(document.activeElement).toBe(element.querySelector('main'));
+    fixture.nativeElement.remove();
+  });
+
   it('should render the navbar', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();

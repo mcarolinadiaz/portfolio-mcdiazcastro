@@ -1,5 +1,20 @@
-<div class="pe-container">
-    @for (professionalExperience of professionalExperiences; track professionalExperience) {
-        <app-card-information [professionalExperience]="professionalExperience"></app-card-information>
+<section class="experience-page" aria-labelledby="experience-title">
+  <header class="page-header">
+    <div class="page-heading">
+      <p class="eyebrow">{{ firstYear }} – {{ 'COMMON.PRESENT' | translate }}</p>
+      <h1 id="experience-title" class="page-title">{{ titleKey | translate }}</h1>
+    </div>
+    <a class="button button-outline" [href]="curriculumPath()" [attr.download]="curriculumFileName">
+      <app-icon name="download" [size]="18"></app-icon>
+      {{ 'EXPERIENCE_PAGE.DOWNLOAD_CV' | translate }}
+    </a>
+  </header>
+
+  <ol class="timeline">
+    @for (entry of entries(); track $index; let last = $last) {
+      <li>
+        <app-experience-item [entry]="entry" [isLast]="last"></app-experience-item>
+      </li>
     }
-</div>
+  </ol>
+</section>

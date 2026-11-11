@@ -1,0 +1,53 @@
+<button
+  #previewToggle
+  class="legacy-toggle"
+  type="button"
+  [attr.aria-expanded]="isOpen()"
+  [attr.aria-controls]="previewId"
+  [attr.aria-label]="'LEGACY.OPEN_PREVIEW' | translate"
+  [attr.title]="'LEGACY.OPEN_PREVIEW' | translate"
+  (click)="toggle()"
+>
+  <app-icon name="history"></app-icon>
+</button>
+
+@if (isOpen()) {
+  <section class="legacy-card" [id]="previewId" [attr.aria-label]="'LEGACY.PREVIEW' | translate">
+    <header class="legacy-card-header">
+      <span class="legacy-host">{{ legacySite.host }}</span>
+      <button
+        class="legacy-close"
+        type="button"
+        [attr.aria-label]="'LEGACY.CLOSE_PREVIEW' | translate"
+        (click)="closeAndFocusToggle()"
+      >
+        <app-icon name="close" [size]="18"></app-icon>
+      </button>
+    </header>
+
+    @let screenshot =
+      responsiveService.isMobile() ? legacySite.screenshots.mobile : legacySite.screenshots.desktop;
+    <a
+      class="legacy-thumb"
+      [class.overlay-visible]="responsiveService.isMobile()"
+      [href]="legacySite.url"
+      target="_blank"
+      rel="noopener"
+      [attr.aria-label]="'LEGACY.OPEN_SITE' | translate"
+    >
+      <img
+        class="legacy-thumb-img"
+        [src]="screenshot.src"
+        [width]="screenshot.width"
+        [height]="screenshot.height"
+        alt=""
+      />
+      <span class="legacy-overlay" aria-hidden="true">
+        <span class="legacy-badge">
+          {{ legacySite.badge }}
+          <app-icon name="external" [size]="22"></app-icon>
+        </span>
+      </span>
+    </a>
+  </section>
+}

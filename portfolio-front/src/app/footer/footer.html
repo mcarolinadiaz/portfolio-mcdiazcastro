@@ -1,18 +1,16 @@
 <footer class="footer">
-    <div class="footer-text">
-        {{ 'FOOTER.INTRO' | translate }}
-        <a [href]="vscSite()">Visual Studio Code</a> {{ 'FOOTER.WITH' | translate }}
-        <a [href]="angularSite()">Angular v22</a> {{ 'FOOTER.AND' | translate }}
-        <a [href]="bootstrapSite()">Bootstrap v5</a>{{ 'FOOTER.TESTED_WITH' | translate }}
-        <a [href]="vitestSite()">Vitest</a>{{ 'FOOTER.USED' | translate }}
-        <a [href]="copilotSite()">Github Copilot</a> {{ 'FOOTER.ACCELERATE_DEPLOY' | translate }}
-        <a [href]="vercelSite()">Vercel</a> {{ 'FOOTER.YEAR' | translate }}
-    </div>
-    <div class="footer-content">
-        @for (network of professionalNetworks; track network) {
-            <a [href]="network.url" target="_blank">
-                <img class="icon-img" [src]="network.icon" [alt]="network.name">
-            </a>
-        }
-    </div>
+  <p class="footer-text">
+    {{ 'FOOTER.INTRO' | translate }}
+    <a [href]="vscSite()">Visual Studio Code</a> {{ 'FOOTER.WITH' | translate }}
+    <a [href]="angularSite()">Angular v22</a>{{ 'FOOTER.TESTED_WITH' | translate }}
+    <a [href]="vitestSite()">Vitest</a>{{ 'FOOTER.USED' | translate }}
+    <a [href]="claudeSite()">Claude</a> {{ 'FOOTER.AND' | translate }}
+    <a [href]="copilotSite()">Github Copilot</a> {{ 'FOOTER.ACCELERATE_DEPLOY' | translate }}
+    <a [href]="vercelSite()">Vercel</a> {{ 'FOOTER.YEAR' | translate }}
+  </p>
+  <div class="footer-actions">
+    <app-social-links></app-social-links>
+    <span class="footer-divider" aria-hidden="true"></span>
+    <app-legacy-preview></app-legacy-preview>
+  </div>
 </footer>

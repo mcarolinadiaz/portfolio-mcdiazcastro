@@ -1,25 +1,64 @@
+@use '../styles/breakpoints' as bp;
+
 :host {
   display: block;
-  min-height: 100vh;
 }
 
 .app-container {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   height: 100vh;
-  width: min(100%, 1200px);
-  margin-inline: auto;
-  padding: 2rem 1rem;
+  height: 100dvh;
 }
 
-.page-container:has(.center-page-container) {
-  display: flex;
-  align-items: safe center;
+.skip-link {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 100;
+  min-height: var(--touch-target);
+  padding: 0 var(--space-5);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-weight: var(--font-weight-semibold);
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: none;
+  }
+}
+
+.app-header {
+  position: relative;
+  z-index: 10;
+  padding-block: var(--space-4);
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+}
+
+.app-footer {
+  position: relative;
+  z-index: 10;
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+}
+
+.app-section-inner,
+.page-content {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
 }
 
 .page-container {
-  flex: 1;
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+
   min-height: 0;
 
   overflow-x: hidden;
@@ -34,12 +73,12 @@
 
   &::-webkit-scrollbar-track {
     background: transparent;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
   }
 
   &::-webkit-scrollbar-thumb {
     background: var(--color-lavender-grey);
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
   }
 
   &::-webkit-scrollbar-thumb:hover {
@@ -53,14 +92,49 @@
   }
 }
 
-@media (min-width: 768px) {
+.page-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+@media (max-width: bp.$mobile-max), (max-height: bp.$short-screen-max-height) {
   .app-container {
-    padding-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .app-header {
+    position: sticky;
+    top: 0;
+  }
+
+  .page-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .page-content {
+    flex: 1;
+    min-height: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-section-inner,
+  .page-content {
+    padding-inline: var(--space-6);
   }
 }
 
 @media (min-width: 1200px) {
-  .app-container {
-    padding-inline: 3rem;
+  .app-section-inner,
+  .page-content {
+    padding-inline: var(--space-7);
   }
 }

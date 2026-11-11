@@ -1,7 +1,20 @@
 <div class="app-container">
-    <app-navbar></app-navbar>
-    <div class="page-container">
-        <router-outlet></router-outlet>
+  <button type="button" class="skip-link" (click)="focusMainContent()">
+    {{ 'NAV.SKIP_TO_CONTENT' | translate }}
+  </button>
+  <header class="app-header">
+    <div class="app-section-inner">
+      <app-navbar></app-navbar>
     </div>
-    <app-footer></app-footer>
+  </header>
+  <main #pageContainer class="page-container" tabindex="0">
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <div class="app-footer">
+    <div class="app-section-inner">
+      <app-footer></app-footer>
+    </div>
+  </div>
 </div>

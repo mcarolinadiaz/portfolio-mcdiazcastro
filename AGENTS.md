@@ -114,6 +114,9 @@ configured in `.prettierrc` but has no npm script.
   `.page-title`, `.button` + `.button-primary`/`.button-outline`, and
   `.tag-list` + `.tag`/`.tag-outline` for technology chips. Add a class there
   when a second page needs it instead of copying it into another component.
+  Button labels never wrap (`white-space: nowrap`): put buttons in a
+  `flex-wrap: wrap` row with `flex: 1 1 auto` so they sit side by side while
+  both labels fit and stack full-width otherwise.
 - Follow `.editorconfig` and Prettier: 2-space indentation, single-quoted
   TypeScript strings, UTF-8, final newlines, and a 100-character print width.
 - Use semantic HTML elements for structure, and keep `div`/`span` only for
@@ -217,3 +220,12 @@ configured in `.prettierrc` but has no npm script.
     transitions and animations.
   - Interactive targets are at least `--touch-target` (44px) and every
     icon-only control has an `aria-label`.
+- 2026-11-11: On mobile widths (`$mobile-max`) and on short viewports
+  (`max-height` below `$short-screen-max-height`, 700px, in
+  `_breakpoints.scss`) only the header stays fixed (`position: sticky`): the
+  whole document scrolls and the footer comes after the content, because the
+  mobile footer (~160px) would take too much of the screen. Desktop screens
+  of normal height keep the fixed header + footer with `<main>` scrolling.
+  `App` resets both scroll positions on navigation, and `LegacyPreview` sizes
+  its mobile screenshot with the viewport height so the card fits between
+  the header and the footer.

@@ -111,8 +111,9 @@
     font-size: var(--font-size-md);
   }
 
-  .hero-actions {
-    flex-direction: column;
+  // Side by side while both labels fit on one line, stacked full-width otherwise.
+  .hero-actions .button {
+    flex: 1 1 auto;
   }
 
   .facts {

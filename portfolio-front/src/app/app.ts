@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, inject, viewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DOCUMENT,
+  ElementRef,
+  inject,
+  viewChild,
+} from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -17,6 +24,7 @@ const PAGE_TOP = 0;
 })
 export class App {
   private readonly router = inject(Router);
+  private readonly document = inject(DOCUMENT);
   private readonly pageContainer = viewChild.required<ElementRef<HTMLElement>>('pageContainer');
   private isFirstNavigation = true;
 
@@ -27,9 +35,13 @@ export class App {
         takeUntilDestroyed(),
       )
       .subscribe(() => {
-        // The page area is the scroll container (not the window), so the router's
-        // scroll restoration does not apply: reset it on every navigation.
+        // The router's scroll restoration only handles the window. The page scrolls
+        // inside <main> on regular screens and in the whole document on short
+        // screens (see app.scss), so reset both on every navigation.
         this.pageContainer().nativeElement.scrollTop = PAGE_TOP;
+        if (this.document.scrollingElement) {
+          this.document.scrollingElement.scrollTop = PAGE_TOP;
+        }
 
         // After an in-app navigation, move focus to the new page so screen readers
         // announce it and keyboard users continue from its content.

@@ -5,3 +5,7 @@
 // without emitting CSS.
 
 $mobile-max: 873.98px;
+
+// Short viewports (small phones, landscape phones, short browser windows): the
+// footer stops being fixed so the content gets the whole screen below the header.
+$short-screen-max-height: 699.98px;

@@ -125,9 +125,11 @@
     width: auto;
   }
 
-  // The full mobile screenshot is taller than the screen: show its top part.
+  // The full mobile screenshot is taller than the screen: show its top part, as
+  // tall as possible while the whole card still fits between the sticky header
+  // (80px) and the footer (~160px) once scrolled to the end.
   .legacy-thumb-img {
-    height: 340px;
+    height: clamp(120px, calc(100dvh - 360px), 340px);
     object-fit: cover;
     object-position: top center;
   }

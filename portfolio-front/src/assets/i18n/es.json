@@ -128,5 +128,9 @@
     "PREVIEW": "Vista previa de la versión 1",
     "CLOSE_PREVIEW": "Cerrar vista previa",
     "OPEN_SITE": "Abrir versión 1 en una pestaña nueva"
+  },
+  "SEO": {
+    "DESCRIPTION": "Ingeniera de sistemas de Tandil, Argentina, con experiencia en desarrollo de software y conocimientos tanto en frontend como en backend.",
+    "SHARE_IMAGE_ALT": "María Carolina Díaz Castro, ingeniera de sistemas de Tandil, Buenos Aires, Argentina"
   }
 }

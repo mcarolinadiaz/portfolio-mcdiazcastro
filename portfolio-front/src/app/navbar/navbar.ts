@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SITE } from '../core/constants/site';
 import { DropdownMenu } from './dropdown-menu/dropdown-menu';
 
 @Component({
@@ -10,6 +11,6 @@ import { DropdownMenu } from './dropdown-menu/dropdown-menu';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Navbar {
-  protected readonly title: string = 'Carolina Díaz';
+  protected readonly title: string = SITE.name;
   protected readonly brandInitial: string = 'C';
 }

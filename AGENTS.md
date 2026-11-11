@@ -264,3 +264,11 @@ before committing so every file keeps the same formatting.
   - `LegacyPreview` and `DropdownMenu` absolutely position their panels
     against `.footer` and `.app-header`, which is why those are positioned
     with a `z-index` above the page.
+- 2026-11-11: SEO and share card. `TranslatedTitleStrategy` calls
+  `PageMetadataService.update(title, path)` on every navigation and language
+  change, which sets the meta description (`SEO.DESCRIPTION`), Open Graph and
+  `twitter:` tags and the canonical link. The production URL, site name
+  (also used by the navbar and the title) and share image live in
+  `core/constants/site.ts` (`SITE`); the image is `public/og-image.png`
+  (1200×630, dark variant of the brand). Crawlers don't run JavaScript, so
+  shared links show the prerendered English metadata.

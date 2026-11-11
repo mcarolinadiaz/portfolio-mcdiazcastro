@@ -46,7 +46,7 @@ export class UserInformationService {
       endDate: new Date('2026-05-31'),
       description: 'EXPERIENCE.LIESA.DESCRIPTION',
       stack: [
-        'Angular-v18',
+        'Angular',
         'TypeScript',
         'SCSS',
         '.NET',
@@ -64,7 +64,7 @@ export class UserInformationService {
       startDate: new Date('2024-01-01'),
       endDate: new Date('2024-09-30'),
       description: 'EXPERIENCE.HMS.DESCRIPTION',
-      stack: ['Angular-v18', 'TypeScript', 'SCSS', 'JavaScript'],
+      stack: ['Angular', 'TypeScript', 'SCSS', 'JavaScript'],
     },
     {
       company: 'Freelance',
@@ -72,7 +72,7 @@ export class UserInformationService {
       startDate: new Date('2022-03-01'),
       endDate: new Date('2023-01-31'),
       description: 'EXPERIENCE.FREELANCE_FRONTEND.DESCRIPTION',
-      stack: ['Angular-v15', 'WordPress', 'PHP', 'JavaScript', 'SCSS'],
+      stack: ['Angular', 'WordPress', 'PHP', 'JavaScript', 'SCSS'],
     },
     {
       company: 'EDSA',
@@ -80,7 +80,7 @@ export class UserInformationService {
       startDate: new Date('2021-05-01'),
       endDate: new Date('2021-12-31'),
       description: 'EXPERIENCE.EDSA.DESCRIPTION',
-      stack: ['PL/SQL', 'JavaScript', 'JSP', 'Angular-v15', 'Azure'],
+      stack: ['PL/SQL', 'JavaScript', 'JSP', 'Angular', 'Azure'],
     },
     {
       company: 'Pladema',
@@ -88,7 +88,7 @@ export class UserInformationService {
       startDate: new Date('2020-08-01'),
       endDate: new Date('2021-05-31'),
       description: 'EXPERIENCE.PLADEMA_FRONTEND.DESCRIPTION',
-      stack: ['Angular-v11', 'HTML', 'SCSS', 'TypeScript'],
+      stack: ['Angular', 'HTML', 'SCSS', 'TypeScript'],
     },
     {
       company: 'Pladema',

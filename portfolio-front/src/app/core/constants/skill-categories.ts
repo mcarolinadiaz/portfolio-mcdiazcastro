@@ -17,9 +17,7 @@ export const SKILL_CATEGORY_ORDER: readonly SkillCategory[] = [
 ];
 
 export const SKILL_CATEGORIES: Readonly<Record<string, SkillCategory>> = {
-  'Angular-v18': SKILL_CATEGORY.FRONTEND,
-  'Angular-v15': SKILL_CATEGORY.FRONTEND,
-  'Angular-v11': SKILL_CATEGORY.FRONTEND,
+  Angular: SKILL_CATEGORY.FRONTEND,
   TypeScript: SKILL_CATEGORY.FRONTEND,
   JavaScript: SKILL_CATEGORY.FRONTEND,
   HTML: SKILL_CATEGORY.FRONTEND,

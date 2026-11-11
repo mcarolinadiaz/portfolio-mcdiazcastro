@@ -128,5 +128,9 @@
     "PREVIEW": "Version 1 preview",
     "CLOSE_PREVIEW": "Close preview",
     "OPEN_SITE": "Open version 1 in a new tab"
+  },
+  "SEO": {
+    "DESCRIPTION": "Software engineer from Tandil, Argentina, with experience in software development and expertise in the frontend and backend areas.",
+    "SHARE_IMAGE_ALT": "María Carolina Díaz Castro, software engineer from Tandil, Buenos Aires, Argentina"
   }
 }

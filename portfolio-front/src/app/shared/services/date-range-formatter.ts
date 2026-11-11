@@ -6,7 +6,6 @@ import { LANGUAGE_LOCALE, LanguageService } from './language-service';
 
 const PRESENT_KEY = 'COMMON.PRESENT';
 
-/** Formats date ranges in the active language ("Sep 2024 – May 2026", "… – Present"). */
 @Service()
 export class DateRangeFormatter {
   private readonly languageService = inject(LanguageService);
@@ -14,10 +13,6 @@ export class DateRangeFormatter {
     initialValue: PRESENT_KEY,
   });
 
-  /**
-   * Formatting function for the current language. Read it inside `computed()` so
-   * the result updates when the language changes.
-   */
   readonly format = computed(() => {
     const locale = LANGUAGE_LOCALE[this.languageService.activeLanguage()];
     const present = this.presentLabel();

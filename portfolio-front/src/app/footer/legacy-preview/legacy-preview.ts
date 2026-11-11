@@ -11,7 +11,6 @@ import { LEGACY_SITE } from '../../core/constants/legacy-site';
 import { Icon } from '../../shared/icon/icon';
 import { ResponsiveService } from '../../shared/services/responsive-service';
 
-/** Footer button that opens a card with a screenshot linking to version 1 of the site. */
 @Component({
   selector: 'app-legacy-preview',
   imports: [Icon, TranslatePipe],
@@ -30,7 +29,8 @@ export class LegacyPreview {
   readonly isOpen = signal(false);
 
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
-  private readonly toggleButton = viewChild.required<ElementRef<HTMLButtonElement>>('previewToggle');
+  private readonly toggleButton =
+    viewChild.required<ElementRef<HTMLButtonElement>>('previewToggle');
 
   toggle(): void {
     this.isOpen.update((isOpen) => !isOpen);

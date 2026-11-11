@@ -188,14 +188,6 @@ export class UserInformationService {
     return this.professionalNetworks;
   }
 
-  getContactInformation(): { email: string; location: string; workAuthorization: string } {
-    return {
-      email: this.user().email,
-      location: this.user().location,
-      workAuthorization: this.user().workAuthorization,
-    };
-  }
-
   getTechnicalSkills(): string[] {
     let stack: string[] = [];
     this.professionalExperiences.forEach((experience) => {
@@ -209,12 +201,13 @@ export class UserInformationService {
     return stack;
   }
 
-  /** Technical skills grouped by `SKILL_CATEGORIES`, keeping their original order. */
   getTechnicalSkillGroups(): SkillGroup[] {
     const skills = this.getTechnicalSkills();
     return SKILL_CATEGORY_ORDER.map((category) => ({
       category,
-      skills: skills.filter((skill) => (SKILL_CATEGORIES[skill] ?? SKILL_CATEGORY.OTHER) === category),
+      skills: skills.filter(
+        (skill) => (SKILL_CATEGORIES[skill] ?? SKILL_CATEGORY.OTHER) === category,
+      ),
     })).filter((group) => group.skills.length > 0);
   }
 

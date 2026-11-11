@@ -16,12 +16,15 @@ npm start                              # Angular development server
 npm run build                          # production build, including SSR output
 npm test -- --watch=false              # all Vitest unit tests
 npm test -- --include src/app/about/about.spec.ts --watch=false  # one test file
+npm run format                         # format src with Prettier
+npm run format:check                   # report files that aren't formatted
 ```
 
 Tests use Angular's `ng test` builder with Vitest and jsdom. Its `--include`
 option accepts a spec file or directory relative to `portfolio-front/`. There
 is no lint script or ESLint configuration in this repository. Prettier is
-configured in `.prettierrc` but has no npm script.
+configured in `.prettierrc` (with `.editorconfig`); run `npm run format`
+before committing so every file keeps the same formatting.
 
 ## Application architecture
 
@@ -41,11 +44,14 @@ configured in `.prettierrc` but has no npm script.
   `src/app/shared/services/user-information-service.ts`. Page components
   consume its user, experience, education, certification, language, and
   network data rather than duplicating that content. Shared presentation
-  components live in `shared/`; `ResponsiveService` turns the Bootstrap
-  breakpoint constants in `core/constants/breakpoints.ts` into signals.
-- Global styling in `src/styles.scss` configures Bootstrap's Sass variables
-  and exposes the palette as CSS custom properties. Component-specific SCSS
-  stays beside each component.
+  components live in `shared/`; `ResponsiveService` turns the breakpoint
+  constants in `core/constants/breakpoints.ts` into signals.
+- No CSS framework is used. Global styling in `src/styles.scss` loads the
+  design tokens (`styles/_tokens.scss`, CSS custom properties), the base
+  element styles (`styles/_base.scss`, a minimal reset that replaced
+  Bootstrap's Reboot) and the shared building blocks
+  (`styles/_components.scss`). Component-specific SCSS stays beside each
+  component. Don't add Bootstrap or another CSS framework back.
 
 ## Repository conventions
 
@@ -97,7 +103,7 @@ configured in `.prettierrc` but has no npm script.
   `Carolina Díaz | <translated section>`, re-applying on language change.
   Reuse `getNavTranslationKey` rather than re-deriving the key when adding a
   page route.
-- Reuse `ResponsiveService` and `BOOTSTRAP_BREAKPOINTS` for responsive
+- Reuse `ResponsiveService` and `BREAKPOINTS` for responsive
   behavior so TypeScript and CSS breakpoints remain aligned. In component
   SCSS, media queries use the variables in `src/styles/_breakpoints.scss`
   (`@use '<relative path>/styles/breakpoints' as bp;`), which mirror
@@ -108,7 +114,7 @@ configured in `.prettierrc` but has no npm script.
   inherit `currentColor` and are `aria-hidden`, so the surrounding button or
   link carries the accessible label. Add new icons to its `ICON_PATHS` map
   instead of inlining `<svg>` in templates or adding icon image assets.
-- Reuse the site palette, Bootstrap configuration, and global styles from
+- Reuse the site palette, base styles, and global styles from
   `src/styles.scss` before adding component-specific styles. Building blocks
   shared by several pages live in `src/styles/_components.scss`: `.eyebrow`,
   `.page-title`, `.button` + `.button-primary`/`.button-outline`, and
@@ -119,6 +125,11 @@ configured in `.prettierrc` but has no npm script.
   both labels fit and stack full-width otherwise.
 - Follow `.editorconfig` and Prettier: 2-space indentation, single-quoted
   TypeScript strings, UTF-8, final newlines, and a 100-character print width.
+- Don't write comments in code (TypeScript, specs, HTML templates, SCSS, or
+  config files such as `tsconfig*.json`). Make the code explain itself with
+  descriptive names and named constants, and record the reasons behind
+  non-obvious decisions in the "Recent decisions" section of this file
+  instead.
 - Use semantic HTML elements for structure, and keep `div`/`span` only for
   purely visual wrappers:
   - The `App` shell owns the page landmarks: `<header>` (navbar), a single
@@ -158,10 +169,11 @@ configured in `.prettierrc` but has no npm script.
   shape.
 - 2026-10-22: `Navbar` initializes mobile section title immediately and keeps
   it updated on navigation via `NavigationEnd`, using the deepest active route
-  path and `getNavTranslationKey`.
-- 2026-11-10: Design tokens live in `src/styles/_tokens.scss` (SCSS palette
-  for the Bootstrap theme plus CSS custom properties); components use the
-  custom properties instead of hardcoded values.
+  path and `getNavTranslationKey`. (Superseded on 2026-11-10: the mobile
+  section title was removed.)
+- 2026-11-10: Design tokens live in `src/styles/_tokens.scss` (CSS custom
+  properties built from an SCSS palette); components use the custom
+  properties instead of hardcoded values.
 - 2026-11-10: The `App` shell is a three-row grid (`header` / scrollable
   `main.page-container` / footer) at `100dvh`: header and footer stay fixed
   and span the full width, page content is centered at
@@ -228,4 +240,27 @@ configured in `.prettierrc` but has no npm script.
   of normal height keep the fixed header + footer with `<main>` scrolling.
   `App` resets both scroll positions on navigation, and `LegacyPreview` sizes
   its mobile screenshot with the viewport height so the card fits between
-  the header and the footer.
+  the header and the footer. In that mode the shell is a flex column at
+  `min-height: 100dvh` with `main` and `.page-content` growing (`flex: 1`), so
+  the footer stays at the bottom of the screen on short pages (Contact) and
+  pages that center their content still can.
+- 2026-11-11: Removed Bootstrap. An audit showed no Bootstrap class,
+  component, JS or `--bs-*` variable was used anymore (`active` only matters
+  combined with Bootstrap components); only its Reboot base styles were in
+  effect, now reproduced in `styles/_base.scss`. `BOOTSTRAP_BREAKPOINTS` was
+  renamed to `BREAKPOINTS`. The initial styles bundle dropped from ~228 kB.
+- 2026-11-11: Removed every code comment and unused code (`ResponsiveService`
+  now only exposes `isMobile`, unused tokens and translation keys were
+  dropped). Reasons that used to live in comments:
+  - `$mobile-max` in `_breakpoints.scss` must match `BREAKPOINTS.isMobile`.
+  - `<main>` has `tabindex="0"` because it is a scroll container.
+  - The `?v=` query on the favicon links busts caches of an older favicon
+    served from the same origin.
+  - In the palette, `$punch-red` is only for decorative or large text (it
+    fails 4.5:1 on platinum); text, links and buttons use `$flag-red`.
+  - The mobile v1 screenshot height `clamp(120px, 100dvh - 360px, 340px)`
+    leaves room for the sticky header (80px), the footer (~160px) and the
+    card's own header and padding.
+  - `LegacyPreview` and `DropdownMenu` absolutely position their panels
+    against `.footer` and `.app-header`, which is why those are positioned
+    with a `z-index` above the page.

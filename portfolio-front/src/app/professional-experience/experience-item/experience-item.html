@@ -3,7 +3,12 @@
 
 <p class="experience-dates">{{ item.dateRange }}</p>
 
-<div class="experience-marker" [class.is-current]="item.isCurrent" [class.is-last]="isLast()" aria-hidden="true">
+<div
+  class="experience-marker"
+  [class.is-current]="item.isCurrent"
+  [class.is-last]="isLast()"
+  aria-hidden="true"
+>
   <span class="marker-line marker-line-top"></span>
   <span class="marker-dot"></span>
   <span class="marker-line marker-line-bottom"></span>

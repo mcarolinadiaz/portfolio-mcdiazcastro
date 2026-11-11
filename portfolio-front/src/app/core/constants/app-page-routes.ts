@@ -10,7 +10,6 @@ export interface AppPageRoute extends NavigationRoute {
   readonly loadComponent: Route['loadComponent'];
 }
 
-/** Route paths of the portfolio pages; use them for links instead of literals. */
 export const APP_PAGE_PATHS = {
   ABOUT: '',
   PROFESSIONAL_EXPERIENCE: 'professional-experience',

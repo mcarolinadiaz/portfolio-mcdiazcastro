@@ -49,9 +49,9 @@ describe('ProfessionalExperience', () => {
   });
 
   it('should list every teaching term and span them in the main date range', () => {
-    const teaching = component.entries().find((entry) =>
-      entry.experience.company.includes(COMPANY.UNICEN),
-    )!;
+    const teaching = component
+      .entries()
+      .find((entry) => entry.experience.company.includes(COMPANY.UNICEN))!;
 
     expect(teaching.terms.length).toBe(4);
     expect(teaching.dateRange).toBe('Apr 2019 – Present');

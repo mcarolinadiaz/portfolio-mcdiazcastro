@@ -1,6 +1,5 @@
 @use '../../styles/breakpoints' as bp;
 
-// Positioned so the version 1 preview card can open above it.
 .footer {
   position: relative;
   display: flex;
@@ -40,7 +39,6 @@
   background: var(--color-border-on-dark);
 }
 
-// Mobile: icons centered on top, smaller text below so the fixed footer stays short.
 @media (max-width: bp.$mobile-max) {
   .footer {
     flex-direction: column-reverse;

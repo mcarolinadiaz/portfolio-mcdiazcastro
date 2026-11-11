@@ -8,7 +8,6 @@ export const SKILL_CATEGORY = {
 
 export type SkillCategory = (typeof SKILL_CATEGORY)[keyof typeof SKILL_CATEGORY];
 
-/** Order in which the skill groups are shown. */
 export const SKILL_CATEGORY_ORDER: readonly SkillCategory[] = [
   SKILL_CATEGORY.FRONTEND,
   SKILL_CATEGORY.BACKEND,
@@ -17,10 +16,6 @@ export const SKILL_CATEGORY_ORDER: readonly SkillCategory[] = [
   SKILL_CATEGORY.OTHER,
 ];
 
-/**
- * Category of each technology listed in the experience stacks. A skill missing
- * here falls into OTHER (a spec fails, as a reminder to classify it).
- */
 export const SKILL_CATEGORIES: Readonly<Record<string, SkillCategory>> = {
   'Angular-v18': SKILL_CATEGORY.FRONTEND,
   'Angular-v15': SKILL_CATEGORY.FRONTEND,

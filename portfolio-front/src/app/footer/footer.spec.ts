@@ -37,4 +37,20 @@ describe('Footer', () => {
     expect(footer.querySelectorAll('.social-link').length).toBeGreaterThan(0);
     expect(footer.querySelector('.legacy-toggle')).not.toBeNull();
   });
+
+  it('should credit the tools used to build the site, without Bootstrap', () => {
+    const credits = Array.from(
+      (fixture.nativeElement as HTMLElement).querySelectorAll('.footer-text a'),
+      (link) => link.textContent?.trim(),
+    );
+
+    expect(credits).toEqual([
+      'Visual Studio Code',
+      'Angular v22',
+      'Vitest',
+      'Claude',
+      'Github Copilot',
+      'Vercel',
+    ]);
+  });
 });

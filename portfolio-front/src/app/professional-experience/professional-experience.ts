@@ -8,10 +8,7 @@ import { LanguageService } from '../shared/services/language-service';
 import { UserInformationService } from '../shared/services/user-information-service';
 import { getExperienceDateRanges, spanDateRanges } from '../shared/utils/date-range';
 import { getNavTranslationKey } from '../shared/utils/nav-translation-key';
-import {
-  ExperienceItem,
-  ExperienceTimelineEntry,
-} from './experience-item/experience-item';
+import { ExperienceItem, ExperienceTimelineEntry } from './experience-item/experience-item';
 
 @Component({
   selector: 'app-professional-experience',

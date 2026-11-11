@@ -25,8 +25,7 @@ describe('Contact', () => {
   }
 
   it('should render one h1 and no location or work authorization details', () => {
-    const { location, workAuthorization } =
-      TestBed.inject(UserInformationService).getContactInformation();
+    const { location, workAuthorization } = TestBed.inject(UserInformationService).user();
 
     expect(element().querySelectorAll('h1').length).toBe(1);
     expect(element().querySelector('.eyebrow')).toBeNull();

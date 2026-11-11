@@ -1,6 +1,5 @@
 const LEGACY_SITE_URL = 'https://portfolio-carolinadiaz-v1.vercel.app/';
 
-/** Version 1 of the portfolio, frozen on the `release/v1` branch. */
 export const LEGACY_SITE = {
   url: LEGACY_SITE_URL,
   host: new URL(LEGACY_SITE_URL).host,

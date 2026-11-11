@@ -41,9 +41,7 @@ describe('Education', () => {
   it('should render one article per certification with its period', () => {
     const certifications = TestBed.inject(UserInformationService).getCertifications();
 
-    expect(element().querySelectorAll('article.certification').length).toBe(
-      certifications.length,
-    );
+    expect(element().querySelectorAll('article.certification').length).toBe(certifications.length);
     expect(component.certifications().map((item) => item.period)).toEqual([
       'Dec 2022 – Feb 2023',
       'Oct 2021',

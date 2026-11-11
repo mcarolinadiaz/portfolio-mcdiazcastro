@@ -15,9 +15,9 @@ describe('date-range utils', () => {
   });
 
   it('should render an open-ended range with the present label', () => {
-    expect(formatDateRange({ startDate: new Date('2026-08-01'), endDate: null }, EN, 'Present')).toBe(
-      'Aug 2026 – Present',
-    );
+    expect(
+      formatDateRange({ startDate: new Date('2026-08-01'), endDate: null }, EN, 'Present'),
+    ).toBe('Aug 2026 – Present');
   });
 
   it('should omit the start year when both dates are in the same year', () => {

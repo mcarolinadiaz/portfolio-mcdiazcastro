@@ -32,7 +32,10 @@
     <dt class="fact-label">{{ 'ABOUT.FACTS.LANGUAGES' | translate }}</dt>
     <dd class="fact-value">
       @for (language of user.languages; track language.idiom) {
-        {{ language.idiom | translate }}@if (!$last) { / }
+        {{ language.idiom | translate }}
+        @if (!$last) {
+          /
+        }
       }
     </dd>
   </div>

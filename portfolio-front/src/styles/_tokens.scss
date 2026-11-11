@@ -1,43 +1,33 @@
-// Design tokens for the portfolio.
-// SCSS variables feed the Bootstrap theme (see styles.scss); the CSS custom
-// properties in :root are what components should use.
-
-// ---------------------------------------------------------------------------
-// Palette
-// ---------------------------------------------------------------------------
 $space-indigo: #2b2d42;
 $lavender-grey: #8d99ae;
 $platinum: #edf2f4;
-$punch-red: #ef233c; // decorative / large text only (fails 4.5:1 on platinum)
-$flag-red: #d90429; // red for text, links and buttons (6.3:1 on platinum)
+$punch-red: #ef233c;
+$flag-red: #d90429;
+$flag-red-dark: #ae0321;
 
 $pure-white: #ffffff;
-$pure-black: #000000;
 
-// Derived neutrals used by the redesign
-$slate-text: #3b3e54; // body copy on light surfaces
-$slate-muted: #555b6e; // secondary text on light surfaces (6.4:1 on platinum)
-$indigo-raised: #3a3d56; // raised elements on dark surfaces
-$indigo-border: #5c6178; // borders on dark surfaces
-$mist: #c9d1dc; // secondary text on dark surfaces / light borders
-$rose-on-dark: #ff8a98; // red accent for text on dark surfaces
+$slate-text: #3b3e54;
+$slate-muted: #555b6e;
+$indigo-raised: #3a3d56;
+$indigo-border: #5c6178;
+$mist: #c9d1dc;
+$rose-on-dark: #ff8a98;
 
-// ---------------------------------------------------------------------------
-// Typography
-// ---------------------------------------------------------------------------
-$font-family-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+$font-family-body:
+  'Inter',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  sans-serif;
 $font-family-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
 
 :root {
-  // Raw palette (kept for existing components)
   --color-space-indigo: #{$space-indigo};
   --color-lavender-grey: #{$lavender-grey};
-  --color-platinum: #{$platinum};
-  --color-punch-red: #{$punch-red};
-  --color-flag-red: #{$flag-red};
   --color-white: #{$pure-white};
 
-  // Semantic colors
   --color-bg: #{$platinum};
   --color-surface: #{$pure-white};
   --color-surface-dark: #{$space-indigo};
@@ -50,6 +40,7 @@ $font-family-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --color-text-on-dark-muted: #{$mist};
 
   --color-accent: #{$flag-red};
+  --color-accent-hover: #{$flag-red-dark};
   --color-accent-decorative: #{$punch-red};
   --color-accent-on-dark: #{$rose-on-dark};
 
@@ -57,27 +48,24 @@ $font-family-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --color-border-on-dark: #{$indigo-border};
   --color-overlay: rgb(43 45 66 / 60%);
 
-  // Font families
   --font-family-body: #{$font-family-body};
   --font-family-heading: #{$font-family-heading};
 
-  // Font weights
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  // Type scale
-  --font-size-xs: 0.8125rem; // 13px – eyebrows, chips
-  --font-size-sm: 0.875rem; // 14px – footer, meta
-  --font-size-base: 1rem; // 16px – body
-  --font-size-md: 1.0625rem; // 17px – long-form bio
-  --font-size-lg: 1.25rem; // 20px – card titles, lead text
-  --font-size-xl: 1.5rem; // 24px
-  --font-size-2xl: 2rem; // 32px – section titles
-  --font-size-3xl: clamp(1.875rem, 1.25rem + 2vw, 2.5rem); // 30–40px
-  --font-size-4xl: clamp(2.25rem, 1.5rem + 3vw, 3.5rem); // 36–56px – page titles
-  --font-size-display: clamp(2.5rem, 1.25rem + 5vw, 4.5rem); // 40–72px – hero
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.0625rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: clamp(1.875rem, 1.25rem + 2vw, 2.5rem);
+  --font-size-4xl: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+  --font-size-display: clamp(2.5rem, 1.25rem + 5vw, 4.5rem);
 
   --line-height-tight: 1.05;
   --line-height-heading: 1.15;
@@ -87,32 +75,26 @@ $font-family-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --letter-spacing-tight: -0.02em;
   --letter-spacing-eyebrow: 0.08em;
 
-  // Spacing (4px base)
-  --space-1: 0.25rem; // 4
-  --space-2: 0.5rem; // 8
-  --space-3: 0.75rem; // 12
-  --space-4: 1rem; // 16
-  --space-5: 1.5rem; // 24
-  --space-6: 2rem; // 32
-  --space-7: 3rem; // 48
-  --space-8: 4rem; // 64
-  --space-9: 6rem; // 96
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
 
-  // Layout
   --container-max-width: 1200px;
-  --container-gutter: var(--space-5);
   --touch-target: 44px;
 
-  // Radii
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-pill: 999px;
 
-  // Elevation
   --shadow-popover: 0 16px 48px rgb(43 45 66 / 30%);
 
-  // Motion
   --transition-fast: 0.2s ease;
 }

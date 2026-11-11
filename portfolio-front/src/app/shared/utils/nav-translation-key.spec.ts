@@ -15,9 +15,7 @@ describe('getNavTranslationKey', () => {
   });
 
   it('should replace dashes with underscores for multi-word paths', () => {
-    expect(getNavTranslationKey('professional-experience')).toBe(
-      'NAV.PROFESSIONAL_EXPERIENCE',
-    );
+    expect(getNavTranslationKey('professional-experience')).toBe('NAV.PROFESSIONAL_EXPERIENCE');
     expect(getNavTranslationKey('keep-in-touch')).toBe('NAV.KEEP_IN_TOUCH');
   });
 });

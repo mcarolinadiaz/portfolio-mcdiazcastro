@@ -2,7 +2,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 const BLANK_LINE = /\n\s*\n/;
 
-/** Splits a text into paragraphs on blank lines, so each one can be its own `<p>`. */
 @Pipe({ name: 'paragraphs' })
 export class ParagraphsPipe implements PipeTransform {
   transform(text: string | null | undefined): string[] {

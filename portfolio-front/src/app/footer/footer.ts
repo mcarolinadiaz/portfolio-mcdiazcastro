@@ -14,7 +14,6 @@ import { LegacyPreview } from './legacy-preview/legacy-preview';
 export class Footer {
   private readonly urlSanitizerService = inject(UrlSanitizerService);
   protected readonly angularSite = this.urlSanitizerService.angularSite;
-  protected readonly bootstrapSite = this.urlSanitizerService.bootstrapSite;
   protected readonly vscSite = this.urlSanitizerService.vscSite;
   protected readonly vitestSite = this.urlSanitizerService.vitestSite;
   protected readonly vercelSite = this.urlSanitizerService.vercelSite;

@@ -26,9 +26,7 @@
     </header>
 
     @let screenshot =
-      responsiveService.isMobile()
-        ? legacySite.screenshots.mobile
-        : legacySite.screenshots.desktop;
+      responsiveService.isMobile() ? legacySite.screenshots.mobile : legacySite.screenshots.desktop;
     <a
       class="legacy-thumb"
       [class.overlay-visible]="responsiveService.isMobile()"

@@ -27,7 +27,6 @@ export class DropdownMenu {
   private readonly router = inject(Router);
 
   constructor() {
-    // Also covers navigation that doesn't come from a menu link (back button).
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),

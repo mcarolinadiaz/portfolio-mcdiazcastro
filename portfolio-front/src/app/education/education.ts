@@ -34,7 +34,6 @@ export class Education {
 
   readonly degreePeriod = computed(() => this.formatPeriod(this.education));
 
-  // formatPeriod reads the formatter signal, so both lists update on language change.
   readonly certifications = computed(() =>
     this.userInformationService
       .getCertifications()

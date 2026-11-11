@@ -28,7 +28,6 @@
   background: var(--color-surface);
 }
 
-// Degree
 .degree {
   display: flex;
   flex-wrap: wrap;
@@ -75,7 +74,6 @@
   line-height: var(--line-height-relaxed);
 }
 
-// Certifications
 .certifications {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -110,7 +108,6 @@
   font-weight: var(--font-weight-semibold);
 }
 
-// Solvd's description keeps its line breaks.
 .certification-description {
   margin: 0;
   color: var(--color-text-body);
@@ -119,7 +116,6 @@
   white-space: pre-line;
 }
 
-// Skills + languages
 .skills-and-languages {
   display: flex;
   flex-wrap: wrap;

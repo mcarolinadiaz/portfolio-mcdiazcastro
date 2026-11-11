@@ -1,98 +1,14 @@
-@use 'styles/tokens' as t;
-
-@use "bootstrap/scss/bootstrap" with (
-	$black:                  t.$space-indigo,
-	$white:                  t.$pure-white,
-
-
-	$gray-100:               t.$platinum,
-	$gray-200:               #e2e6ea,
-	$gray-300:               t.$lavender-grey,
-	$gray-400:               t.$lavender-grey,
-	$gray-500:               t.$space-indigo,
-	$gray-600:               t.$space-indigo,
-	$gray-700:               t.$space-indigo,
-	$gray-800:               t.$space-indigo,
-	$gray-900:               t.$space-indigo,
-
-	$blue:                   t.$space-indigo,
-	$indigo:                 t.$space-indigo,
-	$purple:                 t.$space-indigo,
-	$pink:                   t.$punch-red,
-	$red:                    t.$flag-red,
-	$orange:                 t.$punch-red,
-	$yellow:                 t.$lavender-grey,
-	$green:                  t.$space-indigo,
-	$teal:                   t.$lavender-grey,
-	$cyan:                   t.$platinum,
-
-
-	// Flag red instead of punch red: white text on it and red links on
-	// platinum both pass WCAG AA (4.5:1).
-	$primary:                t.$flag-red,
-	$secondary:              t.$space-indigo,
-	$success:                t.$space-indigo,
-	$info:                   t.$lavender-grey,
-	$warning:                t.$lavender-grey,
-	$danger:                 t.$flag-red,
-	$light:                  t.$platinum,
-	$dark:                   t.$space-indigo,
-
-	$body-bg:                t.$platinum,
-	$body-color:             t.$space-indigo,
-	$body-secondary-bg:      t.$lavender-grey,
-	$body-tertiary-bg:       t.$pure-white,
-	$body-emphasis-color:    t.$space-indigo,
-
-	$min-contrast-ratio:     4.5,
-	$color-contrast-dark:    t.$space-indigo,
-	$color-contrast-light:   t.$pure-white,
-
-	$font-family-sans-serif: t.$font-family-body,
-	$headings-font-family:   t.$font-family-heading,
-	$headings-font-weight:   700
-);
-
+@use 'styles/tokens';
+@use 'styles/base';
 @use 'styles/components';
 
-html,
-body {
-	margin: 0;
-	background-color: var(--color-bg);
-}
-
-body {
-	font-family: var(--font-family-body);
-	color: var(--color-text);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: var(--font-family-heading);
-	font-weight: var(--font-weight-bold);
-	line-height: var(--line-height-heading);
-	color: var(--color-text);
-}
-
-:focus-visible {
-	outline: 2px solid var(--color-accent);
-	outline-offset: 2px;
-}
-
-// Respect the system "reduce motion" setting for every transition and animation.
 @media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

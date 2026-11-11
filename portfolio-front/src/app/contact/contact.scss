@@ -1,6 +1,5 @@
 @use '../../styles/breakpoints' as bp;
 
-// Grows to fill the page area so the content is vertically centered when it fits.
 :host {
   display: flex;
   flex: 1;

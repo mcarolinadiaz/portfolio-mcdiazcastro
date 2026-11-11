@@ -17,7 +17,6 @@ $card-offset: var(--space-4);
   font-weight: var(--font-weight-semibold);
 }
 
-// Vertical line with a dot aligned to the card's first line.
 .experience-marker {
   display: flex;
   flex-direction: column;
@@ -94,7 +93,6 @@ $card-offset: var(--space-4);
   line-height: var(--line-height-body);
 }
 
-// Mobile: dates move above the card, next to the dot.
 @media (max-width: bp.$mobile-max) {
   :host {
     grid-template-columns: $marker-size minmax(0, 1fr);
